@@ -6,16 +6,16 @@
   <property name="description"
     i18n:translate="">A video file with screenshot</property>
   <property name="content_meta_type">RTInternalVideo</property>
-  <property name="content_icon">document_icon.gif</property>
+  <property name="content_icon">video.png</property>
   <property name="product">redturtle.video</property>
   <property name="factory">addRTInternalVideo</property>
-  <property name="immediate_view">atct_edit</property>
+  <property name="immediate_view">flowplayer</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>
   <property name="allow_discussion">False</property>
-  <property name="default_view">base_view</property>
+  <property name="default_view">flowplayer</property>
   <property name="view_methods">
-    <element value="base_view" />
+    <element value="flowplayer" />
   </property>
   <alias from="(Default)" to="(dynamic view)" />
   <alias from="edit" to="atct_edit" />

@@ -3,27 +3,24 @@
 
 from zope.interface import implements, directlyProvides
 
+from AccessControl import ClassSecurityInfo
+from Products.CMFCore import permissions
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
+from Products.ATContentTypes.content.file import ATFileSchema, ATFile
+from Products.ATContentTypes.content.image import ATImageSchema, ATImage
+from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
+
+from collective.flowplayer.interfaces import IFlowPlayable
 
 from redturtle.video import videoMessageFactory as _
 from redturtle.video.interfaces import IRTInternalVideo
 from redturtle.video.config import PROJECTNAME
 
-RTInternalVideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
+RTInternalVideoSchema = ATFileSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
-
-    atapi.StringField(
-        'image',
-        storage=atapi.AnnotationStorage(),
-        widget=atapi.StringWidget(
-            label=_(u"Preview image"),
-            description=_(u"Field description"),
-        ),
-    ),
-
 
 ))
 
@@ -33,11 +30,17 @@ RTInternalVideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
 RTInternalVideoSchema['title'].storage = atapi.AnnotationStorage()
 RTInternalVideoSchema['description'].storage = atapi.AnnotationStorage()
 
+imageField = ATImageSchema['image'].copy()
+imageField.required = False
+imageField.primary = False
+RTInternalVideoSchema.addField(imageField)
+RTInternalVideoSchema.moveField('image', after='file')
+
 schemata.finalizeATCTSchema(RTInternalVideoSchema, moveDiscussion=False)
 
-class RTInternalVideo(base.ATCTContent):
+class RTInternalVideo(ATFile, ATCTImageTransform):
     """A video file with screenshot"""
-    implements(IRTInternalVideo)
+    implements(IRTInternalVideo, IFlowPlayable)
 
     meta_type = "RTInternalVideo"
     schema = RTInternalVideoSchema
@@ -46,7 +49,31 @@ class RTInternalVideo(base.ATCTContent):
     description = atapi.ATFieldProperty('description')
     
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
-    image = atapi.ATFieldProperty('image')
 
+    security = ClassSecurityInfo()
+
+    security.declareProtected(permissions.View, 'tag')
+    def tag(self, **kwargs):
+        """Generate image tag using the api of the ImageField
+        """
+        return self.getField('image').tag(self, **kwargs)
+
+    def __bobo_traverse__(self, REQUEST, name):
+        """Transparent access to image scales
+        """
+        if name.startswith('image'):
+            field = self.getField('image')
+            image = None
+            if name == 'image':
+                image = field.getScale(self)
+            else:
+                scalename = name[len('image_'):]
+                if scalename in field.getAvailableSizes(self):
+                    image = field.getScale(self, scale=scalename)
+            if image is not None and not isinstance(image, basestring):
+                # image might be None or '' for empty images
+                return image
+
+        return ATFile.__bobo_traverse__(self, REQUEST, name)
 
 atapi.registerType(RTInternalVideo, PROJECTNAME)
