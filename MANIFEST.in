@@ -1,0 +1,2 @@
+recursive-include redturtle *
+global-exclude *pyc

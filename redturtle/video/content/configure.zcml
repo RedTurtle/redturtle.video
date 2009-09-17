@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="redturtle.video">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".rtremotevideo.RTRemoteVideo">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IRTRemoteVideo"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        set_schema="..interfaces.IRTRemoteVideo"
+        />
+  </class>
+  <class class=".rtinternalvideo.RTInternalVideo">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IRTInternalVideo"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        set_schema="..interfaces.IRTInternalVideo"
+        />
+  </class>
+
+</configure>
