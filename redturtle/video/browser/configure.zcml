@@ -7,4 +7,12 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+    <browser:page
+        name="flowplayer"
+        for="redturtle.video.interfaces.IRTInternalVideo"
+        class=".view.InternalVideo"
+        template="video_view.pt"
+        permission="zope2.View"
+        />
+
 </configure>

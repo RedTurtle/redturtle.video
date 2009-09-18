@@ -7,7 +7,7 @@ from Products.ATContentTypes.interface.file import IATFile
 
 from redturtle.video import videoMessageFactory as _
 
-class IRTInternalVideo(IATFile):
+class IRTInternalVideo(Interface):
     """A video file with screenshot"""
     
     # -*- schema definition goes here -*-

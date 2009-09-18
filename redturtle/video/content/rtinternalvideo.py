@@ -38,7 +38,7 @@ RTInternalVideoSchema.moveField('image', after='file')
 
 schemata.finalizeATCTSchema(RTInternalVideoSchema, moveDiscussion=False)
 
-class RTInternalVideo(ATFile, ATCTImageTransform):
+class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
     """A video file with screenshot"""
     implements(IRTInternalVideo, IFlowPlayable)
 
@@ -74,6 +74,6 @@ class RTInternalVideo(ATFile, ATCTImageTransform):
                 # image might be None or '' for empty images
                 return image
 
-        return ATFile.__bobo_traverse__(self, REQUEST, name)
+        return base.ATCTContent.__bobo_traverse__(self, REQUEST, name)
 
 atapi.registerType(RTInternalVideo, PROJECTNAME)
