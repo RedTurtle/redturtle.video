@@ -68,6 +68,7 @@ class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
                 image = field.getScale(self)
             else:
                 scalename = name[len('image_'):]
+                scalename.replace(".jpg","")
                 if scalename in field.getAvailableSizes(self):
                     image = field.getScale(self, scale=scalename)
             if image is not None and not isinstance(image, basestring):

@@ -39,6 +39,8 @@
                 that you have JavaScript enabled and the latest version of
                 Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
             </a>
+			<!--img tal:attributes="alt context/Description;
+			                     src string:/${context/portal_url/getPortalObject/getId}/image_thumb.jpg" /-->
         </div>
 		<!-- controlbar container --> 
 		<div id="hulu" class="hulu huluMain"><!-- toolbar here --></div>
