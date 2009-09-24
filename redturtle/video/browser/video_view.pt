@@ -42,8 +42,6 @@
 			<!--img tal:attributes="alt context/Description;
 			                     src string:/${context/portal_url/getPortalObject/getId}/image_thumb.jpg" /-->
         </div>
-		<!-- controlbar container --> 
-		<div id="hulu" class="hulu huluMain"><!-- toolbar here --></div>
 
         <div metal:use-macro="here/document_relateditems/macros/relatedItems">
             show related items if they exist

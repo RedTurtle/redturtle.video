@@ -12,7 +12,7 @@ from collective.flowplayer.browser.view import File
 from plone.memoize.instance import memoize
 
 class InternalVideo(File):
-    """The specific RedTurtle Video browser view"""
+    """The RedTurtle Internal Video browser view"""
 
     def href(self):
         return self.context.absolute_url()+'/at_download/file'

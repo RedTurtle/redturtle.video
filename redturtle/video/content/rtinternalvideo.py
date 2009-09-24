@@ -77,4 +77,10 @@ class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
 
         return base.ATCTContent.__bobo_traverse__(self, REQUEST, name)
 
+    def hasSplashScreenImage(self):
+        """Boolean value to know if an image is available"""
+        if self.getImage():
+            return True
+        return False
+
 atapi.registerType(RTInternalVideo, PROJECTNAME)

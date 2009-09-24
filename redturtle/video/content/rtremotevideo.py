@@ -3,28 +3,24 @@
 
 from zope.interface import implements, directlyProvides
 
+from AccessControl import ClassSecurityInfo
+from Products.CMFCore import permissions
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
+from Products.ATContentTypes.content.link import ATLink, ATLinkSchema
+from Products.ATContentTypes.content.image import ATImageSchema, ATImage
+from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
+
+from collective.flowplayer.interfaces import IFlowPlayable
 
 from redturtle.video import videoMessageFactory as _
 from redturtle.video.interfaces import IRTRemoteVideo
 from redturtle.video.config import PROJECTNAME
 
-RTRemoteVideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
+RTRemoteVideoSchema = ATLinkSchema + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
-
-    atapi.ImageField(
-        'image',
-        storage=atapi.AnnotationStorage(),
-        widget=atapi.ImageWidget(
-            label=_(u"Preview image"),
-            description=_(u"Field description"),
-        ),
-        validators=('isNonEmptyFile'),
-    ),
-
 
 ))
 
@@ -34,11 +30,17 @@ RTRemoteVideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
 RTRemoteVideoSchema['title'].storage = atapi.AnnotationStorage()
 RTRemoteVideoSchema['description'].storage = atapi.AnnotationStorage()
 
+imageField = ATImageSchema['image'].copy()
+imageField.required = False
+imageField.primary = False
+RTRemoteVideoSchema.addField(imageField)
+RTRemoteVideoSchema.moveField('image', after='remoteUrl')
+
 schemata.finalizeATCTSchema(RTRemoteVideoSchema, moveDiscussion=False)
 
-class RTRemoteVideo(base.ATCTContent):
+class RTRemoteVideo(ATLink, ATCTImageTransform):
     """A link to a video with screenshot"""
-    implements(IRTRemoteVideo)
+    implements(IRTRemoteVideo, IFlowPlayable)
 
     meta_type = "RTRemoteVideo"
     schema = RTRemoteVideoSchema
@@ -47,7 +49,38 @@ class RTRemoteVideo(base.ATCTContent):
     description = atapi.ATFieldProperty('description')
     
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
-    image = atapi.ATFieldProperty('image')
 
+    security = ClassSecurityInfo()
+
+    security.declareProtected(permissions.View, 'tag')
+    def tag(self, **kwargs):
+        """Generate image tag using the api of the ImageField
+        """
+        return self.getField('image').tag(self, **kwargs)
+
+    def __bobo_traverse__(self, REQUEST, name):
+        """Transparent access to image scales
+        """
+        if name.startswith('image'):
+            field = self.getField('image')
+            image = None
+            if name == 'image':
+                image = field.getScale(self)
+            else:
+                scalename = name[len('image_'):]
+                scalename.replace(".jpg","")
+                if scalename in field.getAvailableSizes(self):
+                    image = field.getScale(self, scale=scalename)
+            if image is not None and not isinstance(image, basestring):
+                # image might be None or '' for empty images
+                return image
+
+        return ATLink.__bobo_traverse__(self, REQUEST, name)
+
+    def hasSplashScreenImage(self):
+        """Boolean value to know if an image is available"""
+        if self.getImage():
+            return True
+        return False
 
 atapi.registerType(RTRemoteVideo, PROJECTNAME)

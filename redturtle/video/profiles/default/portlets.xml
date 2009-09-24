@@ -4,5 +4,11 @@
      of this file for more information.
   -->
 <portlets>
-  <!-- -*- extra stuff goes here -*- -->
+
+   <portlet
+     addview="redturtle.video.Player"
+     title="Video gallery"
+     description="A portlet that show videos"
+   />
+
 </portlets>

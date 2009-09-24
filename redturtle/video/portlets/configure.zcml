@@ -7,6 +7,15 @@
        without this, we may get a permission lookup error -->
   <include package="plone.app.portlets" />
 
-	<!-- -*- extra stuff goes here -*- -->
+    <plone:portlet
+        name="redturtle.video.Player"
+        interface=".portlet.IRTVideoPortlet"
+        assignment=".portlet.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".portlet.Renderer"
+        addview=".portlet.AddForm"
+        editview=".portlet.EditForm"        
+    />
 
 </configure>

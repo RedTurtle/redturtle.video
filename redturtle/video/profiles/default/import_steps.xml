@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="redturte.video" version="20090924-01"
+              handler="redturte.video.setuphandlers.setupVarious"
+              title="RT Video contents - various import steps">
+     Various import steps
+ </import-step>
+</import-steps>
