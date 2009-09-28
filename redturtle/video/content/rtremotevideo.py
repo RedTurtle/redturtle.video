@@ -33,8 +33,11 @@ RTRemoteVideoSchema['description'].storage = atapi.AnnotationStorage()
 imageField = ATImageSchema['image'].copy()
 imageField.required = False
 imageField.primary = False
+imageField.widget.description = _(u'help_video_image',
+                                  default=u'Can be used to provide splash image when needed')
 RTRemoteVideoSchema.addField(imageField)
 RTRemoteVideoSchema.moveField('image', after='remoteUrl')
+RTRemoteVideoSchema['remoteUrl'].widget.size=60
 
 schemata.finalizeATCTSchema(RTRemoteVideoSchema, moveDiscussion=False)
 

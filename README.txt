@@ -1,9 +1,38 @@
 Introduction
 ============
 
-A simple video supporto for Plone, based on `collective.flowplayer`__.
+A simple video support for Plone, based on `collective.flowplayer`__.
+
+__ http://pypi.python.org/pypi/collective.flowplayer
+
+This add to your Plone portal two new content types:
+
+* **Video file** for providing a video content directly from a video file compatible with flowplayer
+  formats
+* **Video link** for a remote video resource 
+
+New content types have mandatory image field, for the video screenshot/splash data.
+
+All other given feature cames directly from collective.flowplayer features.
+
+Portlet
+-------
+
+Also this will give you a new "*Video gallery*" portlet, similar to the ones you'll get with
+collective.flowplayer. This new portlet shows image fields content taken from videos.
+
+Important
+=========
+
+This version of the product is teste with older version of collective.flowplayer (`1.0b5`__). Newer
+versions may works also, but aren't tested.
 
 __ http://pypi.python.org/pypi/collective.flowplayer/1.0b5
 
+TODO
+====
+
+* Internationalization
+* Test with new collective.flowplayer versions
 
 
