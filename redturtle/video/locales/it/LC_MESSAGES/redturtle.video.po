@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: redturtle.video\n"
+"POT-Creation-Date: 2009-10-02 14:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: redturtle.video\n"
+
+#. Default: "A link to a video with screenshot"
+#: ./profiles/default/types/RTRemoteVideo.xml
+msgid "A link to a video with screenshot"
+msgstr "Un link a un video con screenshot"
+
+#. Default: "A video file with screenshot"
+#: ./profiles/default/types/RTInternalVideo.xml
+msgid "A video file with screenshot"
+msgstr "Un file video con screenshot"
+
+#. Default: "Video file"
+#: ./profiles/default/types/RTInternalVideo.xml
+msgid "Video file"
+msgstr "Video file"
+
+#. Default: "Video link"
+#: ./profiles/default/types/RTRemoteVideo.xml
+msgid "Video link"
+msgstr "Video link"
+
+#. Default: "This portlet display a video gallery."
+#: ./portlets/portlet.py:147
+msgid "help_add_video_portlet"
+msgstr "Questa portlet visualizza una galleria video."
+
+#. Default: "This portlet display a video gallery."
+#: ./portlets/portlet.py:157
+msgid "help_edit_video_portlet"
+msgstr "Questa portlet visualizza una galleria video."
+
+#. Default: "Enter a number greater than 0 to limit the number of items displayed"
+#: ./portlets/portlet.py:50
+msgid "help_number_of_videos_to_show"
+msgstr "Inserire un numero maggiore di 0 per limitare il numero di elementi visualizzati"
+
+#. Default: "Title of the rendered portlet"
+#: ./portlets/portlet.py:38
+msgid "help_portlet_header"
+msgstr "Titolo della portlet restituita"
+
+#. Default: "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
+#: ./portlets/portlet.py:55
+msgid "help_show_more_link"
+msgstr "Se attivato, un altro ... link verrà visualizzato a piè di pagina della portlet."
+
+#. Default: "This can be a file containing an video content, or a folder or collection containing videos"
+#: ./portlets/portlet.py:42
+msgid "help_target_object"
+msgstr "Questo può essere un file che contiene un contenuto video, o una cartella o raccolta contenente video"
+
+#. Default: "Can be used to provide splash image when needed"
+#: ./content/rtinternalvideo.py:36
+msgid "help_video_image"
+msgstr "Può essere utilizzata per fornire un'immagine schizzo, se necessario"
+
+#. Default: "Add Video Portlet"
+#: ./portlets/portlet.py:146
+msgid "label_add_video_portlet"
+msgstr "Aggiungi una Portlet video"
+
+#. Default: "Edit Video Portlet"
+#: ./portlets/portlet.py:156
+msgid "label_edit_video_portlet"
+msgstr "Modifica una Portlet video"
+
+#. Default: "Number of videos to show"
+#: ./portlets/portlet.py:49
+msgid "label_number_of_videos_to_show"
+msgstr "Il numero di video da mostrare"
+
+#. Default: "Portlet header"
+#: ./portlets/portlet.py:37
+msgid "label_portlet_header"
+msgstr "Titolo della portlet restituita"
+
+#. Default: "Show more... link"
+#: ./portlets/portlet.py:54
+msgid "label_show_more_link"
+msgstr "Mostra più... link"
+
+#. Default: "Target object"
+#: ./portlets/portlet.py:41
+msgid "label_target_object"
+msgstr "Oggetto target"
+
+#. Default: "Video gallery: "
+#: ./portlets/portlet.py:76
+msgid "label_video_gallery"
+msgstr "Galleria video: "
+
+#. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."
+#: ./browser/video_view.pt:35
+msgid "video_fallback"
+msgstr "Se il tuo video non inizia subito, si prega di assicurarsi che JavaScript sia attivato e l'ultima versione di Adobe Flash Player (http://www.adobe.com/products/flashplayer/) sia installata."
+
