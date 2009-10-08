@@ -73,7 +73,7 @@ class Assignment(base.Assignment):
 
     @property
     def title(self):
-        return _(u"label_video_gallery",default=u"Video gallery: ") + self.header
+        return _(u"Video gallery: ") + self.header
 
 class Renderer(base.Renderer):
     render = ViewPageTemplateFile('portlet.pt')

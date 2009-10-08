@@ -1,5 +1,5 @@
 <dl class="portlet portletFlowPlayer"
-    i18n:domain="collective.flowplayer"
+    i18n:domain="redturtle.video"
     tal:define="target_url string:${view/target_url}/view">
 
     <dt class="portletHeader">

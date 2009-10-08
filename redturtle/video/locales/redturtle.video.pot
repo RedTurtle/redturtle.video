@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-10-02 14:28+0000\n"
+"POT-Creation-Date: 2009-10-08 12:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,10 @@ msgstr ""
 #. Default: "Video file"
 #: ./profiles/default/types/RTInternalVideo.xml
 msgid "Video file"
+msgstr ""
+
+#: ./portlets/portlet.py:76
+msgid "Video gallery: "
 msgstr ""
 
 #. Default: "Video link"
@@ -102,9 +106,9 @@ msgstr ""
 msgid "label_target_object"
 msgstr ""
 
-#. Default: "Video gallery: "
-#: ./portlets/portlet.py:76
-msgid "label_video_gallery"
+#. Default: "More…"
+#: ./portlets/portlet.pt:29
+msgid "more_url"
 msgstr ""
 
 #. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."

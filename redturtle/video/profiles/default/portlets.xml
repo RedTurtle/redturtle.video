@@ -3,12 +3,15 @@
      be used to register completely new column types. See CMFPlone's version
      of this file for more information.
   -->
-<portlets>
+<portlets xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
 
    <portlet
      addview="redturtle.video.Player"
      title="Video gallery"
      description="A portlet that show videos"
+     i18n:attributes="title title_video_portlet;
+                    description description_video_portlet"
    />
 
 </portlets>

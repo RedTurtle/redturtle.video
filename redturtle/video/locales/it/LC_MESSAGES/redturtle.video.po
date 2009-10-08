@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: redturtle.video\n"
-"POT-Creation-Date: 2009-10-02 14:28+0000\n"
+"POT-Creation-Date: 2009-10-08 12:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,10 @@ msgstr "Un file video con screenshot"
 #: ./profiles/default/types/RTInternalVideo.xml
 msgid "Video file"
 msgstr "Video file"
+
+#: ./portlets/portlet.py:76
+msgid "Video gallery: "
+msgstr ""
 
 #. Default: "Video link"
 #: ./profiles/default/types/RTRemoteVideo.xml
@@ -57,12 +61,12 @@ msgstr "Titolo della portlet restituita"
 #. Default: "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
 #: ./portlets/portlet.py:55
 msgid "help_show_more_link"
-msgstr "Se attivato, un altro ... link verrà visualizzato a piè di pagina della portlet."
+msgstr "Se attivato, di più... verrà visualizzato un link a piè di pagina della portlet, collegato ai dati mostrati dalla portlet."
 
 #. Default: "This can be a file containing an video content, or a folder or collection containing videos"
 #: ./portlets/portlet.py:42
 msgid "help_target_object"
-msgstr "Questo può essere un file che contiene un contenuto video, o una cartella o raccolta contenente video"
+msgstr "Questo può essere un file che contiene un contenuto video, o una cartella o una raccolta contenente video"
 
 #. Default: "Can be used to provide splash image when needed"
 #: ./content/rtinternalvideo.py:36
@@ -87,22 +91,22 @@ msgstr "Il numero di video da mostrare"
 #. Default: "Portlet header"
 #: ./portlets/portlet.py:37
 msgid "label_portlet_header"
-msgstr "Titolo della portlet restituita"
+msgstr "Intestazione della portlet"
 
 #. Default: "Show more... link"
 #: ./portlets/portlet.py:54
 msgid "label_show_more_link"
-msgstr "Mostra più... link"
+msgstr "Mostra di più... link"
 
 #. Default: "Target object"
 #: ./portlets/portlet.py:41
 msgid "label_target_object"
 msgstr "Oggetto target"
 
-#. Default: "Video gallery: "
-#: ./portlets/portlet.py:76
-msgid "label_video_gallery"
-msgstr "Galleria video: "
+#. Default: "More…"
+#: ./portlets/portlet.pt:29
+msgid "more_url"
+msgstr "Di più..."
 
 #. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."
 #: ./browser/video_view.pt:35
