@@ -24,7 +24,7 @@ collective.flowplayer. This new portlet shows image fields content taken from vi
 Important
 =========
 
-This version of the product is teste with older version of collective.flowplayer (`1.0b5`__). Newer
+This version of the product is tested with older version of collective.flowplayer (`1.0b5`__). Newer
 versions may works also, but aren't tested.
 
 __ http://pypi.python.org/pypi/collective.flowplayer/1.0b5
