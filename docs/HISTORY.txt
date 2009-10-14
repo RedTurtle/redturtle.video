@@ -1,6 +1,13 @@
 Changelog
 =========
 
+
+0.2.0beta
+----------
+
+* Added informations (duration and year) of the video, that will be displayed in the portlet
+* Fixed bug finders in using getFolderContents for ATTopic
+
 0.1.0alpha
 ----------
 
