@@ -32,7 +32,6 @@ __ http://pypi.python.org/pypi/collective.flowplayer/1.0b5
 TODO
 ====
 
-* Internationalization
 * Test with new collective.flowplayer versions
 
 
