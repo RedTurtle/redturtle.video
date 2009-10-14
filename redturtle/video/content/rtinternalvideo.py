@@ -18,7 +18,9 @@ from redturtle.video import videoMessageFactory as _
 from redturtle.video.interfaces import IRTInternalVideo
 from redturtle.video.config import PROJECTNAME
 
-RTInternalVideoSchema = ATFileSchema.copy() + atapi.Schema((
+from redturtle.video.content.video_schema import VIDEO_SCHEMA
+
+RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
 

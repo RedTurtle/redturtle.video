@@ -99,6 +99,8 @@ class Renderer(base.Renderer):
             return [dict(title=target.Title(),
                          description=target.Description(),
                          url=target.absolute_url(),
+                         year=target.getYear,
+                         duration=target.getDuration,
                          image_url=getImageUrl(target),
                         ),]
         if IATFolder.providedBy(target):
@@ -108,16 +110,20 @@ class Renderer(base.Renderer):
                 values.append(dict(title=v.Title,
                                    description=v.Description,
                                    url=v.getURL(),
+                                   year=v.getYear,
+                                   duration=v.getDuration,
                                    image_url=getImageUrl(v),
                                    ))
             return (limit and values[:limit]) or values
         if IATTopic.providedBy(target):
             values = []
-            videos = target.getFolderContents(contentFilter={'object_provides': IRTVideo.__identifier__})
+            videos = target.queryCatalog(contentFilter={'object_provides':IRTVideo.__identifier__})
             for v in videos:
                 values.append(dict(title=v.Title,
                                    description=v.Description,
-                                   url=v.getURL,
+                                   url=v.getURL(),
+                                   year=v.getYear,
+                                   duration=v.getDuration,
                                    image_url=getImageUrl(v),
                                    ))
             return (limit and values[:limit]) or values

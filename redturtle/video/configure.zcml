@@ -25,6 +25,18 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
+  <subscriber
+	for=".interfaces.IRTInternalVideo
+		Products.Archetypes.interfaces.IObjectInitializedEvent"
+    handler=".events.createTempFileInternalVideo"
+  	/>
+  	
+  <!--subscriber
+	for=".interfaces.IRTRemoteVideo
+		Products.Archetypes.interfaces.IObjectInitializedEvent"
+    handler=".events.createTempFileRemoteVideo"
+  	/-->
+  
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>

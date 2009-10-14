@@ -19,6 +19,26 @@
 					<img tal:attributes="alt video/description;
 					                     src video/image_url" />
 				</a>
+				<div class="informationvideo">
+					<div class="Title" tal:condition="video/title">
+						<label i18n:translate="label_info_title">Title: </label>
+                        <tal:title content="video/title">
+                            title
+                        </tal:title>
+					</div>
+					<div class="Year" tal:condition="video/year">
+                        <label i18n:translate="label_info_year">Year: </label>
+                        <tal:year content="video/year">
+                            year
+                        </tal:year>
+                    </div>
+                    <div class="Duration" tal:condition="video/duration">
+                        <label i18n:translate="label_info_duration">Duration: </label>
+                        <tal:duration content="video/duration">
+                            duration
+                        </tal:duration>
+                    </div>
+				</div>
 		    </dd>
 		</tal:video>
 	</tal:videos>

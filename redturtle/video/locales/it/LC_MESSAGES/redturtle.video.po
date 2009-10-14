@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: redturtle.video\n"
-"POT-Creation-Date: 2009-10-08 12:34+0000\n"
+"POT-Creation-Date: 2009-10-13 11:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,12 +39,12 @@ msgid "Video link"
 msgstr "Video link"
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:147
+#: ./portlets/portlet.py:149
 msgid "help_add_video_portlet"
 msgstr "Questa portlet visualizza una galleria video."
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:157
+#: ./portlets/portlet.py:159
 msgid "help_edit_video_portlet"
 msgstr "Questa portlet visualizza una galleria video."
 
@@ -69,19 +69,39 @@ msgid "help_target_object"
 msgstr "Questo può essere un file che contiene un contenuto video, o una cartella o una raccolta contenente video"
 
 #. Default: "Can be used to provide splash image when needed"
-#: ./content/rtinternalvideo.py:36
+#: ./content/rtinternalvideo.py:38
 msgid "help_video_image"
 msgstr "Può essere utilizzata per fornire un'immagine schizzo, se necessario"
 
 #. Default: "Add Video Portlet"
-#: ./portlets/portlet.py:146
+#: ./portlets/portlet.py:148
 msgid "label_add_video_portlet"
 msgstr "Aggiungi una Portlet video"
 
+#. Default: "Duration"
+#: ./content/video_schema.py:17
+msgid "label_duration"
+msgstr "Durata"
+
 #. Default: "Edit Video Portlet"
-#: ./portlets/portlet.py:156
+#: ./portlets/portlet.py:158
 msgid "label_edit_video_portlet"
 msgstr "Modifica una Portlet video"
+
+#. Default: "Duration:"
+#: ./portlets/portlet.pt:36
+msgid "label_info_duration"
+msgstr "Durata:"
+
+#. Default: "Title:"
+#: ./portlets/portlet.pt:24
+msgid "label_info_title"
+msgstr "Titolo:"
+
+#. Default: "Year:"
+#: ./portlets/portlet.pt:30
+msgid "label_info_year"
+msgstr "Anno:"
 
 #. Default: "Number of videos to show"
 #: ./portlets/portlet.py:49
@@ -103,8 +123,13 @@ msgstr "Mostra di più... link"
 msgid "label_target_object"
 msgstr "Oggetto target"
 
+#. Default: "Year"
+#: ./content/video_schema.py:9
+msgid "label_year"
+msgstr "Anno"
+
 #. Default: "More…"
-#: ./portlets/portlet.pt:29
+#: ./portlets/portlet.pt:49
 msgid "more_url"
 msgstr "Di più..."
 

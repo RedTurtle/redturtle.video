@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '0.1.0'
+version = '0.2.0'
 
 tests_require=['zope.testing']
 
@@ -34,6 +34,9 @@ setup(name='redturtle.video',
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
+                        'hachoir_core==1.2',
+                        'hachoir_metadata==1.2',
+                        'hachoir_parser==1.2'
                         #'collective.flowplayer',
                         # -*- Extra requirements: -*-
                         ],
