@@ -3,10 +3,7 @@ from zope import component
 
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
-from collective.flowplayer.utils import properties_to_javascript
 
-from collective.flowplayer.interfaces import IFlowPlayable
-from collective.flowplayer.interfaces import IMediaInfo, IFlowPlayerView
 from collective.flowplayer.browser.view import File
 
 from plone.memoize.instance import memoize
