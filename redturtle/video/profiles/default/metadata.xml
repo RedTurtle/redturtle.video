@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>0.2.0beta</version>
+  <version>0.2.1beta</version>
   <dependencies>
     <dependency>profile-collective.flowplayer:default</dependency>
   </dependencies>

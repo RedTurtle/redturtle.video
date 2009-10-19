@@ -1,9 +1,14 @@
 Changelog
 =========
 
+0.2.1beta
+---------
+
+* Fixed bug using redturtle.video with latests collective.flowplayer versions (3.0+)
+* Tested with latest flowplayer release
 
 0.2.0beta
-----------
+---------
 
 * Added informations (duration and year) of the video, that will be displayed in the portlet
 * Fixed bug finders in using getFolderContents for ATTopic
