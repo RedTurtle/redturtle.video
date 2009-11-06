@@ -1,10 +1,17 @@
-from hachoir_parser.guess import createParser
-from hachoir_metadata.metadata import extractMetadata
-from hachoir_core.error import HachoirError
-from hachoir_core.stream import InputStreamError
+#from hachoir_parser.guess import createParser
+#from hachoir_metadata.metadata import extractMetadata
+#from hachoir_core.error import HachoirError
+#from hachoir_core.stream import InputStreamError
+
+# Includes above someway broke the stdout when used at module level
 
 def extract(filename):
     """Extract the metadata from the media file"""
+
+    from hachoir_parser.guess import createParser
+    from hachoir_metadata.metadata import extractMetadata
+    from hachoir_core.error import HachoirError
+    from hachoir_core.stream import InputStreamError
 
     filename = unicode(filename)
 
