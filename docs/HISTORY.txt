@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.2.2
+-----
+
+* Portlet does not return the getYear and getDuration method anymore
+
 0.2.1beta
 ---------
 

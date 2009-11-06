@@ -99,8 +99,8 @@ class Renderer(base.Renderer):
             return [dict(title=target.Title(),
                          description=target.Description(),
                          url=target.absolute_url(),
-                         year=target.getYear,
-                         duration=target.getDuration,
+                         year=target.getYear(),
+                         duration=target.getDuration(),
                          image_url=getImageUrl(target),
                         ),]
         if IATFolder.providedBy(target):
