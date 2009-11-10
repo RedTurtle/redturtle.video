@@ -34,9 +34,9 @@ setup(name='redturtle.video',
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
-                        'hachoir_core==1.2',
-                        'hachoir_metadata==1.2',
-                        'hachoir_parser==1.2'
+                        'hachoir_core',
+                        'hachoir_metadata',
+                        'hachoir_parser'
                         #'collective.flowplayer',
                         # -*- Extra requirements: -*-
                         ],
