@@ -33,7 +33,7 @@ Other products
 
 **AKA: are you sure you wanna use me?**
 
-If you are using *Plone 3.1* or better, before us this product, take a look at
+If you are using *Plone 3.3* or better, before us this product, take a look at
 `Plone Video Suite`__.
 The redturtle.video product was developed in sad days, when the only choice was
 p4a.video (and this scare us a lot). The Plone Video Suite can became the next generation,
