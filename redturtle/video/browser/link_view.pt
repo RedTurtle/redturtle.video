@@ -4,7 +4,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="redturtle.video">
+      i18n:domain="plone">
 
 <body>
 
@@ -30,7 +30,8 @@
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <div class="autoFlowPlayer video"
-		     tal:attributes="style view/scale">
+		     tal:attributes="style view/scale"
+			 tal:condition="not:view/fromYouTube">
             <a tal:attributes="href view/href;
                                style view/scale"
                i18n:translate="video_fallback">
@@ -42,14 +43,11 @@
 			                     src string:/${context/portal_url/getPortalObject/getId}/image_thumb.jpg" /-->
         </div>
 		
-		<!--dl class="video-metainfo">
-				<dt i18n:translate="label_info_year">Year</dt>
-				<dd tal:condition="context/getYear"
-				    tal:content="context/getYear">1980</dd>
-				<dt i18n:translate="label_info_duration">Duration</dt>
-				<dd tal:condition="context/getDuration"
-				    tal:content="context/getDuration">01:12:45</dd>
-		</dl-->
+		<div class="youtube-remote"
+		     tal:condition="view/fromYouTube"
+			 tal:content="structure view/getYoutubePlayerCode">
+			Youtube player
+		</div>
 
         <div metal:use-macro="here/document_relateditems/macros/relatedItems">
             show related items if they exist

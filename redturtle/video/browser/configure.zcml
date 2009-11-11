@@ -15,4 +15,12 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="flowplayer"
+        for="redturtle.video.interfaces.IRTRemoteVideo"
+        class=".view.RemoteVideo"
+        template="link_view.pt"
+        permission="zope2.View"
+        />
+
 </configure>

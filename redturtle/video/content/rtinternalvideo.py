@@ -11,6 +11,7 @@ from Products.ATContentTypes.content import schemata
 from Products.ATContentTypes.content.file import ATFileSchema, ATFile
 from Products.ATContentTypes.content.image import ATImageSchema, ATImage
 from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
+from Products.validation import V_REQUIRED
 
 from collective.flowplayer.interfaces import IFlowPlayable
 
@@ -37,6 +38,8 @@ imageField.required = False
 imageField.primary = False
 imageField.widget.description = _(u'help_video_image',
                                   default=u'Can be used to provide splash image when needed')
+imageField.validators = None
+
 RTInternalVideoSchema.addField(imageField)
 RTInternalVideoSchema.moveField('image', after='file')
 
