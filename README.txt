@@ -23,6 +23,14 @@ Portlet
 Also this will give you a new "*Video gallery*" portlet, similar to the ones you'll get with
 collective.flowplayer. This new portlet shows image fields content taken from videos.
 
+Requirements
+------------
+
+* hachoir_core
+* hachoir_metadata
+* hachoir_parser
+* BeautifulSoup
+
 TODO
 ----
 
