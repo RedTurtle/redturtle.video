@@ -19,16 +19,6 @@
             </metal:field>
         </h1>
 
-        <div tal:replace="structure provider:plone.belowcontenttitle" />
-
-        <p class="documentDescription">
-            <metal:field use-macro="python:here.widget('description', mode='view')">
-            Description
-            </metal:field>
-        </p>
-
-        <div tal:replace="structure provider:plone.abovecontentbody" />
-
         <div class="autoFlowPlayer video"
 		     tal:attributes="style view/scale">
             <a tal:attributes="href view/href;
@@ -41,15 +31,32 @@
 			<!--img tal:attributes="alt context/Description;
 			                     src string:/${context/portal_url/getPortalObject/getId}/image_thumb.jpg" /-->
         </div>
-		
-		<!--dl class="video-metainfo">
-				<dt i18n:translate="label_info_year">Year</dt>
-				<dd tal:condition="context/getYear"
-				    tal:content="context/getYear">1980</dd>
-				<dt i18n:translate="label_info_duration">Duration</dt>
-				<dd tal:condition="context/getDuration"
-				    tal:content="context/getDuration">01:12:45</dd>
-		</dl-->
+        
+        <div class="video_metainfo field">
+			<div class="duration_metainfo" tal:condition="context/getDuration">
+				<label i18n:translate="label_info_duration">Duration</label>
+				<spam tal:content="context/getDuration" />
+			</div>
+			<div class="year_metainfo" tal:condition="context/getYear">
+				<label i18n:translate="label_info_year">Year</label>
+				<spam tal:content="context/getYear" />
+			</div>
+		</div>
+        
+        <div class="documentDescription">
+            <metal:field use-macro="python:here.widget('description', mode='view')">
+            Description
+            </metal:field>
+        </div>
+        
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        
+        <form action="">
+        	<div>
+  				<input type="text" size="40" name="embed" tal:attributes="value view/getEmbedCode" />
+  			</div>
+		</form>
 
         <div metal:use-macro="here/document_relateditems/macros/relatedItems">
             show related items if they exist

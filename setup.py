@@ -36,8 +36,8 @@ setup(name='redturtle.video',
       install_requires=['setuptools',
                         'hachoir_core',
                         'hachoir_metadata',
-                        'hachoir_parser'
-                        #'collective.flowplayer',
+                        'hachoir_parser',
+                        'collective.flowplayer',
                         # -*- Extra requirements: -*-
                         ],
       tests_require=tests_require,
@@ -45,11 +45,6 @@ setup(name='redturtle.video',
       test_suite = 'redturtle.video.tests.test_docs.test_suite',
       entry_points="""
       # -*- entry_points -*- 
-      [distutils.setup_keywords]
-      paster_plugins = setuptools.dist:assert_string_list
-
-      [egg_info.writers]
-      paster_plugins.txt = setuptools.command.egg_info:write_arg
       """,
       paster_plugins = ["ZopeSkel"],
       )
