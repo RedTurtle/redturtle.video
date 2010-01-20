@@ -24,7 +24,15 @@
       description="Basic archetype based video content, integrated with collective.flowplayer"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  
+
+  <genericsetup:importStep
+      name="redturtle.video.various"
+      title="redturtle.video: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="redturtle.video.setuphandlers.setupVarious">
+      <depends name="catalog.xml"/>
+  </genericsetup:importStep>
+
   <subscriber
     for=".interfaces.IRTInternalVideo
 		 Products.Archetypes.interfaces.IObjectInitializedEvent"

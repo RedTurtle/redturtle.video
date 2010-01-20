@@ -1,6 +1,8 @@
 from zope import interface
 from zope import component
 
+from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 
@@ -15,12 +17,20 @@ except ImportError:
 
 import urllib
 
+
+class Macros(BrowserView):
+    template = ViewPageTemplateFile('redturtlevideo_macros.pt')
+
+    def __getitem__(self, key):
+        return self.template.macros[key]
+
+
 class InternalVideo(File):
     """The Internal Video browser view"""
 
     def href(self):
         return self.context.absolute_url()+'/at_download/file'
-    
+
     def getEmbedCode(self):
         """Return embed code"""
         base_url = self.context.absolute_url()
@@ -31,13 +41,14 @@ class InternalVideo(File):
         object="' /></object>"
         return embed_code + config + clip + object
 
+
 class RemoteVideo(Link):
     """The External Video link browser view"""
 
     def fromYouTube(self):
         """Check if the current player must be taken from youtube"""
         return self.context.getRemoteUrl().startswith("http://www.youtube.com/")
-    
+
     def getYoutubePlayerCode(self):
         """Return code from youtube player"""
         embed_code = None

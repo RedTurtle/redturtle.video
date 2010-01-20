@@ -37,14 +37,15 @@ imageField = ATImageSchema['image'].copy()
 imageField.required = False
 imageField.primary = False
 imageField.widget.description = _(u'help_video_image',
-                                  default=u'Can be used to provide splash image when needed')
+            default = u'Can be used to provide splash image when needed')
 imageField.validators = None
 
 RTRemoteVideoSchema.addField(imageField)
-RTRemoteVideoSchema.moveField('image', after='remoteUrl')
-RTRemoteVideoSchema['remoteUrl'].widget.size=60
+RTRemoteVideoSchema.moveField('image', after = 'remoteUrl')
+RTRemoteVideoSchema['remoteUrl'].widget.size = 60
 
-schemata.finalizeATCTSchema(RTRemoteVideoSchema, moveDiscussion=False)
+schemata.finalizeATCTSchema(RTRemoteVideoSchema, moveDiscussion = False)
+
 
 class RTRemoteVideo(ATLink, ATCTImageTransform):
     """A link to a video with screenshot"""
@@ -55,7 +56,7 @@ class RTRemoteVideo(ATLink, ATCTImageTransform):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
-    
+
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
 
     security = ClassSecurityInfo()
@@ -76,7 +77,7 @@ class RTRemoteVideo(ATLink, ATCTImageTransform):
                 image = field.getScale(self)
             else:
                 scalename = name[len('image_'):]
-                scalename.replace(".jpg","")
+                scalename.replace(".jpg", "")
                 if scalename in field.getAvailableSizes(self):
                     image = field.getScale(self, scale=scalename)
             if image is not None and not isinstance(image, basestring):

@@ -37,13 +37,14 @@ imageField = ATImageSchema['image'].copy()
 imageField.required = False
 imageField.primary = False
 imageField.widget.description = _(u'help_video_image',
-                                  default=u'Can be used to provide splash image when needed')
+            default=u'Can be used to provide splash image when needed')
 imageField.validators = None
 
 RTInternalVideoSchema.addField(imageField)
 RTInternalVideoSchema.moveField('image', after='file')
 
 schemata.finalizeATCTSchema(RTInternalVideoSchema, moveDiscussion=False)
+
 
 class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
     """A video file with screenshot"""
@@ -54,7 +55,7 @@ class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
-    
+
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
 
     security = ClassSecurityInfo()
@@ -75,7 +76,7 @@ class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
                 image = field.getScale(self)
             else:
                 scalename = name[len('image_'):]
-                scalename.replace(".jpg","")
+                scalename.replace(".jpg", "")
                 if scalename in field.getAvailableSizes(self):
                     image = field.getScale(self, scale=scalename)
             if image is not None and not isinstance(image, basestring):

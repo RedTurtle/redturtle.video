@@ -8,6 +8,7 @@ from Testing import ZopeTestCase as ztc
 
 from redturtle.video.tests import base
 
+
 def test_suite():
     return unittest.TestSuite([
 

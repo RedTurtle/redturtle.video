@@ -5,10 +5,8 @@
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="redturtle.video">
-
-<body>
-
-<div metal:fill-slot="main">
+  <body>
+   <div metal:fill-slot="main">
     <tal:main-macro metal:define-macro="main">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
@@ -20,7 +18,7 @@
         </h1>
 
         <div class="autoFlowPlayer video"
-		     tal:attributes="style view/scale">
+              tal:attributes="style view/scale">
             <a tal:attributes="href view/href;
                                style view/scale"
                i18n:translate="video_fallback">
@@ -28,35 +26,24 @@
                 that you have JavaScript enabled and the latest version of
                 Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
             </a>
-			<!--img tal:attributes="alt context/Description;
-			                     src string:/${context/portal_url/getPortalObject/getId}/image_thumb.jpg" /-->
         </div>
-        
-        <div class="video_metainfo field">
-			<div class="duration_metainfo" tal:condition="context/getDuration">
-				<label i18n:translate="label_info_duration">Duration</label>
-				<spam tal:content="context/getDuration" />
-			</div>
-			<div class="year_metainfo" tal:condition="context/getYear">
-				<label i18n:translate="label_info_year">Year</label>
-				<spam tal:content="context/getYear" />
-			</div>
-		</div>
-        
+
+        <metal:video_details use-macro="context/@@redturtlevideo_macros/video_details" />
+
         <div class="documentDescription">
             <metal:field use-macro="python:here.widget('description', mode='view')">
             Description
             </metal:field>
         </div>
-        
+
         <div tal:replace="structure provider:plone.belowcontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
-        
+
         <form action="">
-        	<div>
-  				<input type="text" size="40" name="embed" tal:attributes="value view/getEmbedCode" />
-  			</div>
-		</form>
+          <div>
+            <input type="text" size="40" name="embed" tal:attributes="value view/getEmbedCode" />
+          </div>
+        </form>
 
         <div metal:use-macro="here/document_relateditems/macros/relatedItems">
             show related items if they exist
@@ -65,8 +52,6 @@
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>
-</div>
-
-</body>
-
+   </div>
+  </body>
 </html>
