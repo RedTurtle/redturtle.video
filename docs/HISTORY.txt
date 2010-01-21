@@ -1,9 +1,11 @@
 Changelog
 =========
 
-0.2.2... Unreleased
+0.2.3... Unreleased
 --------------------
-  * added redturtle_video macros
+  * added youtube.com and vimeo.com adapters [gborelli]
+  * getting video embed html code with adapter [gborelli]
+  * added redturtle_video macros [gborelli]
   * added some tests [gborelli]
   * added locales rebuild script [gborelli]
   * fixed package install [gborelli]

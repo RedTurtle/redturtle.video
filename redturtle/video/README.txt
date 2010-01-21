@@ -63,9 +63,17 @@ We can add some additional data to video as 'year' and 'duration'
     >>> print browser.contents
     <!DOCTYPE html PUBLIC...
     ...
-    <div class="youtube-remote">
-    <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/f7OLg1AZvr4&hl=it_IT&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7OLg1AZvr4&hl=it_IT&fs=1" type="application/x-shockwave-flash" width="425" height="344" allowscriptaccess="always" allowfullscreen="true"></embed></object>
-    </div>
+    <div class="video-remote">
+    <object width="425" height="344">
+      <param name="movie"
+             value="http://www.youtube.com/v/f7OLg1AZvr4" />
+      <param name="allowFullScreen" value="true" />
+      <param name="allowscriptaccess" value="always" />
+      <embed src="http://www.youtube.com/v/f7OLg1AZvr4"
+             type="application/x-shockwave-flash"
+             allowscriptaccess="always" allowfullscreen="true"
+             width="425" height="344"></embed>
+    </object>
     ...
     ...</html>
 

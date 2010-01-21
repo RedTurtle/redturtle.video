@@ -28,7 +28,7 @@
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
-        <div class="autoFlowPlayer video"
+        <!-- <div class="autoFlowPlayer video"
               tal:attributes="style view/scale"
               tal:condition="not:view/fromYouTube">
             <a tal:attributes="href view/href;
@@ -39,11 +39,10 @@
                 Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
             </a>
 
-        </div>
+        </div> -->
 
-        <div class="youtube-remote"
-              tal:condition="view/fromYouTube">
-            <tal:video replace="structure view/getYoutubePlayerCode" />
+        <div class="video-remote">
+            <tal:video replace="structure view/getPlayerCode" />
         </div>
 
         <metal:video_details use-macro="context/@@redturtlevideo_macros/video_details" />

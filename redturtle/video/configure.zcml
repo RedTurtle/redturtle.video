@@ -35,16 +35,40 @@
 
   <subscriber
     for=".interfaces.IRTInternalVideo
-		 Products.Archetypes.interfaces.IObjectInitializedEvent"
+         Products.Archetypes.interfaces.IObjectInitializedEvent"
     handler=".events.createTempFileInternalVideo"
-  	/>
+  />
 
   <!--subscriber
-	for=".interfaces.IRTRemoteVideo
-		Products.Archetypes.interfaces.IObjectInitializedEvent"
+    for=".interfaces.IRTRemoteVideo
+         Products.Archetypes.interfaces.IObjectInitializedEvent"
     handler=".events.createTempFileRemoteVideo"
-  	/-->
-  
+    /-->
+
   <!-- -*- extra stuff goes here -*- -->
+
+  <adapter
+      for = "redturtle.video.interfaces.IRTRemoteVideo
+             zope.publisher.interfaces.browser.IHTTPRequest"
+      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+      factory = "redturtle.video.browser.videoembedcode.VideoEmbedCode"
+      />
+
+  <adapter
+      for = "redturtle.video.interfaces.IRTRemoteVideo
+             zope.publisher.interfaces.browser.IHTTPRequest"
+      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+      factory = "redturtle.video.browser.videoembedcode.YoutubeEmbedCode"
+      name= 'youtube.com'
+  />
+
+  <adapter
+      for = "redturtle.video.interfaces.IRTRemoteVideo
+             zope.publisher.interfaces.browser.IHTTPRequest"
+      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+      factory = "redturtle.video.browser.videoembedcode.VimeoEmbedCode"
+      name= 'vimeo.com'
+  />
+
 
 </configure>

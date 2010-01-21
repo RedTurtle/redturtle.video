@@ -60,6 +60,13 @@ setup_product()
 ptc.setupPloneSite(products=['redturtle.video'])
 
 
+from zope.publisher.interfaces.browser import IHTTPRequest
+from zope.publisher.browser import TestRequest
+from zope.interface import implements
+class TestRequest(TestRequest):
+    implements(IHTTPRequest)
+
+
 class TestCase(ptc.PloneTestCase):
     """We use this base class for all the tests in this package. If
     necessary, we can put common utility or setup code in here. This
