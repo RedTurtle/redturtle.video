@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.2.3... Unreleased
+--------------------
+  * fixed embedded code link to flowplayer [alert]
+  * merged gborelli branch to trunk [alert]
+  * added youtube.com and vimeo.com adapters [gborelli]
+  * getting video embed html code with adapter [gborelli]
+  * added redturtle_video macros [gborelli]
+  * added some tests [gborelli]
+  * added locales rebuild script [gborelli]
+  * fixed package install [gborelli]
+
 0.2.2
 -----
 
