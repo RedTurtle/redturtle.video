@@ -7,9 +7,8 @@ from redturtle.video.interfaces import IRTVideo
 
 from redturtle.video import videoMessageFactory as _
 
+
 class IRTInternalVideo(IRTVideo):
     """A video file with screenshot"""
-    
+
     # -*- schema definition goes here -*-
-
-

@@ -5,7 +5,7 @@ Plone's products are loaded, and a Plone site will be created. This
 happens at module level, which makes it faster to run each test, but
 slows down test runner startup.
 """
-
+import os
 from Products.Five import zcml
 from Products.Five import fiveconfigure
 
@@ -59,11 +59,20 @@ def setup_product():
 setup_product()
 ptc.setupPloneSite(products=['redturtle.video'])
 
+
+from zope.publisher.interfaces.browser import IHTTPRequest
+from zope.publisher.browser import TestRequest
+from zope.interface import implements
+class TestRequest(TestRequest):
+    implements(IHTTPRequest)
+
+
 class TestCase(ptc.PloneTestCase):
     """We use this base class for all the tests in this package. If
     necessary, we can put common utility or setup code in here. This
     applies to unit test cases.
     """
+
 
 class FunctionalTestCase(ptc.FunctionalTestCase):
     """We use this class for functional integration tests that use
@@ -76,3 +85,11 @@ class FunctionalTestCase(ptc.FunctionalTestCase):
         self.portal.portal_membership.addMember('contributor',
                                                 'secret',
                                                 roles, [])
+
+    def getImage(self):
+        image = '/'.join(os.path.realpath( __file__ ).split(os.path.sep )[:-2])
+        image = '%s/tests/plone_logo.png' % image
+        fd = open(image, 'rb')
+        data = fd.read()
+        fd.close()
+        return data

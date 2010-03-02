@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="redturtle.video"
+      tal:omit-tag="">
+
+  <body>
+    <metal:define define-macro="video_details">
+      <div class="video_metainfo field">
+        <div class="duration_metainfo" tal:condition="context/getDuration">
+          <label i18n:translate="label_info_duration">Duration:</label>
+          <span tal:content="context/getDuration" />
+        </div>
+        <div class="year_metainfo" tal:condition="context/getYear">
+          <label i18n:translate="label_info_year">Year:</label>
+          <span tal:content="context/getYear" />
+        </div>
+      </div>
+    </metal:define>
+  </body>
+</html>
+

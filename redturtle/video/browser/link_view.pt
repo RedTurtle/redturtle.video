@@ -4,11 +4,10 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="redturtle.video">
 
-<body>
-
-<div metal:fill-slot="main">
+  <body>
+   <div metal:fill-slot="main">
     <tal:main-macro metal:define-macro="main">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
@@ -29,9 +28,9 @@
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
-        <div class="autoFlowPlayer video"
-		     tal:attributes="style view/scale"
-			 tal:condition="not:view/fromYouTube">
+        <!-- <div class="autoFlowPlayer video"
+              tal:attributes="style view/scale"
+              tal:condition="not:view/fromYouTube">
             <a tal:attributes="href view/href;
                                style view/scale"
                i18n:translate="video_fallback">
@@ -39,15 +38,14 @@
                 that you have JavaScript enabled and the latest version of
                 Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
             </a>
-			<!--img tal:attributes="alt context/Description;
-			                     src string:/${context/portal_url/getPortalObject/getId}/image_thumb.jpg" /-->
+
+        </div> -->
+
+        <div class="video-remote">
+            <tal:video replace="structure view/getPlayerCode" />
         </div>
-		
-		<div class="youtube-remote"
-		     tal:condition="view/fromYouTube"
-			 tal:content="structure view/getYoutubePlayerCode">
-			Youtube player
-		</div>
+
+        <metal:video_details use-macro="context/@@redturtlevideo_macros/video_details" />
 
         <div metal:use-macro="here/document_relateditems/macros/relatedItems">
             show related items if they exist
@@ -56,8 +54,7 @@
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>
-</div>
+   </div>
 
-</body>
-
+  </body>
 </html>

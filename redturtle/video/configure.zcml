@@ -24,19 +24,51 @@
       description="Basic archetype based video content, integrated with collective.flowplayer"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  
+
+  <genericsetup:importStep
+      name="redturtle.video.various"
+      title="redturtle.video: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="redturtle.video.setuphandlers.setupVarious">
+      <depends name="catalog.xml"/>
+  </genericsetup:importStep>
+
   <subscriber
     for=".interfaces.IRTInternalVideo
-		 Products.Archetypes.interfaces.IObjectInitializedEvent"
+         Products.Archetypes.interfaces.IObjectInitializedEvent"
     handler=".events.createTempFileInternalVideo"
-  	/>
+  />
 
   <!--subscriber
-	for=".interfaces.IRTRemoteVideo
-		Products.Archetypes.interfaces.IObjectInitializedEvent"
+    for=".interfaces.IRTRemoteVideo
+         Products.Archetypes.interfaces.IObjectInitializedEvent"
     handler=".events.createTempFileRemoteVideo"
-  	/-->
-  
+    /-->
+
   <!-- -*- extra stuff goes here -*- -->
+
+  <adapter
+      for = "redturtle.video.interfaces.IRTRemoteVideo
+             zope.publisher.interfaces.browser.IHTTPRequest"
+      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+      factory = "redturtle.video.browser.videoembedcode.VideoEmbedCode"
+      />
+
+  <adapter
+      for = "redturtle.video.interfaces.IRTRemoteVideo
+             zope.publisher.interfaces.browser.IHTTPRequest"
+      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+      factory = "redturtle.video.browser.videoembedcode.YoutubeEmbedCode"
+      name= 'youtube.com'
+  />
+
+  <adapter
+      for = "redturtle.video.interfaces.IRTRemoteVideo
+             zope.publisher.interfaces.browser.IHTTPRequest"
+      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+      factory = "redturtle.video.browser.videoembedcode.VimeoEmbedCode"
+      name= 'vimeo.com'
+  />
+
 
 </configure>
