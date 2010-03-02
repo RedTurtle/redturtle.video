@@ -29,23 +29,19 @@ Requirements
 * hachoir_core
 * hachoir_metadata
 * hachoir_parser
-* BeautifulSoup
 
 TODO
 ----
 
-Right now year and duration are not displayed in the video view.
+* video transcript
+* can be integrated with `stxnext.transform.avi2flv`__
+
+__ http://pypi.python.org/pypi/stxnext.transform.avi2flv/
 
 Other products
 ==============
 
-**AKA: are you sure you wanna use me?**
-
-If you are using *Plone 3.3* or better, before us this product, take a look at
-`Plone Video Suite`__.
-The redturtle.video product was developed in sad days, when the only choice was
-p4a.video (and this scare us a lot). The Plone Video Suite can became the next generation,
-unified, product to use video contents inside Plone!
+Take a look at `Plone Video Suite`__ .
 
 __ http://www.coactivate.org/projects/plone-video-sprint/project-home
 

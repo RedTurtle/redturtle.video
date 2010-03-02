@@ -1,39 +1,39 @@
 Changelog
 =========
 
-0.2.3... Unreleased
---------------------
-  * fixed embedded code link to flowplayer [alert]
-  * merged gborelli branch to trunk [alert]
-  * added youtube.com and vimeo.com adapters [gborelli]
-  * getting video embed html code with adapter [gborelli]
-  * added redturtle_video macros [gborelli]
-  * added some tests [gborelli]
-  * added locales rebuild script [gborelli]
-  * fixed package install [gborelli]
+0.3.0 (2010-xx-xx)
+------------------
 
-0.2.2
------
+* embedded code link to flowplayer [alert, fdelia]
+* added youtube.com and vimeo.com adapters [gborelli]
+* getting video embed html code with adapter [gborelli]
+* added redturtle_video macros [gborelli]
+* added some tests [gborelli]
+* added locales rebuild script [gborelli]
+* fixed package install [gborelli]
+
+0.2.2 (2009-11-11)
+------------------
 
 * Portlet does not return the getYear and getDuration method anymore [keul]
 * Moved hachoir import inside function from module level, due to stdout PDB error [keul]
 * Added a *very* ugly support for remote video to Youtube links [keul]
 * Removed validators for image field as it was not required but was not possible to ignore it [keul]
 
-0.2.1beta
----------
+0.2.1beta (2009-10-19)
+----------------------
 
 * Fixed bug using redturtle.video with latests collective.flowplayer versions (3.0+) [fdelia]
 * Tested with latest flowplayer release [fdelia]
 
-0.2.0beta
----------
+0.2.0beta (2009-10-14)
+----------------------
 
 * Added informations (duration and year) of the video, that will be displayed in the portlet
 * Fixed bug finders in using getFolderContents for ATTopic
 
-0.1.0alpha
-----------
+0.1.0alpha (2009-09-28)
+-----------------------
 
 * Initial release
 
