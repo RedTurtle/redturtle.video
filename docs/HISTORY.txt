@@ -1,12 +1,12 @@
 Changelog
 =========
 
-0.3.0 (2010-xx-xx)
+0.3.0 (2010-03-03)
 ------------------
 
-* embedded code link to flowplayer [alert, fdelia]
+* embedded code link to flowplayer [alert, fdelia, keul]
 * added youtube.com and vimeo.com adapters [gborelli]
-* getting video embed html code with adapter [gborelli]
+* getting video embed html code with adapter (and removed BeautifulSoup) [gborelli]
 * added redturtle_video macros [gborelli]
 * added some tests [gborelli]
 * added locales rebuild script [gborelli]

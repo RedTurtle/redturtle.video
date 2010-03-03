@@ -23,6 +23,25 @@ Portlet
 Also this will give you a new "*Video gallery*" portlet, similar to the ones you'll get with
 collective.flowplayer. This new portlet shows image fields content taken from videos.
 
+Support for remote video services
+---------------------------------
+
+The *Video link* content type handle URL not only to .flv or other compatible flowplayer resource, but
+also to 3rd party video services.
+
+Right now URL to those services are handled:
+
+* Youtube (http://www.youtube.com/)
+* Vimeo (http://vimeo.com/)
+
+You are invited to help us extending also to other services.
+
+Thanks to
+---------
+
+Special thanks to **Giorgio Borelli** (gborelli) for adding tests, fixing issues and provide the
+*Vimeo* support.
+
 Requirements
 ------------
 

@@ -30,8 +30,8 @@ class InternalVideo(File):
     def getEmbedCode(self):
         """Return embed code"""
         baseUrl = self.context.absolute_url()
-        #fpUrl = baseUrl+"/++resource++collective.flowplayer/flowplayer.swf"
-        fpUrl = 'http://releases.flowplayer.org/swf/flowplayer-3.1.5.swf'
+        fpUrl = baseUrl+"/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.swf"
+        #fpUrl = 'http://releases.flowplayer.org/swf/flowplayer-3.1.5.swf'
         embed = """
         <object width="251" height="200" data="%(fpUrl)s" type="application/x-shockwave-flash">
                 <param name="movie" value="%(fpUrl)s" />
