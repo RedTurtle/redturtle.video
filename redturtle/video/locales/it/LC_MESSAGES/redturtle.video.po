@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: redturtle.video\n"
-"POT-Creation-Date: 2010-01-20 00:18+0000\n"
+"POT-Creation-Date: 2010-03-18 15:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Un file video con screenshot"
 msgid "Video file"
 msgstr "Video file"
 
-#: ./portlets/portlet.py:76
+#: ./portlets/portlet.py:97
 msgid "Video gallery: "
 msgstr ""
 
@@ -38,33 +38,38 @@ msgstr ""
 msgid "Video link"
 msgstr "Video link"
 
+#. Default: "Put this video on your site"
+#: ./browser/video_view.pt:43
+msgid "description_embed"
+msgstr "Inserisci questo video nel tuo sito"
+
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:153
+#: ./portlets/portlet.py:183
 msgid "help_add_video_portlet"
 msgstr "Questa portlet visualizza una galleria video."
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:163
+#: ./portlets/portlet.py:196
 msgid "help_edit_video_portlet"
 msgstr "Questa portlet visualizza una galleria video."
 
 #. Default: "Enter a number greater than 0 to limit the number of items displayed"
-#: ./portlets/portlet.py:50
+#: ./portlets/portlet.py:64
 msgid "help_number_of_videos_to_show"
 msgstr "Inserire un numero maggiore di 0 per limitare il numero di elementi visualizzati"
 
 #. Default: "Title of the rendered portlet"
-#: ./portlets/portlet.py:38
+#: ./portlets/portlet.py:44
 msgid "help_portlet_header"
 msgstr "Titolo della portlet restituita"
 
 #. Default: "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
-#: ./portlets/portlet.py:55
+#: ./portlets/portlet.py:72
 msgid "help_show_more_link"
 msgstr "Se attivato, di più... verrà visualizzato un link a piè di pagina della portlet, collegato ai dati mostrati dalla portlet."
 
 #. Default: "This can be a file containing an video content, or a folder or collection containing videos"
-#: ./portlets/portlet.py:42
+#: ./portlets/portlet.py:50
 msgid "help_target_object"
 msgstr "Questo può essere un file che contiene un contenuto video, o una cartella o una raccolta contenente video"
 
@@ -75,7 +80,7 @@ msgid "help_video_image"
 msgstr "Può essere utilizzata per fornire un'immagine schizzo, se necessario"
 
 #. Default: "Add Video Portlet"
-#: ./portlets/portlet.py:152
+#: ./portlets/portlet.py:181
 msgid "label_add_video_portlet"
 msgstr "Aggiungi una Portlet video"
 
@@ -85,12 +90,12 @@ msgid "label_duration"
 msgstr "Durata"
 
 #. Default: "Edit Video Portlet"
-#: ./portlets/portlet.py:162
+#: ./portlets/portlet.py:194
 msgid "label_edit_video_portlet"
 msgstr "Modifica una Portlet video"
 
 #. Default: "Duration:"
-#: ./browser/video_view.pt:37
+#: ./browser/redturtlevideo_macros.pt:12
 #: ./portlets/portlet.pt:36
 msgid "label_info_duration"
 msgstr "Durata:"
@@ -101,28 +106,28 @@ msgid "label_info_title"
 msgstr "Titolo:"
 
 #. Default: "Year:"
-#: ./browser/video_view.pt:41
+#: ./browser/redturtlevideo_macros.pt:16
 #: ./portlets/portlet.pt:30
 msgid "label_info_year"
 msgstr "Anno:"
 
 #. Default: "Number of videos to show"
-#: ./portlets/portlet.py:49
+#: ./portlets/portlet.py:62
 msgid "label_number_of_videos_to_show"
 msgstr "Il numero di video da mostrare"
 
 #. Default: "Portlet header"
-#: ./portlets/portlet.py:37
+#: ./portlets/portlet.py:42
 msgid "label_portlet_header"
 msgstr "Intestazione della portlet"
 
 #. Default: "Show more... link"
-#: ./portlets/portlet.py:54
+#: ./portlets/portlet.py:70
 msgid "label_show_more_link"
 msgstr "Mostra di più... link"
 
 #. Default: "Target object"
-#: ./portlets/portlet.py:41
+#: ./portlets/portlet.py:48
 msgid "label_target_object"
 msgstr "Oggetto target"
 
@@ -137,8 +142,7 @@ msgid "more_url"
 msgstr "Di più..."
 
 #. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."
-#: ./browser/link_view.pt:34
-#: ./browser/video_view.pt:24
+#: ./browser/video_view.pt:22
 msgid "video_fallback"
 msgstr "Se il tuo video non inizia subito, si prega di assicurarsi che JavaScript sia attivato e l'ultima versione di Adobe Flash Player (http://www.adobe.com/products/flashplayer/) sia installata."
 

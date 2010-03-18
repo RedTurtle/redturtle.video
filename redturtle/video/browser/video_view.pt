@@ -40,8 +40,9 @@
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <form action="">
+          <label for="embed" i18n:translate="description_embed">Put this video on your site</label>
           <div>
-            <input type="text" size="40" name="embed" tal:attributes="value view/getEmbedCode" />
+            <input type="text" size="40" name="embed" id="embed" tal:attributes="value view/getEmbedCode" />
           </div>
         </form>
 
