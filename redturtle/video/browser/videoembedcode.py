@@ -146,3 +146,55 @@ class VimeoEmbedCode(object):
 
     def __call__(self):
         return self.template()
+
+class GoogleEmbedCode(object):
+    """ YoutubeEmbedCode 
+    provides a way to have a html code to embed Google video in a web page 
+
+    >>> from zope.interface import implements
+    >>> from redturtle.video.interfaces import IRTRemoteVideo
+    >>> from redturtle.video.interfaces import IVideoEmbedCode
+    >>> from zope.component import getMultiAdapter
+    >>> from redturtle.video.tests.base import TestRequest
+
+    >>> class RemoteVideo(object):
+    ...     implements(IRTRemoteVideo)
+    ...     remoteUrl = 'http://video.google.com/videoplay?docid=7880614371292254214#'
+    ...     def getRemoteUrl(self):
+    ...         return self.remoteUrl
+
+    >>> remotevideo = RemoteVideo()
+    >>> adapter = getMultiAdapter((remotevideo, TestRequest()), 
+    ...                                         IVideoEmbedCode, 
+    ...                                         name = 'video.google.com')
+    >>> adapter.getVideoLink()
+    'http://video.google.com/googleplayer.swf?docid=7880614371292254214'
+
+    >>> print adapter()
+    <embed id=VideoPlayback 
+    src=http://video.google.com/googleplayer.swf?docid=7880614371292254214&hl=en&fs=true 
+    style=width:400px;height:326px 
+    allowFullScreen=true 
+    allowScriptAccess=always 
+    type=application/x-shockwave-flash> 
+    </embed>
+
+    """
+    implements(IVideoEmbedCode)
+    template = ViewPageTemplateFile('googleembedcode_template.pt')
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def getVideoLink(self):
+        qs = urlparse(self.context.getRemoteUrl())[4]
+        params = qs.split('&')
+        for param in params:
+            k, v = param.split('=')
+            if k == 'docid':
+                return 'http://video.google.com/googleplayer.swf?docid=%s' % v
+
+    def __call__(self):
+        return self.template()
+ 

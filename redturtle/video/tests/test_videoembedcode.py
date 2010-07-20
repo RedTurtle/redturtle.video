@@ -30,7 +30,13 @@ def setUp(test):
             name='vimeo.com'
         )
 
-
+    zope.component.provideAdapter(
+            redturtle.video.browser.videoembedcode.VimeoEmbedCode,
+            (redturtle.video.interfaces.IRTRemoteVideo,
+             zope.publisher.interfaces.browser.IHTTPRequest),
+            provides=redturtle.video.interfaces.IVideoEmbedCode,
+            name='video.google.com'
+        )
 def test_suite():
     return unittest.TestSuite((
         doctest.DocTestSuite(redturtle.video.browser.videoembedcode,
