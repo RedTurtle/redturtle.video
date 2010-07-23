@@ -198,3 +198,56 @@ class GoogleEmbedCode(object):
     def __call__(self):
         return self.template()
  
+
+class MetacafeEmbedCode(object):
+    """ MetacafeEmbedCode 
+    provides a way to have a html code to embed Metacafe video in a web page 
+
+    >>> from zope.interface import implements
+    >>> from redturtle.video.interfaces import IRTRemoteVideo
+    >>> from redturtle.video.interfaces import IVideoEmbedCode
+    >>> from zope.component import getMultiAdapter
+    >>> from redturtle.video.tests.base import TestRequest
+
+    >>> class RemoteVideo(object):
+    ...     implements(IRTRemoteVideo)
+    ...     remoteUrl = 'http://www.metacafe.com/watch/4950343/stone_trailer/'
+    ...     def getRemoteUrl(self):
+    ...         return self.remoteUrl
+
+    >>> remotevideo = RemoteVideo()
+    >>> adapter = getMultiAdapter((remotevideo, TestRequest()), 
+    ...                                         IVideoEmbedCode, 
+    ...                                         name = 'www.metacafe.com')
+    >>> adapter.getVideoLink()
+    'http://www.metacafe.com/fplayer/4950343/stone_trailer.swf'
+
+    >>> print adapter()
+      <embed  
+        src="http://www.metacafe.com/fplayer/4950343/stone_trailer.swf" 
+        width="440" 
+        height="272" 
+        wmode="transparent" 
+        allowFullScreen="true" 
+        allowScriptAccess="always" 
+        name="Metacafe_4950343" 
+        pluginspage="http://www.macromedia.com/go/getflashplayer" 
+        type="application/x-shockwave-flash">
+        </embed>
+
+    """
+    implements(IVideoEmbedCode)
+    template = ViewPageTemplateFile('metacafeembedcode_template.pt')
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def getVideoLink(self):
+        qs = urlparse(self.context.getRemoteUrl()).path   
+        p = qs.split('/') [2:4]  
+        return 'http://www.metacafe.com/fplayer/%s/%s.swf' %(p[0],p[1])
+
+    def __call__(self):
+        return self.template()
+ 

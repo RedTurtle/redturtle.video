@@ -1,0 +1,7 @@
+  <embed id=VideoPlayback
+    width="440"
+    height="272"
+    tal:attributes="src view/getVideoLink"
+    allowFullScreen="true"
+    allowScriptAccess="always"
+    type="application/x-shockwave-flash" />

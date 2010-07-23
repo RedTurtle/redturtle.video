@@ -9,7 +9,7 @@ This add to your Plone portal two new content types:
 
 * *Video file* for providing a video content directly from a video file compatible with flowplayer
   formats
-* *Video link* for a remote video resource 
+* *Video link* for a remote video resource
 
 
 Video Link - RTRemoteVideo
@@ -101,4 +101,68 @@ And related views
     <img src="http://nohost/plone/rtremotevideo-sample/image_preview" alt="RTRemoteVideo Sample" title="RTRemoteVideo Sample" height="256" width="256" />
     ...
     ...</html>
+
+
+
+
+Adding a custom player, Metacafe as an example:
+
+
+Goto the video on the videosite::
+
+    http://www.metacafe.com/watch/4950343/stone_trailer/
+
+select embed video and copy the embedcode::
+
+    <div style="background:#000000;width:440px;height:272px"><embed flashVars="playerVars=showStats=yes|autoPlay=no|videoTitle=STONE: Trailer" src="http://www.metacafe.com/fplayer/4950343/stone_trailer.swf" width="440" height="272" wmode="transparent" allowFullScreen="true" allowScriptAccess="always" name="Metacafe_4950343" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed></div><div style="font-size:12px;"><a href="http://www.metacafe.com/watch/4950343/stone_trailer/">STONE: Trailer</a>. Watch more top selected videos about: <a href="http://www.metacafe.com/topics/Robert_De_Niro/" title="Robert_De_Niro">Robert De Niro</a>, <a href="http://www.metacafe.com/topics/Stone_(2010_film)/" title="Stone_(2010_film)">Stone (2010 film)</a></div>
+
+get rid of all markup that is not really needed to embed the video::
+
+    <embed
+        src="http://www.metacafe.com/fplayer/4950343/stone_trailer.swf"
+        width="440"
+        height="272"
+        allowFullScreen="true"
+        allowScriptAccess="always"
+        type="application/x-shockwave-flash">
+        </embed>
+
+create a new template in .../redturtle.video/redturtle/video/browser/
+metacafeembedcode_template.pt::
+
+    <embed id=VideoPlayback
+    width="440"
+    height="272"
+    tal:attributes="src view/getVideoLink"
+    allowFullScreen="true"
+    allowScriptAccess="always"
+    type="application/x-shockwave-flash" />
+
+edit .../redturtle.video/redturtle/video/browser/videoembedcode.py and add a new
+class MetacafeEmbedCode. Copy and paste from the classes already there what you
+need. The main task is to find out how to translate the URL on the site to the
+url of the embedded video. For Metacafe the getVideoLink method looks like this::
+
+    def getVideoLink(self):
+        qs = urlparse(self.context.getRemoteUrl())[-2]
+        return 'http://www.metacafe.com/fplayer/%s/%s.swf' % qs
+
+in .../redturtle.video/redturtle/video/configure.zcml setup an adapter for your
+embed code::
+
+    <adapter
+	      for = "redturtle.video.interfaces.IRTRemoteVideo
+	             zope.publisher.interfaces.browser.IHTTPRequest"
+	      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+	      factory = "redturtle.video.browser.videoembedcode.MetacafeEmbedCode"
+	      name= 'www.metacafe.com'
+	  />
+
+
+
+write some tests that everything is OK and thats it ;-)
+
+
+
+
 

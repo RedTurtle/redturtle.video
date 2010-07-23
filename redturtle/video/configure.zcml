@@ -8,14 +8,14 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <include package="collective.flowplayer" />
-  
+
   <i18n:registerTranslations directory="locales" />
 
   <!-- Include the sub-packages that use their own configure.zcml files. -->
   <include package=".browser" />
   <include package=".content" />
   <include package=".portlets" />
-  
+
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
@@ -77,5 +77,15 @@
       factory = "redturtle.video.browser.videoembedcode.GoogleEmbedCode"
       name= 'video.google.com'
   />
+
+
+  <adapter
+      for = "redturtle.video.interfaces.IRTRemoteVideo
+             zope.publisher.interfaces.browser.IHTTPRequest"
+      provides = "redturtle.video.interfaces.IVideoEmbedCode"
+      factory = "redturtle.video.browser.videoembedcode.MetacafeEmbedCode"
+      name= 'metacafe.com'
+  />
+
 
 </configure>
