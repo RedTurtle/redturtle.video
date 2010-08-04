@@ -244,7 +244,7 @@ class MetacafeEmbedCode(object):
         self.request = request
 
     def getVideoLink(self):
-        qs = urlparse(self.context.getRemoteUrl()).path   
+        qs = urlparse(self.context.getRemoteUrl())[2]
         p = qs.split('/') [2:4]  
         return 'http://www.metacafe.com/fplayer/%s/%s.swf' %(p[0],p[1])
 

@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.4.0 (2010-08-03)
+------------------
+* add metacafe.com and video.google.com adapters [nan010]
+* add some documentation how to write an adpter [nan010]
+* write some tests [nan010]
+
 0.3.1 (2010-03-18)
 ------------------
 * inserted string over the player [fdelia]
