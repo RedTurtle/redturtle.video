@@ -42,25 +42,25 @@ Thanks to
 Special thanks to **Giorgio Borelli** (gborelli) for adding tests, fixing issues and provide the
 *Vimeo* support.
 
-Requirements
-------------
-
-* hachoir_core
-* hachoir_metadata
-* hachoir_parser
-
 TODO
 ----
 
 * video transcript
-* can be integrated with `stxnext.transform.avi2flv`__
+* can be integrated with `stxnext.transform.avi2flv`__?
+* can be integrated wtih `collective.transcode`__?
 
 __ http://pypi.python.org/pypi/stxnext.transform.avi2flv/
+__ http://pypi.python.org/pypi/collective.transcode.star
 
 Other products
 ==============
 
-Take a look at `Plone Video Suite`__ .
+Before choosing this product, if you think you need a site with huge video features,
+take a look at:
 
+* `Plumi`__
+* `Plone Video Suite`__ 
+
+__ http://plone.org/products/plumi
 __ http://www.coactivate.org/projects/plone-video-sprint/project-home
 

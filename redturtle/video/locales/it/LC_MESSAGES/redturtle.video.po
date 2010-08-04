@@ -31,7 +31,7 @@ msgstr "Video file"
 
 #: ./portlets/portlet.py:97
 msgid "Video gallery: "
-msgstr ""
+msgstr "Galleria video"
 
 #. Default: "Video link"
 #: ./profiles/default/types/RTRemoteVideo.xml

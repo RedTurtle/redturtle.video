@@ -3,12 +3,6 @@
 from zope import component
 from Products.CMFCore.utils import getToolByName
 
-INDEXES_TO_ADD = (
-                  #('hasSplashScreenImage', 'FieldIndex',
-                  # {'indexed_attrs': 'hasSplashScreenImage', }, ),
-                  )
-
-
 # form : http://maurits.vanrees.org/weblog/archive/2009/12/catalog
 def addKeyToCatalog(portal, logger=None):
     '''Takes portal_catalog and adds a key to it
@@ -41,6 +35,6 @@ def setupVarious(context):
     if context.readDataFile('redturtle.video_various.txt') is None:
         return
 
-    logger = context.getLogger('your.package')
+    logger = context.getLogger('redturtle.video')
     portal = context.getSite()
     addKeyToCatalog(portal, logger)

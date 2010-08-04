@@ -1,5 +1,6 @@
-from zope.interface import Interface
+# -*- coding: utf-8 -*-
 
+from Products.ATContentTypes.interface import IImageContent
 
-class IRTVideo(Interface):
+class IRTVideo(IImageContent):
     """A video file with screenshot"""

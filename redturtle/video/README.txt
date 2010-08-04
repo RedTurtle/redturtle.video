@@ -34,7 +34,7 @@ We have the login portlet, so let's use that.
     >>> browser.getControl(name='submit').click()
 
 Adding a new RTRemoteVideo content item
---------------------------------
+---------------------------------------
 
 We use the 'Add new' menu to add a new content item.
 
@@ -103,10 +103,10 @@ And related views
     ...</html>
 
 
+How to support additional remote services for Video link
+--------------------------------------------------------
 
-
-Adding a custom player, Metacafe as an example:
-
+We use Metacafe as an example.
 
 Goto the video on the videosite::
 
@@ -161,8 +161,4 @@ embed code::
 
 
 write some tests that everything is OK and thats it ;-)
-
-
-
-
 
