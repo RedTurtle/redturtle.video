@@ -37,11 +37,18 @@ imageField = ATImageSchema['image'].copy()
 imageField.required = False
 imageField.primary = False
 imageField.widget.description = _(u'help_video_image',
-            default=u'Can be used to provide splash image when needed')
+                                  default=u'Can be used to provide splash image when needed')
 imageField.validators = None
 
 RTInternalVideoSchema.addField(imageField)
 RTInternalVideoSchema.moveField('image', after='file')
+
+fileFied = RTInternalVideoSchema['file']
+fileFied.required = True
+fileFied.widget.label = _(u'label_video_file',
+                          default=u'Video file')
+fileFied.widget.description = _(u'help_video_file',
+                                default=u'Put there the video file in a compatible format')
 
 schemata.finalizeATCTSchema(RTInternalVideoSchema, moveDiscussion=False)
 

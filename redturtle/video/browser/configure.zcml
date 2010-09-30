@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+	xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="redturtle.video">
 
   <include package="plone.app.contentmenu" />
@@ -27,5 +28,13 @@
         template="link_view.pt"
         permission="zope2.View"
         />
+
+  <configure zcml:condition="installed plone.app.blob">
+	  <browser:page
+	      for="..interfaces.IRTInternalVideo"
+	      name="migrateblobs"
+	      class=".migrateblobs.MigrateBlobs"
+	      permission="cmf.ManagePortal" />
+  </configure>
 
 </configure>

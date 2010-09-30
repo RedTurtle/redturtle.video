@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-03-18 15:16+0000\n"
+"POT-Creation-Date: 2010-09-30 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,14 @@ msgstr ""
 
 #: ./profiles/default/types/RTInternalVideo.xml
 msgid "A video file with screenshot"
+msgstr ""
+
+#: ./browser/migrateblobs.py:39
+msgid "Cancel"
+msgstr ""
+
+#: ./browser/migrateblobs.py:26
+msgid "Migrate Internal video"
 msgstr ""
 
 #: ./profiles/default/types/RTInternalVideo.xml
@@ -70,6 +78,11 @@ msgstr ""
 #. Default: "This can be a file containing an video content, or a folder or collection containing videos"
 #: ./portlets/portlet.py:50
 msgid "help_target_object"
+msgstr ""
+
+#. Default: "Put there the video file in a compatible format"
+#: ./content/rtinternalvideo.py:49
+msgid "help_video_file"
 msgstr ""
 
 #. Default: "Can be used to provide splash image when needed"
@@ -130,9 +143,19 @@ msgstr ""
 msgid "label_target_object"
 msgstr ""
 
+#. Default: "Video file"
+#: ./content/rtinternalvideo.py:47
+msgid "label_video_file"
+msgstr ""
+
 #. Default: "Year"
 #: ./content/video_schema.py:8
 msgid "label_year"
+msgstr ""
+
+#. Default: "You need to install \"Products.contentmigration\" product for perform the task"
+#: ./browser/migrateblobs.py:33
+msgid "migration_error_msg"
 msgstr ""
 
 #. Default: "More…"

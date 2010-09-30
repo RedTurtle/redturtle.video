@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: redturtle.video\n"
-"POT-Creation-Date: 2010-03-18 15:16+0000\n"
+"POT-Creation-Date: 2010-09-30 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,14 @@ msgstr "Un link a un video con screenshot"
 #: ./profiles/default/types/RTInternalVideo.xml
 msgid "A video file with screenshot"
 msgstr "Un file video con screenshot"
+
+#: ./browser/migrateblobs.py:39
+msgid "Cancel"
+msgstr "Annulla"
+
+#: ./browser/migrateblobs.py:26
+msgid "Migrate Internal video"
+msgstr "Migra video interno"
 
 #. Default: "Video file"
 #: ./profiles/default/types/RTInternalVideo.xml
@@ -72,6 +80,11 @@ msgstr "Se attivato, di più... verrà visualizzato un link a piè di pagina del
 #: ./portlets/portlet.py:50
 msgid "help_target_object"
 msgstr "Questo può essere un file che contiene un contenuto video, o una cartella o una raccolta contenente video"
+
+#. Default: "Put there the video file in a compatible format"
+#: ./content/rtinternalvideo.py:49
+msgid "help_video_file"
+msgstr "Inserisci qui il file video, in formato compatibile"
 
 #. Default: "Can be used to provide splash image when needed"
 #: ./content/rtinternalvideo.py:39
@@ -131,15 +144,25 @@ msgstr "Mostra di più... link"
 msgid "label_target_object"
 msgstr "Oggetto target"
 
+#. Default: "Video file"
+#: ./content/rtinternalvideo.py:47
+msgid "label_video_file"
+msgstr "File video"
+
 #. Default: "Year"
 #: ./content/video_schema.py:8
 msgid "label_year"
 msgstr "Anno"
 
+#. Default: "You need to install \"Products.contentmigration\" product for perform the task"
+#: ./browser/migrateblobs.py:33
+msgid "migration_error_msg"
+msgstr "Devi installare \"Products.contentmigration\" per eseguire l'operazione"
+
 #. Default: "More…"
 #: ./portlets/portlet.pt:49
 msgid "more_url"
-msgstr "Di più..."
+msgstr "Di più…"
 
 #. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."
 #: ./browser/video_view.pt:22

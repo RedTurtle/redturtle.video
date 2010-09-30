@@ -2,7 +2,6 @@ import tempfile
 import urllib2
 from redturtle.video.metadataextractor import extract
 
-
 def _setDurationVideo(object, name):
     """Set the duration field of video
     """
@@ -27,7 +26,12 @@ def createTempFileInternalVideo(object, event):
         return
     file=object.getFile()
     fd=tempfile.NamedTemporaryFile()
-    fd.write(file.data.data)
+    if type(file.data)==str:
+        # blob support
+        fd.write(file.data)
+    else:
+        # No blob
+        fd.write(file.data.data)
     _setDurationVideo(object, fd.name)
     object.reindexObject()
     fd.close()
