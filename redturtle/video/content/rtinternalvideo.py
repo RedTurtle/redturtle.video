@@ -31,6 +31,7 @@ RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA + atapi.Schema((
 # they work well with the python bridge properties.
 
 RTInternalVideoSchema['title'].storage = atapi.AnnotationStorage()
+RTInternalVideoSchema['title'].required = True
 RTInternalVideoSchema['description'].storage = atapi.AnnotationStorage()
 
 imageField = ATImageSchema['image'].copy()
@@ -44,7 +45,6 @@ RTInternalVideoSchema.addField(imageField)
 RTInternalVideoSchema.moveField('image', after='file')
 
 fileFied = RTInternalVideoSchema['file']
-fileFied.required = True
 fileFied.widget.label = _(u'label_video_file',
                           default=u'Video file')
 fileFied.widget.description = _(u'help_video_file',
