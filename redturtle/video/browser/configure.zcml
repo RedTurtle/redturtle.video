@@ -29,12 +29,11 @@
         permission="zope2.View"
         />
 
-  <configure zcml:condition="installed plone.app.blob">
-	  <browser:page
-	      for="..interfaces.IRTInternalVideo"
-	      name="migrateblobs"
-	      class=".migrateblobs.MigrateBlobs"
-	      permission="cmf.ManagePortal" />
-  </configure>
+    <browser:page
+        zcml:condition="installed plone.app.blob"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        name="blob-video-migration"
+        class=".migrateblobs.MigrateBlobs"
+        permission="cmf.ManagePortal" />
 
 </configure>

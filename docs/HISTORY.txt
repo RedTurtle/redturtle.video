@@ -8,7 +8,7 @@ Changelog
 * write some tests [nan010]
 * video contents now implements the IImageContent interface [keul]
 * now support plone.app.blob [keul]
-* added way (*/@@migrateblobs* view) to migrate from ZODB to blob [keul]
+* added way (*/@@blob-video-migration* view) to migrate from ZODB to blob [keul]
 * bug fixed: the title for internal video was not required [keul]
 
 0.3.1 (2010-03-18)
