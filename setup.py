@@ -11,7 +11,7 @@ tests_require=['zope.testing']
 
 setup(name='redturtle.video',
       version=version,
-      description="Basic archetype based video contents, integrated with collective.flowplayer",
+      description="Basic video contents for Plone, with collective.flowplayer integration",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
@@ -44,5 +44,4 @@ setup(name='redturtle.video',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      paster_plugins = ["ZopeSkel"],
       )
