@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import tempfile
 import urllib2
 from redturtle.video.metadataextractor import extract

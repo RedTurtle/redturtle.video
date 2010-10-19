@@ -6,7 +6,6 @@
 
   <include package="plone.app.contentmenu" />
 
-  <!-- -*- extra stuff goes here -*- -->
     <browser:page
        name="redturtlevideo_macros"
        for="*"
