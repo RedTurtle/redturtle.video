@@ -10,6 +10,7 @@ Changelog
 * now support plone.app.blob [keul]
 * added way (*/@@blob-video-migration* view) to migrate from ZODB to blob [keul]
 * bug fixed: the title for internal video was not required [keul]
+* shortened and made absolute embed URL for loading the flash player [keul]
 
 0.3.1 (2010-03-18)
 ------------------

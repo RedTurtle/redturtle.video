@@ -30,37 +30,38 @@ class InternalVideo(File):
     def getEmbedCode(self):
         """Return embed code"""
         baseUrl = self.context.absolute_url()
-        fpUrl = baseUrl+"/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.swf"
-        #fpUrl = 'http://releases.flowplayer.org/swf/flowplayer-3.1.5.swf'
+        portal_url = getToolByName(self.context, 'portal_url')()
+        fpUrl = portal_url+"/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.swf"
         embed = """
-        <object width="251" height="200" data="%(fpUrl)s" type="application/x-shockwave-flash">
-                <param name="movie" value="%(fpUrl)s" />
-                <param name="allowfullscreen" value="true" />
-                <param name="allowscriptaccess" value="always" />
-                <param name="flashvars" value='config={"clip":{"scaling":"fit",
-                                                       "autoBuffering":false,
-                                                       "autoPlay":false,
-                                                       "baseUrl":"%(baseUrl)s",
-                                                       "url":"%(clipUrl)s"
+        <object width="251" height="200" data="%(fpUrl)s" type="application/x-shockwave-flash">\n
+                <param name="movie" value="%(fpUrl)s" />\n
+                <param name="allowfullscreen" value="true" />\n
+                <param name="allowscriptaccess" value="always" />\n
+                <param name="flashvars" value="config={'clip':{'scaling':'fit',
+                                                       'autoBuffering':false,
+                                                       'autoPlay':false,
+                                                       'baseUrl':'%(baseUrl)s',
+                                                       'url':'%(clipUrl)s'
                                         },
-                               "playlist": [{"scaling":"fit",
-                                             "autoBuffering":false,
-                                             "autoPlay":false,"baseUrl":"%(baseUrl)s",
-                                             "url":"%(clipUrl)s"}],
-                               "canvas":{"backgroundColor":"#112233"},
-                               "plugins":{"controls":{"time":false,
-                                                      "volume":false,
-                                                      "fullscreen":false},
-                                          "content":{"url":"flowplayer.swf",
-                                                     "html":"Flash plugins work too"}
+                               'playlist': [{'scaling':'fit',
+                                             'autoBuffering':false,
+                                             'autoPlay':false,'baseUrl':'%(baseUrl)s',
+                                             'url':'%(clipUrl)s'}],
+                               'canvas':{'backgroundColor':'#112233'},
+                               'plugins':{'controls':{'time':false,
+                                                      'volume':false,
+                                                      'fullscreen':false},
+                                          'content':{'url':'flowplayer.swf',
+                                                     'html':'Flash plugins work too'}
                                          }
-                                }' />
-        </object>
+                                }" />\n
+        </object>\n
     """ % {
            "fpUrl"   : fpUrl,
-           "baseUrl" : self.context.absolute_url(),
+           "baseUrl" : portal_url,
            "clipUrl" : self.href()
            }
+        embed = embed.replace("\n","")
         return "".join((x.strip() for x in embed.splitlines()))
 
 class RemoteVideo(Link):
