@@ -46,8 +46,6 @@
     handler=".events.createTempFileRemoteVideo"
     /-->
 
-  <!-- -*- extra stuff goes here -*- -->
-
   <configure zcml:condition="installed plone.app.blob">
     <include package="archetypes.schemaextender" />
     <adapter factory=".extender.RemoteVideoATTypeExtender" />
@@ -65,7 +63,7 @@
              zope.publisher.interfaces.browser.IHTTPRequest"
       provides = "redturtle.video.interfaces.IVideoEmbedCode"
       factory = "redturtle.video.browser.videoembedcode.YoutubeEmbedCode"
-      name= 'youtube.com'
+      name= "youtube.com"
   />
 
   <adapter
@@ -73,7 +71,7 @@
              zope.publisher.interfaces.browser.IHTTPRequest"
       provides = "redturtle.video.interfaces.IVideoEmbedCode"
       factory = "redturtle.video.browser.videoembedcode.VimeoEmbedCode"
-      name= 'vimeo.com'
+      name= "vimeo.com"
   />
 
   <adapter
@@ -81,17 +79,15 @@
              zope.publisher.interfaces.browser.IHTTPRequest"
       provides = "redturtle.video.interfaces.IVideoEmbedCode"
       factory = "redturtle.video.browser.videoembedcode.GoogleEmbedCode"
-      name= 'video.google.com'
+      name= "video.google.com"
   />
-
 
   <adapter
       for = "redturtle.video.interfaces.IRTRemoteVideo
              zope.publisher.interfaces.browser.IHTTPRequest"
       provides = "redturtle.video.interfaces.IVideoEmbedCode"
       factory = "redturtle.video.browser.videoembedcode.MetacafeEmbedCode"
-      name= 'metacafe.com'
+      name= "metacafe.com"
   />
-
 
 </configure>

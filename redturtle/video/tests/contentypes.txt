@@ -51,17 +51,15 @@ And we ensure that we get the friendly logged-in message:
     >>> "You are now logged in" in browser.contents
     True
 
-
--*- extra stuff goes here -*-
 The RTRemoteVideo content type
-===============================
+==============================
 
 In this section we are tesing the RTRemoteVideo content type by performing
 basic operations like adding, updadating and deleting RTRemoteVideo content
 items.
 
 Adding a new RTRemoteVideo content item
---------------------------------
+---------------------------------------
 
 We use the 'Add new' menu to add a new content item.
 
@@ -85,7 +83,7 @@ Now we fill the form and submit it.
 And we are done! We added a new 'RTRemoteVideo' content item to the portal.
 
 Updating an existing RTRemoteVideo content item
----------------------------------------
+-----------------------------------------------
 
 Let's click on the 'edit' tab and update the object attribute values.
 
@@ -101,7 +99,7 @@ We check that the changes were applied.
     True
 
 Removing a/an RTRemoteVideo content item
---------------------------------
+----------------------------------------
 
 If we go to the home page, we can see a tab with the 'New RTRemoteVideo
 Sample' title in the global navigation tabs.
@@ -131,7 +129,7 @@ Sample' tab.
     False
 
 Adding a new RTRemoteVideo content item as contributor
-------------------------------------------------
+------------------------------------------------------
 
 Not only site managers are allowed to add RTRemoteVideo content items, but
 also site contributors.
@@ -177,14 +175,14 @@ Finally, let's login back as manager.
 
 
 The RTInternalVideo content type
-===============================
+================================
 
 In this section we are tesing the RTInternalVideo content type by performing
 basic operations like adding, updadating and deleting RTInternalVideo content
 items.
 
 Adding a new RTInternalVideo content item
---------------------------------
+-----------------------------------------
 
 We use the 'Add new' menu to add a new content item.
 
@@ -208,7 +206,7 @@ Now we fill the form and submit it.
 And we are done! We added a new 'RTInternalVideo' content item to the portal.
 
 Updating an existing RTInternalVideo content item
----------------------------------------
+-------------------------------------------------
 
 Let's click on the 'edit' tab and update the object attribute values.
 
@@ -224,7 +222,7 @@ We check that the changes were applied.
     True
 
 Removing a/an RTInternalVideo content item
---------------------------------
+------------------------------------------
 
 If we go to the home page, we can see a tab with the 'New RTInternalVideo
 Sample' title in the global navigation tabs.

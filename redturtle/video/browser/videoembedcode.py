@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from urlparse import urlparse
 from zope.interface import implements
 from redturtle.video.interfaces import IVideoEmbedCode
@@ -129,8 +131,6 @@ class VimeoEmbedCode(object):
     </object>
     <BLANKLINE>
 
-
-
     """
     implements(IVideoEmbedCode)
     template = ViewPageTemplateFile('youtubeembedcode_template.pt')
@@ -169,7 +169,6 @@ class GoogleEmbedCode(object):
     ...                                         name = 'video.google.com')
     >>> adapter.getVideoLink()
     'http://video.google.com/googleplayer.swf?docid=7880614371292254214'
-
     >>> print adapter()
     <embed id=VideoPlayback 
     src=http://video.google.com/googleplayer.swf?docid=7880614371292254214&hl=en&fs=true 
@@ -218,7 +217,7 @@ class MetacafeEmbedCode(object):
     >>> remotevideo = RemoteVideo()
     >>> adapter = getMultiAdapter((remotevideo, TestRequest()), 
     ...                                         IVideoEmbedCode, 
-    ...                                         name = 'www.metacafe.com')
+    ...                                         name = 'metacafe.com')
     >>> adapter.getVideoLink()
     'http://www.metacafe.com/fplayer/4950343/stone_trailer.swf'
 

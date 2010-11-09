@@ -14,12 +14,9 @@ from Testing import ZopeTestCase as ztc
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
 
-# When ZopeTestCase configures Zope, it will *not* auto-load products
-# in Products/. Instead, we have to use a statement such as:
-#   ztc.installProduct('SimpleAttachment')
-# This does *not* apply to products in eggs and Python packages (i.e.
-# not in the Products.*) namespace. For that, see below.
-# All of Plone's products are already set up by PloneTestCase.
+from zope.publisher.interfaces.browser import IHTTPRequest
+from zope.publisher.browser import TestRequest
+from zope.interface import implements
 
 @onsetup
 def setup_product():
@@ -59,10 +56,6 @@ def setup_product():
 setup_product()
 ptc.setupPloneSite(products=['redturtle.video'])
 
-
-from zope.publisher.interfaces.browser import IHTTPRequest
-from zope.publisher.browser import TestRequest
-from zope.interface import implements
 class TestRequest(TestRequest):
     implements(IHTTPRequest)
 

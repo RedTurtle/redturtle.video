@@ -36,12 +36,6 @@ Right now URL to those services are handled:
 
 You are invited to help us extending also to other services.
 
-Thanks to
----------
-
-Special thanks to **Giorgio Borelli** (gborelli) for adding tests, fixing issues and provide the
-*Vimeo* support.
-
 TODO
 ----
 
@@ -51,6 +45,33 @@ TODO
 
 __ http://pypi.python.org/pypi/stxnext.transform.avi2flv/
 __ http://pypi.python.org/pypi/collective.transcode.star
+
+Credits
+=======
+
+Developed with the support of `Comune di Modena`__; Comune di Modena supports the
+`PloneGov initiative`__.
+
+.. image:: http://www.ausl.fe.it/logo_ausl.gif
+   :alt: Azienda USL's logo
+
+__ http://www.comune.modena.it/
+__ http://www.plonegov.it/
+
+Authors
+=======
+
+This product was developed by RedTurtle Technology team.
+
+.. image:: http://www.redturtle.net/redturtle_banner.png
+   :alt: RedTurtle Technology Site
+   :target: http://www.redturtle.net/
+
+Thanks to
+---------
+
+* **Giorgio Borelli** (gborelli) for adding tests, fixing issues and providing *Vimeo* support.
+* **XXX** (nan010) for providing Google Video, Metacafe support and not last documentation.
 
 Other products
 ==============

@@ -17,7 +17,6 @@ setup(name='redturtle.video',
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
-        'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         ],
@@ -39,7 +38,7 @@ setup(name='redturtle.video',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite = 'redturtle.video.tests.test_docs.test_suite',
+      test_suite = 'redturtle.video.tests.test_doctest.test_suite',
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone

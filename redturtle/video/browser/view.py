@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from urlparse import urlparse
 from zope import interface
-from zope.component import getMultiAdapter
+from zope.component import getMultiAdapter, ComponentLookupError
 
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 
@@ -33,20 +33,16 @@ class InternalVideo(File):
         portal_url = getToolByName(self.context, 'portal_url')()
         fpUrl = portal_url+"/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.swf"
         embed = """
-        <object width="251" height="200" data="%(fpUrl)s" type="application/x-shockwave-flash">\n
-                <param name="movie" value="%(fpUrl)s" />\n
-                <param name="allowfullscreen" value="true" />\n
-                <param name="allowscriptaccess" value="always" />\n
+        <object width="251" height="200" data="%(fpUrl)s" type="application/x-shockwave-flash">
+                <param name="movie" value="%(fpUrl)s" />
+                <param name="allowfullscreen" value="true" />
+                <param name="allowscriptaccess" value="always" />
                 <param name="flashvars" value="config={'clip':{'scaling':'fit',
                                                        'autoBuffering':false,
                                                        'autoPlay':false,
                                                        'baseUrl':'%(baseUrl)s',
                                                        'url':'%(clipUrl)s'
                                         },
-                               'playlist': [{'scaling':'fit',
-                                             'autoBuffering':false,
-                                             'autoPlay':false,'baseUrl':'%(baseUrl)s',
-                                             'url':'%(clipUrl)s'}],
                                'canvas':{'backgroundColor':'#112233'},
                                'plugins':{'controls':{'time':false,
                                                       'volume':false,
@@ -54,14 +50,13 @@ class InternalVideo(File):
                                           'content':{'url':'flowplayer.swf',
                                                      'html':'Flash plugins work too'}
                                          }
-                                }" />\n
-        </object>\n
+                                }" />
+        </object>
     """ % {
            "fpUrl"   : fpUrl,
            "baseUrl" : portal_url,
            "clipUrl" : self.href()
            }
-        embed = embed.replace("\n","")
         return "".join((x.strip() for x in embed.splitlines()))
 
 class RemoteVideo(Link):
@@ -73,6 +68,6 @@ class RemoteVideo(Link):
         video_site = urlparse(self.context.getRemoteUrl())[1].replace('www.','')
         try:
             adapter = getMultiAdapter((self.context, self.request), IVideoEmbedCode, name = video_site)
-        except:
+        except ComponentLookupError:
             adapter = getMultiAdapter((self.context, self.request), IVideoEmbedCode)            
         return adapter()
