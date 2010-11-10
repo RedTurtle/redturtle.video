@@ -9,7 +9,7 @@ This add to your Plone portal two new content types:
 
 * *Video file* for providing a video content directly from a video file compatible with flowplayer
   formats
-* *Video link* for a remote video resource 
+* *Video link* for a remote video resource
 
 New content types have mandatory image field, for the video screenshot/splash data.
 Also you can insert the *year* of the video and the *duration*. This last info is also taken
@@ -70,14 +70,15 @@ This product was developed by RedTurtle Technology team.
 Thanks to
 ---------
 
-* **Giorgio Borelli** (gborelli) for adding tests, fixing issues and providing *Vimeo* support.
-* **XXX** (nan010) for providing Google Video, Metacafe support and not last documentation.
+* *Giorgio Borelli* (gborelli) for adding tests, fixing issues and providing *Vimeo* support.
+* *Christian Ledermann* (nan010) for providing Google Video, Metacafe support and, not
+  last, good documentation.
 
 Other products
 ==============
 
-Before choosing this product, if you think you need a site with huge video features,
-take a look at:
+Before choosing this product, if you think you need a site with huge video features or simply
+wanna explore where Plone is going when talking of video, take a look at:
 
 * `Plumi`__
 * `Plone Video Suite`__ 
