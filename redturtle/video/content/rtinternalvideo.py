@@ -92,6 +92,21 @@ class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
 
         return base.ATCTContent.__bobo_traverse__(self, REQUEST, name)
 
+    security.declareProtected(permissions.View, 'size')
+    def size(self):
+        """Get size video size
+        """
+        return self.get_size()
+
+    security.declareProtected(permissions.View, 'get_size')
+    def get_size(self):
+        """ZMI / Plone get size method
+        """
+        f = self.getPrimaryField()
+        if f is None:
+            return 0
+        return f.get_size(self) or 0
+
     def hasSplashScreenImage(self):
         """Boolean value to know if an image is available"""
         if self.getImage():

@@ -10,10 +10,15 @@ Changelog
 * now support plone.app.blob [keul]
 * added way (*/@@blob-video-migration* view) to migrate from ZODB to blob [keul]
 * bug fixed: the title for internal video was not required [keul]
-* shortened and made absolute embed URL for loading the flash player [keul]
+* shortened and made absolute embed URL for loading the flash player
+  (this also fix a bug when embedding videos and IE) [keul]
+* The interla video size is now the uploaded video size (close `#1`__) [keul]
+
+__ http://plone.org/products/redturtle.video/issues/1
 
 0.3.1 (2010-03-18)
 ------------------
+
 * inserted string over the player [fdelia]
 
 0.3.0 (2010-03-03)

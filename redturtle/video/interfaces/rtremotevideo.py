@@ -12,4 +12,3 @@ from redturtle.video import videoMessageFactory as _
 class IRTRemoteVideo(IATLink, IRTVideo):
     """A link to a video with screenshot"""
 
-    # -*- schema definition goes here -*-
