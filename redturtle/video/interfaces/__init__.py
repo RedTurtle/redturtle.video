@@ -1,4 +1,5 @@
-# -*- extra stuff goes here -*-
+# -*- coding: utf-8 -*-
+
 from video import IRTVideo
 from rtremotevideo import IRTRemoteVideo
 from rtinternalvideo import IRTInternalVideo

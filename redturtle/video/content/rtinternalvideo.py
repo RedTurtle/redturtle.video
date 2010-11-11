@@ -1,17 +1,16 @@
 """Definition of the RTInternalVideo content type
 """
 
-from zope.interface import implements, directlyProvides
+from zope.interface import implements
 
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore import permissions
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
-from Products.ATContentTypes.content.file import ATFileSchema, ATFile
-from Products.ATContentTypes.content.image import ATImageSchema, ATImage
+from Products.ATContentTypes.content.file import ATFileSchema
+from Products.ATContentTypes.content.image import ATImageSchema
 from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
-from Products.validation import V_REQUIRED
 
 from collective.flowplayer.interfaces import IFlowPlayable
 

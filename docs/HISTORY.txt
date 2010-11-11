@@ -13,6 +13,7 @@ Changelog
 * shortened and made absolute embed URL for loading the flash player
   (this also fix a bug when embedding videos and IE) [keul]
 * The internal video size is now the uploaded video size (close `#1`__) [keul]
+* Pyflakes cleanup [keul]
 
 __ http://plone.org/products/redturtle.video/issues/1
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
+
 from urlparse import urlparse
-from zope import interface
 from zope.component import getMultiAdapter, ComponentLookupError
 
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
@@ -29,7 +29,6 @@ class InternalVideo(File):
 
     def getEmbedCode(self):
         """Return embed code"""
-        baseUrl = self.context.absolute_url()
         portal_url = getToolByName(self.context, 'portal_url')()
         fpUrl = portal_url+"/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.swf"
         embed = """

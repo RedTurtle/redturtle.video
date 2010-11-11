@@ -11,7 +11,7 @@ def _setDurationVideo(object, name):
     if metadata is not None:
         try:
             data = metadata.getItems('duration')
-        except ValueError, e:
+        except ValueError:
             # no valid data
             return
         if len(data) >= 1:

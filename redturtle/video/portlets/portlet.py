@@ -1,5 +1,5 @@
 from zope.interface import implements
-from zope.component import getMultiAdapter, queryMultiAdapter
+from zope.component import getMultiAdapter
 
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
@@ -17,7 +17,6 @@ from plone.app.form.widgets.uberselectionwidget import UberSelectionWidget
 from Products.ATContentTypes.interface import IATTopic, IATFolder
 
 from redturtle.video.interfaces import IRTVideo
-from collective.flowplayer.interfaces import IFlowPlayerView
 from redturtle.video import videoMessageFactory as _
 
 from Products.CMFCore.utils import getToolByName

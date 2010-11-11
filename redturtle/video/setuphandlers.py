@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from zope import component
+import logging
 from Products.CMFCore.utils import getToolByName
 
 # form : http://maurits.vanrees.org/weblog/archive/2009/12/catalog

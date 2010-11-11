@@ -10,7 +10,6 @@ from plone.app.blob.field import BlobField
 from Products.Archetypes import atapi
 
 from redturtle.video.interfaces import IRTInternalVideo
-from redturtle.video import videoMessageFactory as _
 from redturtle.video.content.rtinternalvideo import RTInternalVideoSchema
 
 class ExtensionBlobField(ExtensionField, BlobField):
