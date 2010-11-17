@@ -3,6 +3,7 @@ Changelog
 
 0.4.0 (Unreleased)
 ------------------
+
 * add metacafe.com and video.google.com adapters [nan010]
 * add some documentation how to write an adpter [nan010]
 * write some tests [nan010]
