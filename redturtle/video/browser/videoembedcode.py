@@ -34,7 +34,7 @@ class VideoEmbedCode(object):
         self.request = request
 
     def getVideoLink(self):
-        pass
+        return self.context.getRemoteUrl()
 
     def __call__(self):
         return self.template()

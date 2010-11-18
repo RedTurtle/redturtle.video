@@ -13,15 +13,17 @@ Changelog
 * bug fixed: the title for internal video was not required [keul]
 * shortened and made absolute embed URL for loading the flash player
   (this also fix a bug when embedding videos and IE) [keul]
-* The internal video size is now the uploaded video size (close `#1`__) [keul]
-* Pyflakes cleanup [keul]
+* the internal video size is now the uploaded video size (close `#1`__) [keul]
+* pyflakes cleanup [keul]
+* simple video links to .flv URL were broken [keul]
+* restored right position for below.contenttitle viewlet manager [keul] 
 
 __ http://plone.org/products/redturtle.video/issues/1
 
 0.3.1 (2010-03-18)
 ------------------
 
-* inserted string over the player [fdelia]
+* inserted embed string over the player [fdelia]
 
 0.3.0 (2010-03-03)
 ------------------
@@ -37,25 +39,25 @@ __ http://plone.org/products/redturtle.video/issues/1
 0.2.2 (2009-11-11)
 ------------------
 
-* Portlet does not return the getYear and getDuration method anymore [keul]
-* Moved hachoir import inside function from module level, due to stdout PDB error [keul]
-* Added a *very* ugly support for remote video to Youtube links [keul]
-* Removed validators for image field as it was not required but was not possible to ignore it [keul]
+* portlet does not return the getYear and getDuration method anymore [keul]
+* moved hachoir import inside function from module level, due to stdout PDB error [keul]
+* added a *very* ugly support for remote video to Youtube links [keul]
+* removed validators for image field as it was not required but was not possible to ignore it [keul]
 
 0.2.1beta (2009-10-19)
 ----------------------
 
-* Fixed bug using redturtle.video with latests collective.flowplayer versions (3.0+) [fdelia]
-* Tested with latest flowplayer release [fdelia]
+* fixed bug using redturtle.video with latests collective.flowplayer versions (3.0+) [fdelia]
+* tested with latest flowplayer release [fdelia]
 
 0.2.0beta (2009-10-14)
 ----------------------
 
-* Added informations (duration and year) of the video, that will be displayed in the portlet
-* Fixed bug finders in using getFolderContents for ATTopic
+* added informations (duration and year) of the video, that will be displayed in the portlet
+* fixed bug finders in using getFolderContents for ATTopic
 
 0.1.0alpha (2009-09-28)
 -----------------------
 
-* Initial release
+* initial release
 

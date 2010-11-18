@@ -16,6 +16,8 @@
             Title
             </metal:field>
         </h1>
+		
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <div class="autoFlowPlayer video"
               tal:attributes="style view/scale">
@@ -36,7 +38,6 @@
             </metal:field>
         </div>
 
-        <div tal:replace="structure provider:plone.belowcontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <form action="">

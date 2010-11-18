@@ -1,1 +1,29 @@
-<a href="" tal:content="context/getRemoteUrl" tal:attributes="href context/getRemoteUrl"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+	  tal:omit-tag=""
+      i18n:domain="plone">
+
+<div class="videoContainer">
+    <span class="flowPlayerMessage discreet" i18n:translate="video_fallback">
+        If your video does not start playing shortly, please ensure
+        that you have JavaScript enabled and the latest version of
+        Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
+    </span>
+    <tal:comment tal:condition="nothing">
+     Do not put any text/image inside the following a tag. Flowplayer 
+     consider such text/image as a splash screen and does not display
+     itself until clicked!
+    </tal:comment>
+    <a tal:attributes="href view/getVideoLink"
+	   class="autoFlowPlayer video"></a>
+</div>
+
+<p class="videoDownlaod">
+    <span i18n:translate="link_address">The link address is:</span>
+    <a tal:attributes="href view/getVideoLink"
+       tal:content="view/getVideoLink">remote url</a>
+</p>
+
+</html>
