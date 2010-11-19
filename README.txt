@@ -52,8 +52,8 @@ Credits
 Developed with the support of `Comune di Modena`__; Comune di Modena supports the
 `PloneGov initiative`__.
 
-.. image:: http://www.ausl.fe.it/logo_ausl.gif
-   :alt: Azienda USL's logo
+.. image:: http://www.comune.modena.it/grafica/logoComune/logoComunexweb.jpg 
+   :alt: Rete Civica Mo-Net logo
 
 __ http://www.comune.modena.it/
 __ http://www.plonegov.it/
