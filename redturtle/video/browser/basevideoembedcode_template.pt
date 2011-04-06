@@ -17,7 +17,11 @@
      itself until clicked!
     </tal:comment>
     <a tal:attributes="href view/getVideoLink"
-	   class="autoFlowPlayer video"></a>
+	   class="autoFlowPlayer video">
+	   <img alt="Video splashscreen"
+	   		tal:condition="python:context.hasSplashScreenImage() and context.getUseSplashScreen()"
+	        tal:attributes="src string:${context/absolute_url}/image" />
+	</a>
 </div>
 
 <p class="videoDownlaod">

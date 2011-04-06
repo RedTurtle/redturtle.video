@@ -14,4 +14,15 @@ VIDEO_SCHEMA=atapi.Schema((
                     label = _(u'label_duration', default=u'Duration'),
                     description = '',
                     )),
+                    
+    atapi.BooleanField('useSplashScreen',
+                default=False,
+                schemata="Look",
+                widget = atapi.BooleanWidget(
+                    label = _(u'label_use_imge', default=u'Use image as splash screen?'),
+                    description = _(u'help_use_imge',
+                                    default=u"Check for use splash screen image not only in the product's portlet "
+                                            u"but also in the video view. Be aware of the size!"),
+                    )),
+
 ))

@@ -25,6 +25,7 @@ RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA + atapi.Schema((
     atapi.IntegerField('width',
                 validation=('isInt',),
                 default=251,
+                schemata="Look",
                 widget = atapi.IntegerWidget(
                     label = _(u'label_width', default=u'Video width'),
                     description = '',
@@ -33,6 +34,7 @@ RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA + atapi.Schema((
     atapi.IntegerField('height',
                 validation=('isInt',),
                 default=200,
+                schemata="Look",
                 widget = atapi.IntegerWidget(
                     label = _(u'label_height', default=u'Video height'),
                     description = '',

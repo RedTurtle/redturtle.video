@@ -16,6 +16,7 @@ Changelog
 * the internal video size is now the uploaded video size (close `#1`__) [keul]
 * simple video links to .flv URL were broken [keul]
 * restored right position for below.contenttitle viewlet manager [keul]
+* splashscreen can be used (optionally) as real video splashscreen [keul] 
 * added video size fields; internal video view and embed code now use it [keul]
 * shortened the embedding code, using the `External configuration file`__,
   this also fix problems when embedding in documents using TinyMCE [keul]

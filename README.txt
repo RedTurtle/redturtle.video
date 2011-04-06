@@ -8,12 +8,15 @@ __ http://pypi.python.org/pypi/collective.flowplayer
 This add to your Plone portal two new content types:
 
 * *Video file* for providing a video content directly from a video file compatible with flowplayer
-  formats
+  formats. In the video view you can copy/paste the video embedding code, for seeing this video in other
+  sites.
 * *Video link* for a remote video resource
 
 New content types have mandatory image field, for the video screenshot/splash data.
 Also you can insert the *year* of the video and the *duration*. This last info is also taken
 automatically from the video (only for internal video).
+
+You can also (again, automatically taken) change the video size.
 
 All other given feature cames directly from collective.flowplayer.
 
@@ -33,11 +36,13 @@ Right now URL to those services are handled:
 
 * Youtube (http://www.youtube.com/)
 * Vimeo (http://vimeo.com/)
+* Metacafe (http://www.metacafe.com/)
+* Google Video (http://video.google.com/)
 
 You are invited to help us extending also to other services.
 
 TODO
-----
+====
 
 * video transcript
 * can be integrated with `stxnext.transform.avi2flv`__?

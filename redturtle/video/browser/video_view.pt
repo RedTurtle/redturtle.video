@@ -24,6 +24,9 @@
             <a tal:attributes="href view/href;
                                style view/scale"
                i18n:translate="video_fallback">
+               	<img alt="Video splashscreen"
+				     tal:condition="python:context.hasSplashScreenImage() and context.getUseSplashScreen()"
+				     tal:attributes="src string:${context/absolute_url}/image" /><br/>
                 If your video does not start playing shortly, please ensure
                 that you have JavaScript enabled and the latest version of
                 Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
