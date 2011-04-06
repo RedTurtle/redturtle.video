@@ -5,7 +5,7 @@ Changelog
 ------------------
 
 * add metacafe.com and video.google.com adapters [nan010]
-* add some documentation how to write an adpter [nan010]
+* add some documentation how to write an adapter [nan010]
 * write some tests [nan010]
 * video contents now implements the IImageContent interface [keul]
 * now support plone.app.blob [keul]
@@ -14,11 +14,14 @@ Changelog
 * shortened and made absolute embed URL for loading the flash player
   (this also fix a bug when embedding videos and IE) [keul]
 * the internal video size is now the uploaded video size (close `#1`__) [keul]
-* pyflakes cleanup [keul]
 * simple video links to .flv URL were broken [keul]
-* restored right position for below.contenttitle viewlet manager [keul] 
+* restored right position for below.contenttitle viewlet manager [keul]
+* added video size fields; internal video view and embed code now use it [keul]
+* shortened the embedding code, using the `External configuration file`__,
+  this also fix problems when embedding in documents using TinyMCE [keul]
 
 __ http://plone.org/products/redturtle.video/issues/1
+__ http://flowplayer.org/demos/installation/alternate/index.html#external_config
 
 0.3.1 (2010-03-18)
 ------------------

@@ -22,7 +22,21 @@ from redturtle.video.content.video_schema import VIDEO_SCHEMA
 
 RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA + atapi.Schema((
 
-    # -*- Your Archetypes field definitions here ... -*-
+    atapi.IntegerField('width',
+                validation=('isInt',),
+                default=251,
+                widget = atapi.IntegerWidget(
+                    label = _(u'label_width', default=u'Video width'),
+                    description = '',
+                    )),
+
+    atapi.IntegerField('height',
+                validation=('isInt',),
+                default=200,
+                widget = atapi.IntegerWidget(
+                    label = _(u'label_height', default=u'Video height'),
+                    description = '',
+                    )),
 
 ))
 

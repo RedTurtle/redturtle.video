@@ -24,19 +24,43 @@ class Macros(BrowserView):
 class InternalVideo(File):
     """The Internal Video browser view"""
 
+    def __init__(self, context, request):
+        File.__init__(self, context, request)
+
+        self.height = self.height or context.getHeight()
+        self.width = self.width or context.getWidth()        
+        self._scale = "height: %dpx; width: %dpx;" % (self.height, self.width)
+
     def href(self):
         return self.context.absolute_url()+'/at_download/file'
 
     def getEmbedCode(self):
         """Return embed code"""
-        portal_url = getToolByName(self.context, 'portal_url')()
+        context = self.context
+        portal_url = getToolByName(context, 'portal_url')()
         fpUrl = portal_url+"/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.swf"
         embed = """
-        <object width="251" height="200" data="%(fpUrl)s" type="application/x-shockwave-flash">
+        <object width="%(width)d" height="%(height)d" data="%(fpUrl)s" type="application/x-shockwave-flash">
                 <param name="movie" value="%(fpUrl)s" />
                 <param name="allowfullscreen" value="true" />
                 <param name="allowscriptaccess" value="always" />
-                <param name="flashvars" value="config={'clip':{'scaling':'fit',
+                <param name="flashvars" value="config=%(here_url)s/config.js" />
+        </object>
+    """ % {
+           "fpUrl"   : fpUrl,
+           "baseUrl" : portal_url,
+           "here_url": context.absolute_url(),
+           "clipUrl" : self.href(),
+           "width"   : context.getWidth(),
+           "height"   : context.getHeight(),           
+           }
+        return "".join((x.strip() for x in embed.splitlines()))
+
+
+class InternalVideoConfiguration(InternalVideo):
+    """Return the right configuration js file for this video"""
+    
+    MODEL = """{'clip':{'scaling':'fit',
                                                        'autoBuffering':false,
                                                        'autoPlay':false,
                                                        'baseUrl':'%(baseUrl)s',
@@ -49,14 +73,20 @@ class InternalVideo(File):
                                           'content':{'url':'flowplayer.swf',
                                                      'html':'Flash plugins work too'}
                                          }
-                                }" />
-        </object>
-    """ % {
+                                }"""
+
+    def __call__(self):
+        portal_url = getToolByName(self.context, 'portal_url')()
+        fpUrl = portal_url+"/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.swf"
+        self.request.response.setHeader("Content-type", "application/x-javascript")
+
+        return self.MODEL % {
            "fpUrl"   : fpUrl,
            "baseUrl" : portal_url,
            "clipUrl" : self.href()
            }
-        return "".join((x.strip() for x in embed.splitlines()))
+
+
 
 class RemoteVideo(Link):
     """The External Video link browser view"""
