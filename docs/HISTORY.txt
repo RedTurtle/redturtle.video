@@ -22,6 +22,7 @@ Changelog
 * propertly registering in TinyMCE (this close `#5`__) [keul]
 * external video now provides the ``IFlowPlayable`` interface only when linking
   simple .flv resources. This close `#2`__ [keul]
+* portlet header is not required anymore [keul]
 
 __ http://pypi.python.org/pypi/plone.app.blob
 __ http://flowplayer.org/demos/installation/alternate/index.html#external_config
