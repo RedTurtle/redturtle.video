@@ -2,7 +2,15 @@
 
 import tempfile
 import urllib2
+from urlparse import urlparse
+
+from zope.interface import alsoProvides, noLongerProvides
+from zope.component import getMultiAdapter, ComponentLookupError
+
+from collective.flowplayer.interfaces import IFlowPlayable
+
 from redturtle.video.metadataextractor import extract
+from redturtle.video.interfaces import IVideoEmbedCode
 
 def _setVideoMetadata(object, name):
     """Set the metadata taken from the video using hachoir
@@ -61,3 +69,18 @@ def createTempFileRemoteVideo(object, event):
     _setVideoMetadata(object, fd.name)
     object.reindexObject()
     fd.close()
+
+
+def externalVideoModified(object, event):
+    """A remote video has been modified; check is we need to provide to it
+    the IFlowPlayable interface (only if it is Flowplayer compatible)"""
+    video_site = urlparse(object.getRemoteUrl())[1].replace('www.','')
+    try:
+        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode, name = video_site)
+        noLongerProvides(object, IFlowPlayable)
+    except ComponentLookupError:
+        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode)            
+        alsoProvides(object, IFlowPlayable)
+    object.reindexObject(idxs=['object_provides'])
+
+    

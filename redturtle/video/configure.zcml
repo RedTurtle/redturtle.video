@@ -20,7 +20,7 @@
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
-      title="RT Video contents"
+      title="RedTurtle Video"
       directory="profiles/default"
       description="Basic archetype based video content, integrated with collective.flowplayer"
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -89,5 +89,10 @@
       factory = "redturtle.video.browser.videoembedcode.MetacafeEmbedCode"
       name= "metacafe.com"
   />
+
+  <subscriber for=".interfaces.IRTRemoteVideo
+                   zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+              handler=".events.externalVideoModified"
+            />
 
 </configure>

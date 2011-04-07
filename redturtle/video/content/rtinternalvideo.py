@@ -20,27 +20,7 @@ from redturtle.video.config import PROJECTNAME
 
 from redturtle.video.content.video_schema import VIDEO_SCHEMA
 
-RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA + atapi.Schema((
-
-    atapi.IntegerField('width',
-                validation=('isInt',),
-                default=251,
-                schemata="Look",
-                widget = atapi.IntegerWidget(
-                    label = _(u'label_width', default=u'Video width'),
-                    description = '',
-                    )),
-
-    atapi.IntegerField('height',
-                validation=('isInt',),
-                default=200,
-                schemata="Look",
-                widget = atapi.IntegerWidget(
-                    label = _(u'label_height', default=u'Video height'),
-                    description = '',
-                    )),
-
-))
+RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA
 
 # Set storage on fields copied from ATContentTypeSchema, making sure
 # they work well with the python bridge properties.

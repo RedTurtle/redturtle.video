@@ -1,8 +1,11 @@
 <dl class="portlet portletFlowPlayer"
     i18n:domain="redturtle.video"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     tal:define="target_url string:${view/target_url}/view">
 
-    <dt class="portletHeader">
+    <dt class="portletHeader"
+	    tal:condition="view/data/header">
         <span class="portletTopLeft"></span>
         <span tal:content="view/data/header" />
         <span class="portletTopRight"></span>

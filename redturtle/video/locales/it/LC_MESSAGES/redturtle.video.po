@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: redturtle.video\n"
-"POT-Creation-Date: 2010-09-30 12:07+0000\n"
+"POT-Creation-Date: 2011-04-07 08:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,65 +35,70 @@ msgstr "Migra video interno"
 #. Default: "Video file"
 #: ./profiles/default/types/RTInternalVideo.xml
 msgid "Video file"
-msgstr "Video file"
+msgstr ""
 
 #: ./portlets/portlet.py:97
-msgid "Video gallery: "
+msgid "Video gallery"
 msgstr "Galleria video"
 
 #. Default: "Video link"
 #: ./profiles/default/types/RTRemoteVideo.xml
 msgid "Video link"
-msgstr "Video link"
+msgstr ""
 
 #. Default: "Put this video on your site"
-#: ./browser/video_view.pt:43
+#: ./browser/video_view.pt:55
 msgid "description_embed"
 msgstr "Inserisci questo video nel tuo sito"
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:183
+#: ./portlets/portlet.py:184
 msgid "help_add_video_portlet"
 msgstr "Questa portlet visualizza una galleria video."
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:196
+#: ./portlets/portlet.py:197
 msgid "help_edit_video_portlet"
 msgstr "Questa portlet visualizza una galleria video."
 
 #. Default: "Enter a number greater than 0 to limit the number of items displayed"
-#: ./portlets/portlet.py:64
+#: ./portlets/portlet.py:63
 msgid "help_number_of_videos_to_show"
 msgstr "Inserire un numero maggiore di 0 per limitare il numero di elementi visualizzati"
 
 #. Default: "Title of the rendered portlet"
-#: ./portlets/portlet.py:44
+#: ./portlets/portlet.py:43
 msgid "help_portlet_header"
 msgstr "Titolo della portlet restituita"
 
 #. Default: "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
-#: ./portlets/portlet.py:72
+#: ./portlets/portlet.py:71
 msgid "help_show_more_link"
 msgstr "Se attivato, di più... verrà visualizzato un link a piè di pagina della portlet, collegato ai dati mostrati dalla portlet."
 
 #. Default: "This can be a file containing an video content, or a folder or collection containing videos"
-#: ./portlets/portlet.py:50
+#: ./portlets/portlet.py:49
 msgid "help_target_object"
 msgstr "Questo può essere un file che contiene un contenuto video, o una cartella o una raccolta contenente video"
 
+#. Default: "Check for use splash screen image not only in the product's portlet but also in the video view."
+#: ./content/video_schema.py:23
+msgid "help_use_imge"
+msgstr "Seleziona per usare l'immagine di anteprima non solo nel riquadro del prodotto ma anche nella vista del video."
+
 #. Default: "Put there the video file in a compatible format"
-#: ./content/rtinternalvideo.py:49
+#: ./content/rtinternalvideo.py:45
 msgid "help_video_file"
 msgstr "Inserisci qui il file video, in formato compatibile"
 
 #. Default: "Can be used to provide splash image when needed"
-#: ./content/rtinternalvideo.py:39
-#: ./content/rtremotevideo.py:39
+#: ./content/rtinternalvideo.py:35
+#: ./content/rtremotevideo.py:37
 msgid "help_video_image"
 msgstr "Può essere utilizzata per fornire un'immagine schizzo, se necessario"
 
 #. Default: "Add Video Portlet"
-#: ./portlets/portlet.py:181
+#: ./portlets/portlet.py:182
 msgid "label_add_video_portlet"
 msgstr "Aggiungi una Portlet video"
 
@@ -103,51 +108,66 @@ msgid "label_duration"
 msgstr "Durata"
 
 #. Default: "Edit Video Portlet"
-#: ./portlets/portlet.py:194
+#: ./portlets/portlet.py:195
 msgid "label_edit_video_portlet"
 msgstr "Modifica una Portlet video"
 
+#. Default: "Video height"
+#: ./content/video_schema.py:42
+msgid "label_height"
+msgstr "Altezza del video"
+
 #. Default: "Duration:"
 #: ./browser/redturtlevideo_macros.pt:12
-#: ./portlets/portlet.pt:36
+#: ./portlets/portlet.pt:39
 msgid "label_info_duration"
 msgstr "Durata:"
 
 #. Default: "Title:"
-#: ./portlets/portlet.pt:24
+#: ./portlets/portlet.pt:27
 msgid "label_info_title"
 msgstr "Titolo:"
 
 #. Default: "Year:"
 #: ./browser/redturtlevideo_macros.pt:16
-#: ./portlets/portlet.pt:30
+#: ./portlets/portlet.pt:33
 msgid "label_info_year"
 msgstr "Anno:"
 
 #. Default: "Number of videos to show"
-#: ./portlets/portlet.py:62
+#: ./portlets/portlet.py:61
 msgid "label_number_of_videos_to_show"
 msgstr "Il numero di video da mostrare"
 
 #. Default: "Portlet header"
-#: ./portlets/portlet.py:42
+#: ./portlets/portlet.py:41
 msgid "label_portlet_header"
-msgstr "Intestazione della portlet"
+msgstr "Intestazione del riquadro"
 
-#. Default: "Show more... link"
-#: ./portlets/portlet.py:70
+#. Default: "Show \"more...\" link"
+#: ./portlets/portlet.py:69
 msgid "label_show_more_link"
-msgstr "Mostra di più... link"
+msgstr "Mostra link \"altro...\""
 
 #. Default: "Target object"
-#: ./portlets/portlet.py:48
+#: ./portlets/portlet.py:47
 msgid "label_target_object"
-msgstr "Oggetto target"
+msgstr "Oggetto di riferimento"
+
+#. Default: "Use image as splash screen?"
+#: ./content/video_schema.py:22
+msgid "label_use_imge"
+msgstr "Usare l'immagine come anteprima?"
 
 #. Default: "Video file"
-#: ./content/rtinternalvideo.py:47
+#: ./content/rtinternalvideo.py:43
 msgid "label_video_file"
 msgstr "File video"
+
+#. Default: "Video width"
+#: ./content/video_schema.py:33
+msgid "label_width"
+msgstr "Larghezza del video"
 
 #. Default: "Year"
 #: ./content/video_schema.py:8
@@ -160,12 +180,12 @@ msgid "migration_error_msg"
 msgstr "Devi installare \"Products.contentmigration\" per eseguire l'operazione"
 
 #. Default: "More…"
-#: ./portlets/portlet.pt:49
+#: ./portlets/portlet.pt:52
 msgid "more_url"
 msgstr "Di più…"
 
 #. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."
-#: ./browser/video_view.pt:22
+#: ./browser/video_view.pt:34
 msgid "video_fallback"
 msgstr "Se il tuo video non inizia subito, si prega di assicurarsi che JavaScript sia attivato e l'ultima versione di Adobe Flash Player (http://www.adobe.com/products/flashplayer/) sia installata."
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-09-30 12:07+0000\n"
+"POT-Creation-Date: 2011-04-07 08:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgid "Video file"
 msgstr ""
 
 #: ./portlets/portlet.py:97
-msgid "Video gallery: "
+msgid "Video gallery"
 msgstr ""
 
 #: ./profiles/default/types/RTRemoteVideo.xml
@@ -46,53 +46,58 @@ msgid "Video link"
 msgstr ""
 
 #. Default: "Put this video on your site"
-#: ./browser/video_view.pt:43
+#: ./browser/video_view.pt:55
 msgid "description_embed"
 msgstr ""
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:183
+#: ./portlets/portlet.py:184
 msgid "help_add_video_portlet"
 msgstr ""
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:196
+#: ./portlets/portlet.py:197
 msgid "help_edit_video_portlet"
 msgstr ""
 
 #. Default: "Enter a number greater than 0 to limit the number of items displayed"
-#: ./portlets/portlet.py:64
+#: ./portlets/portlet.py:63
 msgid "help_number_of_videos_to_show"
 msgstr ""
 
 #. Default: "Title of the rendered portlet"
-#: ./portlets/portlet.py:44
+#: ./portlets/portlet.py:43
 msgid "help_portlet_header"
 msgstr ""
 
 #. Default: "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
-#: ./portlets/portlet.py:72
+#: ./portlets/portlet.py:71
 msgid "help_show_more_link"
 msgstr ""
 
 #. Default: "This can be a file containing an video content, or a folder or collection containing videos"
-#: ./portlets/portlet.py:50
+#: ./portlets/portlet.py:49
 msgid "help_target_object"
 msgstr ""
 
+#. Default: "Check for use splash screen image not only in the product's portlet but also in the video view."
+#: ./content/video_schema.py:23
+msgid "help_use_imge"
+msgstr ""
+
 #. Default: "Put there the video file in a compatible format"
-#: ./content/rtinternalvideo.py:49
+#: ./content/rtinternalvideo.py:45
 msgid "help_video_file"
 msgstr ""
 
 #. Default: "Can be used to provide splash image when needed"
-#: ./content/rtinternalvideo.py:39
-#: ./content/rtremotevideo.py:39
+#: ./content/rtinternalvideo.py:35
+#: ./content/rtremotevideo.py:37
 msgid "help_video_image"
 msgstr ""
 
 #. Default: "Add Video Portlet"
-#: ./portlets/portlet.py:181
+#: ./portlets/portlet.py:182
 msgid "label_add_video_portlet"
 msgstr ""
 
@@ -102,50 +107,65 @@ msgid "label_duration"
 msgstr ""
 
 #. Default: "Edit Video Portlet"
-#: ./portlets/portlet.py:194
+#: ./portlets/portlet.py:195
 msgid "label_edit_video_portlet"
+msgstr ""
+
+#. Default: "Video height"
+#: ./content/video_schema.py:42
+msgid "label_height"
 msgstr ""
 
 #. Default: "Duration:"
 #: ./browser/redturtlevideo_macros.pt:12
-#: ./portlets/portlet.pt:36
+#: ./portlets/portlet.pt:39
 msgid "label_info_duration"
 msgstr ""
 
 #. Default: "Title:"
-#: ./portlets/portlet.pt:24
+#: ./portlets/portlet.pt:27
 msgid "label_info_title"
 msgstr ""
 
 #. Default: "Year:"
 #: ./browser/redturtlevideo_macros.pt:16
-#: ./portlets/portlet.pt:30
+#: ./portlets/portlet.pt:33
 msgid "label_info_year"
 msgstr ""
 
 #. Default: "Number of videos to show"
-#: ./portlets/portlet.py:62
+#: ./portlets/portlet.py:61
 msgid "label_number_of_videos_to_show"
 msgstr ""
 
 #. Default: "Portlet header"
-#: ./portlets/portlet.py:42
+#: ./portlets/portlet.py:41
 msgid "label_portlet_header"
 msgstr ""
 
-#. Default: "Show more... link"
-#: ./portlets/portlet.py:70
+#. Default: "Show \"more...\" link"
+#: ./portlets/portlet.py:69
 msgid "label_show_more_link"
 msgstr ""
 
 #. Default: "Target object"
-#: ./portlets/portlet.py:48
+#: ./portlets/portlet.py:47
 msgid "label_target_object"
 msgstr ""
 
+#. Default: "Use image as splash screen?"
+#: ./content/video_schema.py:22
+msgid "label_use_imge"
+msgstr ""
+
 #. Default: "Video file"
-#: ./content/rtinternalvideo.py:47
+#: ./content/rtinternalvideo.py:43
 msgid "label_video_file"
+msgstr ""
+
+#. Default: "Video width"
+#: ./content/video_schema.py:33
+msgid "label_width"
 msgstr ""
 
 #. Default: "Year"
@@ -159,12 +179,12 @@ msgid "migration_error_msg"
 msgstr ""
 
 #. Default: "More…"
-#: ./portlets/portlet.pt:49
+#: ./portlets/portlet.pt:52
 msgid "more_url"
 msgstr ""
 
 #. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."
-#: ./browser/video_view.pt:22
+#: ./browser/video_view.pt:34
 msgid "video_fallback"
 msgstr ""
 

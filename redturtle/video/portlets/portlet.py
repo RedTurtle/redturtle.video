@@ -41,8 +41,8 @@ class IRTVideoPortlet(IPortletDataProvider):
     header = schema.TextLine(title = _(u"label_portlet_header",
                                         default = u"Portlet header"),
                              description = _(u"help_portlet_header",
-                                 default = u"Title of the rendered portlet"),
-                             required = True)
+                                             default = u"Title of the rendered portlet"),
+                             required = False)
 
     target = schema.Choice(title = _(u"label_target_object",
                                         default = u"Target object"),
@@ -67,7 +67,7 @@ class IRTVideoPortlet(IPortletDataProvider):
                        default = 0)
 
     show_more = schema.Bool(title = _(u"label_show_more_link",
-                                default=u"Show more... link"),
+                                default=u'Show "more..." link'),
                        description = _(u"help_show_more_link",
                                     default = u"If enabled, a more... "\
                                         "link will appear in the footer of "\
@@ -93,7 +93,9 @@ class Assignment(base.Assignment):
 
     @property
     def title(self):
-        return _(u"Video gallery: ") + self.header
+        if self.header:
+            return _(u"Video gallery")+': ' + self.header
+        return _(u"Video gallery")
 
 
 class Renderer(base.Renderer):

@@ -19,17 +19,25 @@
 		
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
-        <div class="autoFlowPlayer video"
+        <div class="autoFlowPlayer video videoContent internalVideoContent"
               tal:attributes="style view/scale">
             <a tal:attributes="href view/href;
-                               style view/scale"
-               i18n:translate="video_fallback">
-               	<img alt="Video splashscreen"
-				     tal:condition="python:context.hasSplashScreenImage() and context.getUseSplashScreen()"
-				     tal:attributes="src string:${context/absolute_url}/image" /><br/>
-                If your video does not start playing shortly, please ensure
-                that you have JavaScript enabled and the latest version of
-                Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
+                               style view/scale">
+                <img tal:define="scale context/@@images;
+				                 thumbnail python: scale.scale('image', width=context.getWidth(), height=context.getHeight(), direction='down')"
+				     tal:condition="python:thumbnail and context.hasSplashScreenImage() and context.getUseSplashScreen()"
+					 alt="Video splashscreen"
+                     tal:attributes="src thumbnail/url;
+					                 width thumbnail/width;
+                                     height thumbnail/height;" /><br/>
+                <tal:novideo condition="not:context/getUseSplashScreen">
+	                <span class="flowPlayerMessage discreet"
+		                  i18n:translate="video_fallback">
+		                If your video does not start playing shortly, please ensure
+		                that you have JavaScript enabled and the latest version of
+		                Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
+					</span>
+				</tal:novideo>
             </a>
         </div>
 

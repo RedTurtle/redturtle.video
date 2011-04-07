@@ -41,10 +41,16 @@ Right now URL to those services are handled:
 
 You are invited to help us extending also to other services.
 
+Support
+=======
+
+If you find bugs or have a good suggestione, open a ticket at
+http://plone.org/products/redturtle.video/issues/
+
 TODO
 ====
 
-* video transcript
+* video transcript field
 * can be integrated with `stxnext.transform.avi2flv`__?
 * can be integrated wtih `collective.transcode`__?
 
@@ -82,12 +88,19 @@ Thanks to
 Other products
 ==============
 
-Before choosing this product, if you think you need a site with huge video features or simply
-wanna explore where Plone is going when talking of video, take a look at:
+Before choosing this product think about what you want to get from "Plone and Video". We suggest you to use
+redturtle.video when:
 
-* `Plumi`__
-* `Plone Video Suite`__ 
+* The simple use of collective.flowplayer if not enough (you don't like to upload a "File" that magically
+  became a Video? You need remote video support? You need a real new plone content type to make Collections?)
+* The use of `Plumi`__ suite is "too much" (you don't need a full video site, just a simple video support inside
+  you CMS)
+* You need to have Video as real CMS contents, not only use them embedded in document text (a task that you can
+  reach easilly using `collective.embedly`__)
+
+You can also be interested looking at the `Plone Video Suite`__ discussions. 
 
 __ http://plone.org/products/plumi
+__ http://projects.quintagroup.com/products/wiki/collective.embedly
 __ http://www.coactivate.org/projects/plone-video-sprint/project-home
 

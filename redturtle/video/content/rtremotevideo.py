@@ -11,8 +11,6 @@ from Products.ATContentTypes.content.link import ATLink, ATLinkSchema
 from Products.ATContentTypes.content.image import ATImageSchema
 from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
 
-from collective.flowplayer.interfaces import IFlowPlayable
-
 from redturtle.video import videoMessageFactory as _
 from redturtle.video.interfaces import IRTRemoteVideo
 from redturtle.video.config import PROJECTNAME
@@ -47,7 +45,7 @@ schemata.finalizeATCTSchema(RTRemoteVideoSchema, moveDiscussion = False)
 
 class RTRemoteVideo(ATLink, ATCTImageTransform):
     """A link to a video with screenshot"""
-    implements(IRTRemoteVideo, IFlowPlayable)
+    implements(IRTRemoteVideo)
 
     meta_type = "RTRemoteVideo"
     schema = RTRemoteVideoSchema

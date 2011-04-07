@@ -35,6 +35,7 @@ setup(name='redturtle.video',
                         'hachoir_metadata',
                         'hachoir_parser',
                         'collective.flowplayer',
+                        'plone.app.imaging',
                         # -*- Extra requirements: -*-
                         ],
       tests_require=tests_require,
