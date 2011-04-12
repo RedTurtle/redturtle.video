@@ -50,12 +50,9 @@ http://plone.org/products/redturtle.video/issues/
 TODO
 ====
 
-* video transcript field
-* can be integrated with `stxnext.transform.avi2flv`__?
-* can be integrated wtih `collective.transcode`__?
-
-__ http://pypi.python.org/pypi/stxnext.transform.avi2flv/
-__ http://pypi.python.org/pypi/collective.transcode.star
+* video transcript field can be useful?
+* move away, to other packages, all video adapters. It's silly to release a new redturtle.video version if
+  something change on remote services.
 
 Credits
 =======

@@ -22,8 +22,9 @@ class VideoEmbedCode(object):
     ...         return self.remoteUrl
 
     >>> remotevideo = RemoteVideo()
-    >>> print getMultiAdapter((remotevideo, TestRequest()), IVideoEmbedCode)()
-    <a href="http://www.site.com/viedo.mpeg">http://www.site.com/viedo.mpeg</a>
+    >>> adapter = getMultiAdapter((remotevideo, TestRequest()), IVideoEmbedCode)
+    >>> adapter.getVideoLink()
+    'http://www.site.com/viedo.mpeg'
 
     """
     implements(IVideoEmbedCode)
@@ -170,13 +171,9 @@ class GoogleEmbedCode(object):
     >>> adapter.getVideoLink()
     'http://video.google.com/googleplayer.swf?docid=7880614371292254214'
     >>> print adapter()
-    <embed id=VideoPlayback 
-    src=http://video.google.com/googleplayer.swf?docid=7880614371292254214&hl=en&fs=true 
-    style=width:400px;height:326px 
-    allowFullScreen=true 
-    allowScriptAccess=always 
-    type=application/x-shockwave-flash> 
-    </embed>
+    <embed id="VideoPlayback" style="width:400px;height:326px" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docid=7880614371292254214">
+    </embed>...
+
 
     """
     implements(IVideoEmbedCode)
@@ -222,17 +219,8 @@ class MetacafeEmbedCode(object):
     'http://www.metacafe.com/fplayer/4950343/stone_trailer.swf'
 
     >>> print adapter()
-      <embed  
-        src="http://www.metacafe.com/fplayer/4950343/stone_trailer.swf" 
-        width="440" 
-        height="272" 
-        wmode="transparent" 
-        allowFullScreen="true" 
-        allowScriptAccess="always" 
-        name="Metacafe_4950343" 
-        pluginspage="http://www.macromedia.com/go/getflashplayer" 
-        type="application/x-shockwave-flash">
-        </embed>
+    <embed id="VideoPlayback" width="440" height="272" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.metacafe.com/fplayer/4950343/stone_trailer.swf" />...
+
 
     """
     implements(IVideoEmbedCode)

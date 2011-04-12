@@ -25,10 +25,12 @@ First, we must perform some setup.
 
 With that in place, we can go to the portal front page and log in. We will
 do this using the default user from PloneTestCase:
+
     >>> browser.open(portal_url)
 
-We have the login portlet, so let's use that.
+We move on, to the login page.
 
+    >>> browser.open(portal_url+'/login_form')
     >>> browser.getControl(name='__ac_name').value = portal_owner
     >>> browser.getControl(name='__ac_password').value = default_password
     >>> browser.getControl(name='submit').click()
@@ -38,6 +40,7 @@ Adding a new RTRemoteVideo content item
 
 We use the 'Add new' menu to add a new content item.
 
+    >>> browser.open(portal_url)
     >>> browser.getLink('Add new').click()
 
 Then we select the type of item we want to add. In this case we select
@@ -91,17 +94,15 @@ We can add a screenshot/splash image to display it in listing views
 Now our video link have a image
     >>> video_link = portal['rtremotevideo-sample']
     >>> video_link.unrestrictedTraverse('image_large')
-    <Image at /plone/rtremotevideo-sample/image_large>
+    <Image... at /plone/rtremotevideo-sample/image_large>
 
 And related views
-    >>> browser.open('%s/rtremotevideo-sample/image/image_view' % portal_url)
+    >>> browser.open('%s/rtremotevideo-sample/image/image_view_fullscreen' % portal_url)
     >>> print browser.contents
     <!DOCTYPE html PUBLIC...
     ...
-    <img src="http://nohost/plone/rtremotevideo-sample/image_preview" alt="RTRemoteVideo Sample" title="RTRemoteVideo Sample" height="256" width="256" />
+    ...<img src="http://nohost/plone/rtremotevideo-sample/image" alt="RTRemoteVideo Sample" title="RTRemoteVideo Sample" height="256" width="256" />...
     ...
-    ...</html>
-
 
 How to support additional remote services for Video link
 --------------------------------------------------------
