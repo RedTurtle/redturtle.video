@@ -19,6 +19,14 @@
 		
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
+        <div class="documentDescription">
+            <metal:field use-macro="python:here.widget('description', mode='view')">
+            Description
+            </metal:field>
+        </div>
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
         <div class="autoFlowPlayer video videoContent internalVideoContent"
               tal:attributes="style view/scale">
             <a tal:attributes="href view/href;
@@ -42,14 +50,6 @@
         </div>
 
         <metal:video_details use-macro="context/@@redturtlevideo_macros/video_details" />
-
-        <div class="documentDescription">
-            <metal:field use-macro="python:here.widget('description', mode='view')">
-            Description
-            </metal:field>
-        </div>
-
-        <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <form action="">
           <label for="embed" i18n:translate="description_embed">Put this video on your site</label>

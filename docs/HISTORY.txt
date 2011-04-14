@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.4.0 (Unreleased)
+0.4.0 (2011-04-14)
 ------------------
 
 * add metacafe.com and video.google.com adapters [nan010]
@@ -14,8 +14,8 @@ Changelog
   this also fix problems when embedding in documents using TinyMCE [keul]
 * the internal video size is now the uploaded video size (close `#1`__) [keul]
 * simple video links to .flv URL were broken [keul]
-* restored right position for below.contenttitle viewlet manager
-  (reverting changes done in version 0.3.1) [keul]
+* restored right position for a lot of viewlet manager
+  (reverting some changes done in version 0.3.1) [keul]
 * splashscreen image can be used (optionally) as real video splashscreen.
   Now `plone.app.imaging`__ is required (even without ``plone.app.blob``) [keul] 
 * added video size fields; video view and embed code now use it [keul]
