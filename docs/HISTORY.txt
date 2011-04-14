@@ -19,7 +19,7 @@ Changelog
 * splashscreen image can be used (optionally) as real video splashscreen.
   Now `plone.app.imaging`__ is required (even without ``plone.app.blob``) [keul] 
 * added video size fields; video view and embed code now use it [keul]
-* propertly registering in TinyMCE (this close `#5`__) [keul]
+* properly registering types in TinyMCE (this close `#5`__) [keul]
 * external video now provides the ``IFlowPlayable`` interface only when linking
   simple .flv resources. This close `#2`__ [keul]
 * portlet header is not required anymore [keul]
