@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4.1 (Unreleased)
+------------------
+
+* fixed dependency for plone.app.imaging to version 1.0b9 or better [keul]
+
 0.4.0 (2011-04-14)
 ------------------
 

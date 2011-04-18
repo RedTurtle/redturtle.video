@@ -5,7 +5,7 @@ This module contains the tool of redturtle.video
 import os
 from setuptools import setup, find_packages
 
-version = '0.4.0'
+version = '0.4.1dev'
 
 tests_require=['zope.testing']
 
@@ -31,13 +31,13 @@ setup(name='redturtle.video',
       namespace_packages=['redturtle', ],
       include_package_data=True,
       zip_safe=False,
-      install_requires=['Plone',
-                        'setuptools',
+      install_requires=['setuptools',
+                        'Plone',
                         'hachoir_core',
                         'hachoir_metadata',
                         'hachoir_parser',
                         'collective.flowplayer',
-                        'plone.app.imaging',
+                        'plone.app.imaging>=1.0b9',
                         # -*- Extra requirements: -*-
                         ],
       tests_require=tests_require,
