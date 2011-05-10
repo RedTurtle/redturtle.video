@@ -1,7 +1,0 @@
-<embed id=VideoPlayback
-tal:attributes="src view/getVideoLink"
-style="width:400px;height:326px"
-allowFullScreen="true"
-allowScriptAccess="always"
-type="application/x-shockwave-flash">
-</embed>

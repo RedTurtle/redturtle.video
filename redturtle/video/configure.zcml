@@ -79,14 +79,6 @@
       for = "redturtle.video.interfaces.IRTRemoteVideo
              zope.publisher.interfaces.browser.IHTTPRequest"
       provides = "redturtle.video.interfaces.IVideoEmbedCode"
-      factory = "redturtle.video.browser.videoembedcode.GoogleEmbedCode"
-      name= "video.google.com"
-  />
-
-  <adapter
-      for = "redturtle.video.interfaces.IRTRemoteVideo
-             zope.publisher.interfaces.browser.IHTTPRequest"
-      provides = "redturtle.video.interfaces.IVideoEmbedCode"
       factory = "redturtle.video.browser.videoembedcode.MetacafeEmbedCode"
       name= "metacafe.com"
   />

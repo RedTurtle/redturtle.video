@@ -5,13 +5,14 @@ This module contains the tool of redturtle.video
 import os
 from setuptools import setup, find_packages
 
-version = '0.4.1dev'
+version = '0.5.0dev'
 
 tests_require=['zope.testing']
 
 setup(name='redturtle.video',
       version=version,
-      description="Basic video contents for Plone, with collective.flowplayer integration",
+      description="Basic video contents (site's internal and remote) for Plone; "
+                  "use collective.flowplayer but also pluggable with external services",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
