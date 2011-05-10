@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-This module contains the tool of redturtle.video
-"""
+
 import os
 from setuptools import setup, find_packages
 
-version = '0.5.0dev'
+version = '0.5.0'
 
 tests_require=['zope.testing']
 
@@ -20,7 +18,6 @@ setup(name='redturtle.video',
         'Framework :: Plone',
         'Development Status :: 4 - Beta',
         'Topic :: Multimedia :: Video',
-        'Topic :: Software Development :: Libraries :: Python Modules',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         ],
       keywords='plone video flowplayer plonegov',

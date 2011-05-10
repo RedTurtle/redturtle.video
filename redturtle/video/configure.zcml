@@ -63,14 +63,6 @@
       for = "redturtle.video.interfaces.IRTRemoteVideo
              zope.publisher.interfaces.browser.IHTTPRequest"
       provides = "redturtle.video.interfaces.IVideoEmbedCode"
-      factory = "redturtle.video.browser.videoembedcode.YoutubeEmbedCode"
-      name= "youtube.com"
-  />
-
-  <adapter
-      for = "redturtle.video.interfaces.IRTRemoteVideo
-             zope.publisher.interfaces.browser.IHTTPRequest"
-      provides = "redturtle.video.interfaces.IVideoEmbedCode"
       factory = "redturtle.video.browser.videoembedcode.VimeoEmbedCode"
       name= "vimeo.com"
   />

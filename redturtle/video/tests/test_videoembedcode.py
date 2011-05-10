@@ -28,14 +28,6 @@ def setUp(test):
         )
 
     zope.component.provideAdapter(
-            redturtle.video.browser.videoembedcode.YoutubeEmbedCode,
-            (redturtle.video.interfaces.IRTRemoteVideo,
-             zope.publisher.interfaces.browser.IHTTPRequest),
-            provides=redturtle.video.interfaces.IVideoEmbedCode,
-            name='youtube.com'
-        )
-
-    zope.component.provideAdapter(
             redturtle.video.browser.videoembedcode.VimeoEmbedCode,
             (redturtle.video.interfaces.IRTRemoteVideo,
              zope.publisher.interfaces.browser.IHTTPRequest),

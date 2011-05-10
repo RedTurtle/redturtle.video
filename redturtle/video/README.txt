@@ -11,17 +11,20 @@ This add to your Plone portal two new content types:
   formats
 * *Video link* for a remote video resource
 
-
-Video Link - RTRemoteVideo
---------------------------
-We can add a Video link content type to display youtube video in Plone.
-
 First, we must perform some setup.
+
     >>> from Products.Five.testbrowser import Browser
     >>> browser = Browser()
     >>> portal_url = self.portal.absolute_url()
     >>> self.portal.error_log._ignored_exceptions = ()
     >>> from Products.PloneTestCase.setup import portal_owner, default_password
+
+Video File - RTInternalVideo
+==========================
+
+We can add a Video content to display it in Plone using `collective.flowplayer`__.
+
+__ http://pypi.python.org/pypi/collective.flowplayer
 
 With that in place, we can go to the portal front page and log in. We will
 do this using the default user from PloneTestCase:
@@ -34,6 +37,79 @@ We move on, to the login page.
     >>> browser.getControl(name='__ac_name').value = portal_owner
     >>> browser.getControl(name='__ac_password').value = default_password
     >>> browser.getControl(name='submit').click()
+
+We are ready for add the video. 
+
+We use the 'Add new' menu to add a new content item.
+
+    >>> browser.open(portal_url)
+    >>> browser.getLink('Add new').click()
+
+Then we select the type of item we want to add. In this case we select
+'Video Link' and click the 'Add' button to get to the add form.
+    >>> browser.getControl('Video file').click()
+    >>> browser.getControl(name='form.button.Add').click()
+    >>> 'RTInternalVideo' in browser.contents
+    True
+
+Now we fill the form and submit it.
+
+    >>> browser.getControl(label='Title').value = 'RTInternalVideo Sample'
+    >>> browser.getControl(label='Description').value = 'RTInternalVideo short description'
+
+We can add some additional data to video as ``year`` and ``duration``.
+
+    >>> browser.getControl(label='Year').value = '2011'
+
+We dont' specify a duration, as the product itself will get it from the movies metadata.
+
+Finally the video:
+
+    >>> import cStringIO
+    >>> videofile = cStringIO.StringIO(self.getVideoFile())
+    >>> video_control = browser.getControl(name='file_file')
+    >>> video_control.add_file(videofile, 'video/mp4', '1-2-3.mp4')
+
+Let's save and see our results.
+
+    >>> browser.getControl('Save').click()
+    >>> 'Changes saved' in browser.contents
+    True
+
+This is the page content.
+
+    >>> print browser.contents
+    <!DOCTYPE html PUBLIC...
+    ...
+            <div class="autoFlowPlayer video videoContent internalVideoContent" style="height: 480px; width: 640px;">
+                <a style="height: 480px; width: 640px;" href="http://.../rtinternalvideo-sample/at_download/file">
+                    <br />
+    <BLANKLINE>
+                        <span class="flowPlayerMessage discreet">
+                                If your video does not start playing shortly, please ensure
+                                that you have JavaScript enabled and the latest version of
+                                Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
+                                        </span>
+    ...
+                </a>
+            </div>
+    ...
+    ...</html>
+
+Is the video duration correctly in the view?
+
+    >>> '<span>00:00:05</span>' in browser.contents
+    True
+
+Video Link - RTRemoteVideo
+==========================
+
+We can add a Video link content type to display a video taken from an URL.
+
+With that in place, we can go to the portal front page and log in. We will
+do this using the default user from PloneTestCase:
+
+    >>> browser.open(portal_url)
 
 Adding a new RTRemoteVideo content item
 ---------------------------------------
@@ -53,50 +129,60 @@ Then we select the type of item we want to add. In this case we select
 Now we fill the form and submit it.
     >>> browser.getControl(label='Title').value = 'RTRemoteVideo Sample'
     >>> browser.getControl(label='Description').value = 'RTRemoteVideo short description'
-    >>> browser.getControl(label='URL').value = 'http://www.youtube.com/watch?v=f7OLg1AZvr4'
+    >>> browser.getControl(label='URL').value = browser.url+'/rtinternalvideo-sample/at_download/file'
 
-We can add some additional data to video as 'year' and 'duration'
+We can add some additional data to video as ``year`` and ``duration``.
+
     >>> browser.getControl(label='Year').value = '2007'
-    >>> browser.getControl(label='Duration').value = '2.25min'
+    >>> browser.getControl(label='Duration').value = '00:02:25'
 
+We can also use a different size:
+
+    >>> browser.getControl('Video width').value = '500'
+    >>> browser.getControl('Video height').value = '350'
     >>> browser.getControl('Save').click()
     >>> 'Changes saved' in browser.contents
     True
 
+Let's save and see our results.
+
     >>> print browser.contents
     <!DOCTYPE html PUBLIC...
     ...
-    <div class="video-remote">
-    <object width="425" height="344">
-      <param name="movie"
-             value="http://www.youtube.com/v/f7OLg1AZvr4" />
-      <param name="allowFullScreen" value="true" />
-      <param name="allowscriptaccess" value="always" />
-      <embed src="http://www.youtube.com/v/f7OLg1AZvr4"
-             type="application/x-shockwave-flash"
-             allowscriptaccess="always" allowfullscreen="true"
-             width="425" height="344"></embed>
-    </object>
+    <div class="videoContainer">
+        <span class="flowPlayerMessage discreet">
+            If your video does not start playing shortly, please ensure
+            that you have JavaScript enabled and the latest version of
+            Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
+        </span>
+        <a class="autoFlowPlayer video videoContent externalVideoContent" style="width:500px; height:350px;"
+          href="http://.../rtinternalvideo-sample/at_download/file">
+    <BLANKLINE>
+        </a>
+    </div>
     ...
     ...</html>
 
-We can add a screenshot/splash image to display it in listing views
+Se: we are displaying as external video, another (internal) video in this site.
+
+We can add a screenshot/splash image to display it in listing views.
+
     >>> browser.getLink('Edit').click()
-    >>> import cStringIO
     >>> imagefile = cStringIO.StringIO(self.getImage())
     >>> image_control = browser.getControl(name='image_file')
     >>> image_control.add_file(imagefile, 'image/png', 'plone_logo.png')
-
     >>> browser.getControl('Save').click()
     >>> 'Changes saved.' in browser.contents
     True
 
-Now our video link have a image
+Now our video link have a image.
+
     >>> video_link = portal['rtremotevideo-sample']
     >>> video_link.unrestrictedTraverse('image_large')
     <Image... at /plone/rtremotevideo-sample/image_large>
 
-And related views
+And related views.
+
     >>> browser.open('%s/rtremotevideo-sample/image/image_view_fullscreen' % portal_url)
     >>> print browser.contents
     <!DOCTYPE html PUBLIC...

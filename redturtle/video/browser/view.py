@@ -93,7 +93,7 @@ class RemoteVideo(Link):
 
     @memoize
     def getPlayerCode(self):
-        """Return code from youtube player"""
+        """Return code from external service player"""
         video_site = urlparse(self.context.getRemoteUrl())[1].replace('www.','')
         try:
             adapter = getMultiAdapter((self.context, self.request), IVideoEmbedCode, name = video_site)

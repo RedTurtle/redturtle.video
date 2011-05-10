@@ -86,3 +86,12 @@ class FunctionalTestCase(ptc.FunctionalTestCase):
         data = fd.read()
         fd.close()
         return data
+
+    def getVideoFile(self):
+        video = '/'.join(os.path.realpath( __file__ ).split(os.path.sep )[:-2])
+        video = '%s/tests/1-2-3.mp4' % video
+        fd = open(video, 'rb')
+        data = fd.read()
+        fd.close()
+        return data
+

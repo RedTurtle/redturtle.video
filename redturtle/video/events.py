@@ -20,23 +20,25 @@ def _setVideoMetadata(object, name):
         # duration
         try:
             duration = metadata.getItems('duration')
+            if len(duration) >= 1:
+                strdate=str(duration[0].value)
+                strdate=strdate.split('.')
+                strdate=strdate[0]
+                if strdate.startswith('0:'):
+                    strdate = '0' + strdate
+                object.setDuration(strdate)
         except ValueError:
             # no valid data
-            return
-        if len(duration) >= 1:
-            strdate=str(duration[0].value)
-            strdate=strdate.split('.')
-            strdate=strdate[0]
-            object.setDuration(strdate)
+            pass
         # size
         try:
             width = metadata.getItems('width')[0].value
             height = metadata.getItems('height')[0].value
+            object.setWidth(width)
+            object.setHeight(height)
         except ValueError:
             # no valid data
-            return
-        object.setWidth(width)
-        object.setHeight(height)
+            pass
 
 
 def createTempFileInternalVideo(object, event):
