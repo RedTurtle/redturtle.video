@@ -23,7 +23,7 @@
       name="default"
       title="RedTurtle Video"
       directory="profiles/default"
-      description="Basic archetype based video content, integrated with collective.flowplayer"
+      description="Simple video content type, integrated with collective.flowplayer and remote video providers"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

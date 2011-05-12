@@ -17,7 +17,7 @@ VIDEO_SCHEMA=atapi.Schema((
                     
     atapi.BooleanField('useSplashScreen',
                 default=False,
-                schemata="Look",
+                schemata="look",
                 widget = atapi.BooleanWidget(
                     label = _(u'label_use_imge', default=u'Use image as splash screen?'),
                     description = _(u'help_use_imge',
@@ -28,7 +28,7 @@ VIDEO_SCHEMA=atapi.Schema((
     atapi.IntegerField('width',
                 validation=('isInt',),
                 default=251,
-                schemata="Look",
+                schemata="look",
                 widget = atapi.IntegerWidget(
                     label = _(u'label_width', default=u'Video width'),
                     description = '',
@@ -37,7 +37,7 @@ VIDEO_SCHEMA=atapi.Schema((
     atapi.IntegerField('height',
                 validation=('isInt',),
                 default=200,
-                schemata="Look",
+                schemata="look",
                 widget = atapi.IntegerWidget(
                     label = _(u'label_height', default=u'Video height'),
                     description = '',

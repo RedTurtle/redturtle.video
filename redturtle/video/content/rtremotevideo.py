@@ -33,7 +33,7 @@ imageField = ATImageSchema['image'].copy()
 imageField.required = False
 imageField.primary = False
 imageField.widget.description = _(u'help_video_image',
-            default = u'Can be used to provide splash image when needed')
+                                  default = u'Can be used to provide splash image when needed')
 imageField.validators = None
 
 RTRemoteVideoSchema.addField(imageField)

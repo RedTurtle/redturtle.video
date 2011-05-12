@@ -7,8 +7,8 @@ A simple video support for Plone, mainly based on `collective.flowplayer`__.
 
 __ http://pypi.python.org/pypi/collective.flowplayer
 
-New content types
-=================
+Features
+========
 
 This add to your Plone portal two new types:
 
@@ -17,9 +17,12 @@ This add to your Plone portal two new types:
   sites.
 * *Video link* for a remote video resource
 
-Those types have mandatory image field, for the video screenshot/splashscreen data.
-
 Also you can insert the *year* of the video and the *duration*.
+
+A "Look" section will also give you fields for:
+
+* add an optional image field, for the video screenshot/splashscreen data
+* video display size
 
 Internal video
 --------------
@@ -34,35 +37,41 @@ __ http://flowplayer.org/
    :alt: Video file example
 
 If you provided also the image field, this can be used (optionally) as video starting splash image.
-
-No more... all other features came directly from the power of ``collective.flowplayer``.
+All other amazing features came directly from the power of ``collective.flowplayer``.
 
 Remote video
 ------------
 
-Again wrapping ``collective.flowplayer`` features, you can provide a special kind of link that point to
+Always wrapping ``collective.flowplayer`` features, you can provide a special kind of link that point to
 a compatible format resource. Again you can play with all additional fields, adjusting video size and
 metadata.
 
-However the most interesting feature is the support to *URL to 3rd party remote video services* like:
+The link can be to a remote site that host ``flv`` of other compatible types, or a link to an "Video file"
+in the same Plone site.
 
-* Youtube (http://www.youtube.com/)
-* Vimeo (http://vimeo.com/)
-* Metacafe (http://www.metacafe.com/)
-* Google Video (http://video.google.com/)
+Remote video providers
+----------------------
+
+One of the most interesting feature is the support to *URL to 3rd party remote video services* like:
+
+* YouTube (http://www.youtube.com/) - using `collective.rtvideo.youtube`__
+* Vimeo (http://vimeo.com/) - still internal feature
+* Metacafe (http://www.metacafe.com/) - still internal feature
 
 .. image:: http://keul.it/images/plone/redturtle-video-0.4.0-02.png
-   :alt: Video link example
+   :alt: Video link to a YouTube resource
 
 Enhancing this list with additional providers is quite simple (see the `documentation`__ given with the product).
+You are welcome to contribute and release other ``collective.rtvideo.yourpreferredremoteservice`` add-on!
 
+__ http://pypi.python.org/pypi/collective.rtvideo.youtube
 __ http://plone.org/products/redturtle.video/documentation/
 
 Portlet
-=======
+-------
 
 Also this will give you a new "*Video gallery*" portlet, similar to the ones you'll get with
-collective.flowplayer ("Video player").
+``collective.flowplayer`` ("Video player").
 
 This portlet will show links to a configurable set of videos, displaying in the portlet the splash image.
 
@@ -73,6 +82,30 @@ Requirements
 
 Tested on Plone 3.2, 3.3 and 4.0.
 
+Installation
+============
+
+Using buildout::
+
+    [buildout]
+    ...
+    eggs =
+        ...
+        redturtle.video
+
+To add also additional video providers support::
+
+    [buildout]
+    ...
+    eggs =
+        ...
+        redturtle.video
+        collective.rtvideo.youtube
+        ...
+        mycompany.myservice
+
+Plone 3.2 or lower users: don't forget ``zcml`` section.
+
 Support
 =======
 
@@ -82,9 +115,9 @@ http://plone.org/products/redturtle.video/issues/
 TODO
 ====
 
-* video transcript field can be useful?
-* move away, to other packages, all video adapters. It's silly to release a new ``redturtle.video`` version if
-  something change on one of the remote services.
+* video transcript field: can be useful?
+* move away, to other packages named ``collective.rtvideo.xxx``, all video adapters left.
+  It's silly to release a new ``redturtle.video`` version if something change on one of the remote services.
 
 Credits
 =======
@@ -124,9 +157,9 @@ Other products
 ==============
 
 Before choosing this product think about what you want to get from "Plone and Video".
-We strongly suggest you to use redturtle.video only when:
+We strongly suggest you to use ``redturtle.video`` only when:
 
-* The simple use of collective.flowplayer if not enough (you don't like to upload a "File" that magically
+* The simple use of ``collective.flowplayer`` if not enough (you don't like to upload a "File" that magically
   became a Video? You need remote video support? You need a real new plone content type to make Collections?)
 * The use of `Plumi`__ suite is "too much" (you don't need a full video site, just a simple video support inside
   you CMS)

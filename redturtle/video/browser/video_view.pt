@@ -29,15 +29,21 @@
 
         <div class="autoFlowPlayer video videoContent internalVideoContent"
               tal:attributes="style view/scale">
-            <a tal:attributes="href view/href;
-                               style view/scale">
-                <img tal:define="scale context/@@images;
-				                 thumbnail python: scale.scale('image', width=context.getWidth(), height=context.getHeight(), direction='down')"
-				     tal:condition="python:thumbnail and context.hasSplashScreenImage() and context.getUseSplashScreen()"
+            <a class="videoWrapper"
+			   tal:attributes="href view/href;
+                               style view/scale"
+		       tal:define="scale context/@@images;
+				           thumbnail python: scale.scale('image', width=context.getWidth(), height=context.getHeight(), direction='down');
+						   showSplashImage python:thumbnail and context.hasSplashScreenImage() and context.getUseSplashScreen();">
+                <img tal:condition="showSplashImage"
 					 alt="Video splashscreen"
                      tal:attributes="src thumbnail/url;
 					                 width thumbnail/width;
-                                     height thumbnail/height;" /><br/>
+                                     height thumbnail/height;" />
+                <span class="iconPlay"
+				     tal:condition="showSplashImage"
+				     tal:attributes="style python: 'left: %spx;; top: %spx' % ((thumbnail.width/2-42) , (thumbnail.height/2-42));
+									 "></span>
                 <tal:novideo condition="not:context/getUseSplashScreen">
 	                <span class="flowPlayerMessage discreet"
 		                  i18n:translate="video_fallback">

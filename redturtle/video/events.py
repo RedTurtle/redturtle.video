@@ -27,17 +27,22 @@ def _setVideoMetadata(object, name):
                 if strdate.startswith('0:'):
                     strdate = '0' + strdate
                 object.setDuration(strdate)
+        # no valid data
         except ValueError:
-            # no valid data
             pass
+        except IndexError:
+            pass
+
         # size
         try:
             width = metadata.getItems('width')[0].value
             height = metadata.getItems('height')[0].value
             object.setWidth(width)
             object.setHeight(height)
+        # no valid data
         except ValueError:
-            # no valid data
+            pass
+        except IndexError:
             pass
 
 

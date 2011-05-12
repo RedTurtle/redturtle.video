@@ -82,14 +82,7 @@ This is the page content.
     <!DOCTYPE html PUBLIC...
     ...
             <div class="autoFlowPlayer video videoContent internalVideoContent" style="height: 480px; width: 640px;">
-                <a style="height: 480px; width: 640px;" href="http://.../rtinternalvideo-sample/at_download/file">
-                    <br />
-    <BLANKLINE>
-                        <span class="flowPlayerMessage discreet">
-                                If your video does not start playing shortly, please ensure
-                                that you have JavaScript enabled and the latest version of
-                                Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
-                                        </span>
+                <a class="videoWrapper" style="height: 480px; width: 640px;" href="http://.../rtinternalvideo-sample/at_download/file">
     ...
                 </a>
             </div>
@@ -150,12 +143,8 @@ Let's save and see our results.
     <!DOCTYPE html PUBLIC...
     ...
     <div class="videoContainer">
-        <span class="flowPlayerMessage discreet">
-            If your video does not start playing shortly, please ensure
-            that you have JavaScript enabled and the latest version of
-            Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
-        </span>
-        <a class="autoFlowPlayer video videoContent externalVideoContent" style="width:500px; height:350px;"
+    ...
+        <a class="autoFlowPlayer video videoContent externalVideoContent videoWrapper" style="width:500px; height:350px;"
           href="http://.../rtinternalvideo-sample/at_download/file">
     <BLANKLINE>
         </a>
@@ -221,27 +210,27 @@ Select embed video and copy the embedcode::
 Get rid of all markup that is not really needed to embed the video::
 
     <embed
-        src="http://www.metacafe.com/fplayer/4950343/stone_trailer.swf"
-        width="440"
-        height="272"
-        allowFullScreen="true"
-        allowScriptAccess="always"
-        type="application/x-shockwave-flash">
+           src="http://www.metacafe.com/fplayer/4950343/stone_trailer.swf"
+           width="440"
+           height="272"
+           allowFullScreen="true"
+           allowScriptAccess="always"
+           type="application/x-shockwave-flash">
         </embed>
 
-Now create your package, like *collective.rtvideo.metacafe* (again, remember this is an example).
+Now create your package, like **collective.rtvideo.metacafe** (again, remember this is an example).
 
-In this prodoct, like redturtle.video does, create a new template like *metacafeembedcode_template.pt*::
+In this prodoct, like redturtle.video does, create a new template like ``metacafeembedcode_template.pt``::
 
     <embed id=VideoPlayback
-    width="440"
-    height="272"
-    tal:attributes="src view/getVideoLink"
-    allowFullScreen="true"
-    allowScriptAccess="always"
-    type="application/x-shockwave-flash" />
+           width="440"
+           height="272"
+           tal:attributes="src view/getVideoLink"
+           allowFullScreen="true"
+           allowScriptAccess="always"
+           type="application/x-shockwave-flash" />
 
-Create also a *videoembedcode.py* and add a new class *MetacafeEmbedCode*.
+Create also a ``videoembedcode.py`` and add a new class ``MetacafeEmbedCode``.
 
 Copy and paste from the classes you'll find in *redturtle.video*.
 The main task is to find out how to translate the URL on the site to the
@@ -258,9 +247,9 @@ Now configure your adapter for your embed code::
 	             zope.publisher.interfaces.browser.IHTTPRequest"
 	      provides = "redturtle.video.interfaces.IVideoEmbedCode"
 	      factory = "redturtle.video.browser.videoembedcode.MetacafeEmbedCode"
-	      name= 'www.metacafe.com'
+	      name="metacafe.com"
 	  />
 
 
-write some tests that everything is OK and thats it ;-)
+Write some tests that everything is OK and thats it ;-)
 

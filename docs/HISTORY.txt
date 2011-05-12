@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.5.0 (Unreleased)
+0.5.0 (2011-05-12)
 ------------------
 
 * fixed dependency for plone.app.imaging to version 1.0b9 or better [keul]
@@ -11,6 +11,11 @@ Changelog
 * typo error bug fixed: Vimeo embed view was using YouTube template [keul]
 * now also remote video use size fields for the view [keul]
 * XHTML fix for Metacafe template [keul]
+* Fixed a bug that break saving an internalvideo,
+  when metadata can't be extracted [keul]
+* when using splashscreen image, also display a "Play" icon on the image
+  [nekorin]
+* translations fixes [keul]
 
 __ http://plone.org/products/redturtle.video/issues/6
 __ http://pypi.python.org/pypi/collective.rtvideo.youtube

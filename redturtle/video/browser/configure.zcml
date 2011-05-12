@@ -42,4 +42,13 @@
         class=".migrateblobs.MigrateBlobs"
         permission="cmf.ManagePortal" />
 
+    <browser:resource
+	    name="fpPlayButtonBig.png"
+		file="fpPlayButtonBig.png" />
+
+    <browser:resource
+	    name="fl-play.css"
+		file="fl-play.css" />
+
+
 </configure>
