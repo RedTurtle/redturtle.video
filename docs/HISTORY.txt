@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.5.1 (Unreleased)
+------------------
+
+* restored "i18n" folder for translate the ``plone`` domain
+  (translation with locales sometimes sucks) [keul]
+
 0.5.0 (2011-05-12)
 ------------------
 
