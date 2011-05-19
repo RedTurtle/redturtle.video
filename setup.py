@@ -3,7 +3,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '0.5.1dev'
+version = '0.5.1'
 
 tests_require=['zope.testing']
 
@@ -16,7 +16,7 @@ setup(name='redturtle.video',
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Topic :: Multimedia :: Video',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         ],

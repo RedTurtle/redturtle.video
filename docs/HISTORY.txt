@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.5.1 (Unreleased)
+0.5.1 (2011-05-19)
 ------------------
 
 * restored "i18n" folder for translate the ``plone`` domain
@@ -12,7 +12,7 @@ Changelog
 
 * fixed dependency for plone.app.imaging to version 1.0b9 or better [keul]
 * removed support for video.google.com videos (close `#6`__) [keul]
-* removed support for youtube video. moved to `collective.rtvideo.youtube`__
+* removed support for youtube video, moved to `collective.rtvideo.youtube`__
   this is part of ticket `#7`__ [keul]
 * typo error bug fixed: Vimeo embed view was using YouTube template [keul]
 * now also remote video use size fields for the view [keul]
