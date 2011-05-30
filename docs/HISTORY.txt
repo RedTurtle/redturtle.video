@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.5.2 (2011-05-30)
+------------------
+
+* file field for RTInternalVideo content is defined
+  as primary also with blobs, so can be used with FTP/WEB-DAV uploads
+  [keul]
+* RTInternalVideo now register himself for video content in the
+  ``content_type_registry`` [keul]
+
 0.5.1 (2011-05-19)
 ------------------
 

@@ -39,10 +39,10 @@ imageField.validators = None
 RTInternalVideoSchema.addField(imageField)
 RTInternalVideoSchema.moveField('image', after='file')
 
-fileFied = RTInternalVideoSchema['file']
-fileFied.widget.label = _(u'label_video_file',
+fileField = RTInternalVideoSchema['file']
+fileField.widget.label = _(u'label_video_file',
                           default=u'Video file')
-fileFied.widget.description = _(u'help_video_file',
+fileField.widget.description = _(u'help_video_file',
                                 default=u'Put there the video file in a compatible format')
 
 schemata.finalizeATCTSchema(RTInternalVideoSchema, moveDiscussion=False)

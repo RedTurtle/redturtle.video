@@ -27,6 +27,7 @@ class RemoteVideoATTypeExtender(object):
                 description=RTInternalVideoSchema['file'].widget.description,
             ),
             required=True,
+            primary=True,
             validators=('isNonEmptyFile'),
         ),
 

@@ -130,11 +130,14 @@ Developed with the support of:
      :alt: City of Modena - logo
   
 * `Regione Emilia Romagna`__
+
+* `Guardia di Finanza`__
   
 All of them supports the `PloneGov initiative`__.
 
 __ http://www.comune.modena.it/
 __ http://www.regione.emilia-romagna.it/
+__ http://www.gdf.gov.it/
 __ http://www.plonegov.it/
 
 Authors
