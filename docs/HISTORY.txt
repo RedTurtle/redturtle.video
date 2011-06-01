@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.5.3 (Unreleased)
+------------------
+
+* update imports to support latest zope.formlib release, which is
+  pinned in 4.1 release [mamico]
+
 0.5.2 (2011-05-30)
 ------------------
 

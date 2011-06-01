@@ -2,7 +2,10 @@
 
 from zope.interface import Interface
 from zope.formlib import form
-from Products.Five.formlib import formbase
+try: # >= 4.1
+    from five.formlib import formbase
+except ImportError: # < 4.1
+    from Products.Five.formlib import formbase
 from redturtle.video.migrator import migrateRTInternalVideo
 from Products.statusmessages.interfaces import IStatusMessage
 
