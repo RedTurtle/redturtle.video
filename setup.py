@@ -3,7 +3,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '0.5.2'
+version = '0.5.3dev'
 
 tests_require=['zope.testing']
 
@@ -30,7 +30,7 @@ setup(name='redturtle.video',
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
-                        'Plone',
+                        'Products.CMFPlone',
                         'hachoir_core',
                         'hachoir_metadata',
                         'hachoir_parser',

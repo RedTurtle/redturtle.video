@@ -6,6 +6,10 @@ Changelog
 
 * update imports to support latest zope.formlib release, which is
   pinned in 4.1 release [mamico]
+* dependency on ``Products.CMFPlone`` instead of ``Plone``, for
+  Plone 4.1 compatibility (see `documentation`__) [keul]
+
+__ http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.0-to-4.1/updating-add-on-products-for-plone-4.1/changing-dependencies-from-plone-to-products.cmfplone
 
 0.5.2 (2011-05-30)
 ------------------
