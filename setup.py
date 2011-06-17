@@ -7,6 +7,21 @@ version = '0.5.3dev'
 
 tests_require=['zope.testing']
 
+install_requires = ['setuptools',
+                    'hachoir_core',
+                    'hachoir_metadata',
+                    'hachoir_parser',
+                    'collective.flowplayer',
+                    'plone.app.imaging>=1.0b9',
+                    ]
+
+# what I read there seems not working propery for Plone 3.3
+# http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.0-to-4.1/referencemanual-all-pages
+if sys.version_info < (2, 6):
+    install_requires.append('Plone')
+else:
+    install_requires.append('Products.CMFPlone')
+
 setup(name='redturtle.video',
       version=version,
       description="Basic video contents (site's internal and remote) for Plone; "
@@ -29,15 +44,7 @@ setup(name='redturtle.video',
       namespace_packages=['redturtle', ],
       include_package_data=True,
       zip_safe=False,
-      install_requires=['setuptools',
-                        'Products.CMFPlone',
-                        'hachoir_core',
-                        'hachoir_metadata',
-                        'hachoir_parser',
-                        'collective.flowplayer',
-                        'plone.app.imaging>=1.0b9',
-                        # -*- Extra requirements: -*-
-                        ],
+      install_requires=install_requires,
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
       test_suite = 'redturtle.video.tests.test_doctest.test_suite',
