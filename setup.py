@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os
+import os, sys
 from setuptools import setup, find_packages
 
 version = '0.5.3dev'
