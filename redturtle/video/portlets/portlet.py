@@ -20,7 +20,8 @@ from redturtle.video.interfaces import IRTVideo
 from redturtle.video import videoMessageFactory as _
 
 from Products.CMFCore.utils import getToolByName
-
+from zope.component import getMultiAdapter
+from Acquisition import aq_inner
 
 def getImageUrl(resource):
     if ((IRTVideo.providedBy(resource) and \
@@ -106,11 +107,14 @@ class Renderer(base.Renderer):
         return len(self.videos()) > 0
 
     def target_url(self):
-        target = self.target()
+        target=self.target()
         if target is None:
             return None
-        else:
+        plone_view = getMultiAdapter((aq_inner(target), self.request), name='plone')
+        if plone_view.isStructuralFolder():
             return target.absolute_url()
+        else:
+            return "%s/view" %target.absolute_url()
 
     @memoize
     def videos(self):

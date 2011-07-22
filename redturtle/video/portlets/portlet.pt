@@ -2,7 +2,7 @@
     i18n:domain="redturtle.video"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    tal:define="target_url string:${view/target_url}/view">
+    tal:define="target_url view/target_url">
 
     <dt class="portletHeader"
 	    tal:condition="view/data/header">
