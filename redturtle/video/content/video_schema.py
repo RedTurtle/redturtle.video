@@ -27,7 +27,7 @@ VIDEO_SCHEMA=atapi.Schema((
 
     atapi.IntegerField('width',
                 validation=('isInt',),
-                default=251,
+                default_method="getDefaultWidth",
                 schemata="look",
                 widget = atapi.IntegerWidget(
                     label = _(u'label_width', default=u'Video width'),
@@ -36,7 +36,7 @@ VIDEO_SCHEMA=atapi.Schema((
 
     atapi.IntegerField('height',
                 validation=('isInt',),
-                default=200,
+                default_method="getDefaultHeight",
                 schemata="look",
                 widget = atapi.IntegerWidget(
                     label = _(u'label_height', default=u'Video height'),

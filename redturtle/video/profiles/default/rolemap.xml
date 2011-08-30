@@ -5,10 +5,12 @@
     <permission name="redturtle.video: Add RTRemoteVideo" acquire="False">
       <role name="Manager" />
       <role name="Contributor" />
+      <role name="Site Administrator"/>
     </permission>
     <permission name="redturtle.video: Add RTInternalVideo" acquire="False">
       <role name="Manager" />
       <role name="Contributor" />
+      <role name="Site Administrator"/>
     </permission>
   </permissions>
 </rolemap>

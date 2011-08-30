@@ -17,7 +17,7 @@ from collective.flowplayer.interfaces import IFlowPlayable
 from redturtle.video import videoMessageFactory as _
 from redturtle.video.interfaces import IRTInternalVideo
 from redturtle.video.config import PROJECTNAME
-
+from redturtle.video.content.default import DefaultVideo
 from redturtle.video.content.video_schema import VIDEO_SCHEMA
 
 RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA
@@ -48,7 +48,7 @@ fileField.widget.description = _(u'help_video_file',
 schemata.finalizeATCTSchema(RTInternalVideoSchema, moveDiscussion=False)
 
 
-class RTInternalVideo(base.ATCTContent, ATCTImageTransform):
+class RTInternalVideo(base.ATCTContent, ATCTImageTransform, DefaultVideo):
     """A video file with screenshot"""
     implements(IRTInternalVideo, IFlowPlayable)
 

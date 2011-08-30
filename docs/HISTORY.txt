@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.5.3 (Unreleased)
+0.6.0 (Unreleased)
 ------------------
 
 * update imports to support latest zope.formlib release, which is
@@ -9,7 +9,14 @@ Changelog
 * dependency on ``Products.CMFPlone`` instead of ``Plone``, for
   Plone 4.1 compatibility (see `documentation`__) [keul]
 * fixed target_url if the target is a folder [micecchi]
+* removed support for "Vimeo" service, moved away in the `collective.rtvideo.vimeo`__ package.
+  This partially close ticket `#7`__ [keul]
+* added two ZMI properties to controls default video size when creating new contents. Also the default
+  size has been changed to 400x300 [keul]
+
 __ http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.0-to-4.1/updating-add-on-products-for-plone-4.1/changing-dependencies-from-plone-to-products.cmfplone
+__ http://pypi.python.org/pypi/collective.rtvideo.vimeo
+__ http://plone.org/products/redturtle.video/issues/7
 
 0.5.2 (2011-05-30)
 ------------------

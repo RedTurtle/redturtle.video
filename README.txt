@@ -77,10 +77,16 @@ This portlet will show links to a configurable set of videos, displaying in the 
 
 You can still use basic "Video player" portlet given by ``collective.flowplayer``.
 
+Default size
+------------
+
+Default video size (that you can change from the "Look" fieldset) is 400x300. You can change this default
+going to ZMI, in ``portal_properties`` and change values in ``redturtle_video_properties``.
+
 Requirements
 ============
 
-Tested on Plone 3.2, 3.3 and 4.0.
+Tested on Plone 3.3, 4.0 and 4.1
 
 Installation
 ============

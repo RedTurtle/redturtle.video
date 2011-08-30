@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_properties">
+ <object name="redturtle_video_properties" meta_type="Plone Property Sheet">
+  <property name="title">RedTurtle Video properties</property>
+
+  <!-- properties are set in setuphandler.py -->  
+
+ </object>
+</object>

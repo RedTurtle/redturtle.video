@@ -14,7 +14,7 @@ from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
 from redturtle.video import videoMessageFactory as _
 from redturtle.video.interfaces import IRTRemoteVideo
 from redturtle.video.config import PROJECTNAME
-
+from redturtle.video.content.default import DefaultVideo
 from redturtle.video.content.video_schema import VIDEO_SCHEMA
 
 RTRemoteVideoSchema = ATLinkSchema + VIDEO_SCHEMA + atapi.Schema((
@@ -43,7 +43,7 @@ RTRemoteVideoSchema['remoteUrl'].widget.size = 60
 schemata.finalizeATCTSchema(RTRemoteVideoSchema, moveDiscussion = False)
 
 
-class RTRemoteVideo(ATLink, ATCTImageTransform):
+class RTRemoteVideo(ATLink, ATCTImageTransform, DefaultVideo):
     """A link to a video with screenshot"""
     implements(IRTRemoteVideo)
 

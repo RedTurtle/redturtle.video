@@ -35,6 +35,16 @@
       <depends name="catalog.xml"/>
   </genericsetup:importStep>
 
+  <genericsetup:upgradeStep
+        title="Upgrade RedTurtle Video"
+        description="Migrates RedTurtle Video to 0.6"
+        source="*"
+        destination="1000"
+        handler=".setuphandlers.migrateTo060rc1"
+        sortkey="1"
+        profile="redturtle.video:default"
+    />
+
   <subscriber
     for=".interfaces.IRTInternalVideo
          Products.Archetypes.interfaces.IObjectInitializedEvent"
@@ -58,14 +68,6 @@
       provides = "redturtle.video.interfaces.IVideoEmbedCode"
       factory = "redturtle.video.browser.videoembedcode.VideoEmbedCode"
       />
-
-  <adapter
-      for = "redturtle.video.interfaces.IRTRemoteVideo
-             zope.publisher.interfaces.browser.IHTTPRequest"
-      provides = "redturtle.video.interfaces.IVideoEmbedCode"
-      factory = "redturtle.video.browser.videoembedcode.VimeoEmbedCode"
-      name= "vimeo.com"
-  />
 
   <adapter
       for = "redturtle.video.interfaces.IRTRemoteVideo
