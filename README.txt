@@ -55,7 +55,7 @@ Remote video providers
 One of the most interesting feature is the support to *URL to 3rd party remote video services* like:
 
 * YouTube (http://www.youtube.com/) - using `collective.rtvideo.youtube`__
-* Vimeo (http://vimeo.com/) - still internal feature
+* Vimeo (http://vimeo.com/) - using `collective.rtvideo.vimeo`__
 * Metacafe (http://www.metacafe.com/) - still internal feature
 
 .. image:: http://keul.it/images/plone/redturtle-video-0.4.0-02.png
@@ -65,6 +65,7 @@ Enhancing this list with additional providers is quite simple (see the `document
 You are welcome to contribute and release other ``collective.rtvideo.yourpreferredremoteservice`` add-on!
 
 __ http://pypi.python.org/pypi/collective.rtvideo.youtube
+__ http://pypi.python.org/pypi/collective.rtvideo.vimeo
 __ http://plone.org/products/redturtle.video/documentation/
 
 Portlet
