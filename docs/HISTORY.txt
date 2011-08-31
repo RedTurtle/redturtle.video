@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.6.0 (Unreleased)
+0.6.0 (2011-08-31)
 ------------------
 
 * update imports to support latest zope.formlib release, which is
