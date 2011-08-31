@@ -27,14 +27,6 @@ def setUp(test):
             provides=redturtle.video.interfaces.IVideoEmbedCode
         )
 
-    zope.component.provideAdapter(
-            redturtle.video.browser.videoembedcode.MetacafeEmbedCode,
-            (redturtle.video.interfaces.IRTRemoteVideo,
-             zope.publisher.interfaces.browser.IHTTPRequest),
-            provides=redturtle.video.interfaces.IVideoEmbedCode,
-            name='metacafe.com'
-        )
-
 def test_suite():
     return unittest.TestSuite((
         doctest.DocTestSuite(redturtle.video.browser.videoembedcode,

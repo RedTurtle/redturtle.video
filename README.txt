@@ -55,8 +55,8 @@ Remote video providers
 One of the most interesting feature is the support to *URL to 3rd party remote video services* like:
 
 * YouTube (http://www.youtube.com/) - using `collective.rtvideo.youtube`__
-* Vimeo (http://vimeo.com/) - using `collective.rtvideo.vimeo`__
-* Metacafe (http://www.metacafe.com/) - still internal feature
+* Vimeo (http://www.vimeo.com/) - using `collective.rtvideo.vimeo`__
+* Metacafe (http://www.metacafe.com/) - using `collective.rtvideo.metacafe`__
 
 .. image:: http://keul.it/images/plone/redturtle-video-0.4.0-02.png
    :alt: Video link to a YouTube resource
@@ -66,6 +66,7 @@ You are welcome to contribute and release other ``collective.rtvideo.yourpreferr
 
 __ http://pypi.python.org/pypi/collective.rtvideo.youtube
 __ http://pypi.python.org/pypi/collective.rtvideo.vimeo
+__ http://pypi.python.org/pypi/collective.rtvideo.metacafe
 __ http://plone.org/products/redturtle.video/documentation/
 
 Portlet
@@ -123,8 +124,6 @@ TODO
 ====
 
 * video transcript field: can be useful?
-* move away, to other packages named ``collective.rtvideo.xxx``, all video adapters left.
-  It's silly to release a new ``redturtle.video`` version if something change on one of the remote services.
 
 Credits
 =======
@@ -139,12 +138,18 @@ Developed with the support of:
 * `Regione Emilia Romagna`__
 
 * `Guardia di Finanza`__
+
+* `Camera di Commercio di Ferrara`__
+  
+  .. image:: http://www.fe.camcom.it/cciaa-logo.png/
+     :alt: CCIAA Ferrara - logo
   
 All of them supports the `PloneGov initiative`__.
 
 __ http://www.comune.modena.it/
 __ http://www.regione.emilia-romagna.it/
 __ http://www.gdf.gov.it/
+__ http://www.fe.camcom.it/
 __ http://www.plonegov.it/
 
 Authors
@@ -160,8 +165,8 @@ Thanks to
 ---------
 
 * *Giorgio Borelli* (gborelli) for adding tests, fixing issues and providing *Vimeo* support.
-* *Christian Ledermann* (nan010) for providing Google Video, Metacafe support and, not
-  last, good documentation.
+* *Christian Ledermann* (nan010) for providing *Google Video*, *Metacafe* support and, not
+  last, very good documentation.
 
 Other products
 ==============
@@ -178,7 +183,9 @@ We strongly suggest you to use ``redturtle.video`` only when:
 
 You can also be interested looking at the `Plone Video Suite`__ discussions. 
 
+Another very interesting approach is the one used in `collective.mediaelementjs`__.
+
 __ http://plone.org/products/plumi
 __ http://projects.quintagroup.com/products/wiki/collective.embedly
 __ http://www.coactivate.org/projects/plone-video-sprint/project-home
-
+__ http://pypi.python.org/pypi/collective.mediaelementjs

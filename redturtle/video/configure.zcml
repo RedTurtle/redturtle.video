@@ -69,14 +69,6 @@
       factory = "redturtle.video.browser.videoembedcode.VideoEmbedCode"
       />
 
-  <adapter
-      for = "redturtle.video.interfaces.IRTRemoteVideo
-             zope.publisher.interfaces.browser.IHTTPRequest"
-      provides = "redturtle.video.interfaces.IVideoEmbedCode"
-      factory = "redturtle.video.browser.videoembedcode.MetacafeEmbedCode"
-      name= "metacafe.com"
-  />
-
   <subscriber for=".interfaces.IRTRemoteVideo
                    zope.lifecycleevent.interfaces.IObjectModifiedEvent"
               handler=".events.externalVideoModified"

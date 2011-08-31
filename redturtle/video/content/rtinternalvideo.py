@@ -20,7 +20,7 @@ from redturtle.video.config import PROJECTNAME
 from redturtle.video.content.default import DefaultVideo
 from redturtle.video.content.video_schema import VIDEO_SCHEMA
 
-RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA
+RTInternalVideoSchema = ATFileSchema.copy().copy() + VIDEO_SCHEMA.copy()
 
 # Set storage on fields copied from ATContentTypeSchema, making sure
 # they work well with the python bridge properties.

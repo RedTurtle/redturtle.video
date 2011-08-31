@@ -17,7 +17,7 @@ from redturtle.video.config import PROJECTNAME
 from redturtle.video.content.default import DefaultVideo
 from redturtle.video.content.video_schema import VIDEO_SCHEMA
 
-RTRemoteVideoSchema = ATLinkSchema + VIDEO_SCHEMA + atapi.Schema((
+RTRemoteVideoSchema = ATLinkSchema.copy() + VIDEO_SCHEMA.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
 

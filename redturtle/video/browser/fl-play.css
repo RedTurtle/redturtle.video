@@ -5,7 +5,7 @@
 .videoWrapper {
     position: relative;
     display: block;
-    z-index: 100;
+    /* z-index: 100; */
 }
 
 .iconPlay {
@@ -16,6 +16,6 @@
     display: block;
     top: 50%;
     left: 50%;
-    z-index: 102;
+    /* z-index: 102; */
 }
 
