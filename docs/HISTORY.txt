@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.7.0 (Unreleased)
+------------------
+
+* added a ``@@flowplayer-video-migration`` for migrate base Plone Flowplayer enabled contents to be transformed
+  in RedTurtle Video contents [keul] 
+
 0.6.0 (2011-08-31)
 ------------------
 
