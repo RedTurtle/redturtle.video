@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-05-18 08:13+0000\n"
+"POT-Creation-Date: 2011-09-28 09:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,19 +25,28 @@ msgstr ""
 msgid "A video file with screenshot"
 msgstr ""
 
-#: ./browser/migrateblobs.py:39
+#: ./browser/migrateblobs.py:42
+#: ./browser/migrateflowplayable.py:33
 msgid "Cancel"
 msgstr ""
 
-#: ./browser/migrateblobs.py:26
+#: ./browser/migrateflowplayable.py:24
+msgid "Migrate Flowplayer video files"
+msgstr ""
+
+#: ./browser/migrateblobs.py:29
 msgid "Migrate Internal video"
+msgstr ""
+
+#: ./browser/migrateflowplayable.py:30
+msgid "Nothing to migrate"
 msgstr ""
 
 #: ./profiles/default/types/RTInternalVideo.xml
 msgid "Video file"
 msgstr ""
 
-#: ./portlets/portlet.py:97
+#: ./portlets/portlet.py:98
 msgid "Video gallery"
 msgstr ""
 
@@ -51,32 +60,32 @@ msgid "description_embed"
 msgstr ""
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:184
+#: ./portlets/portlet.py:188
 msgid "help_add_video_portlet"
 msgstr ""
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:197
+#: ./portlets/portlet.py:201
 msgid "help_edit_video_portlet"
 msgstr ""
 
 #. Default: "Enter a number greater than 0 to limit the number of items displayed"
-#: ./portlets/portlet.py:63
+#: ./portlets/portlet.py:64
 msgid "help_number_of_videos_to_show"
 msgstr ""
 
 #. Default: "Title of the rendered portlet"
-#: ./portlets/portlet.py:43
+#: ./portlets/portlet.py:44
 msgid "help_portlet_header"
 msgstr ""
 
 #. Default: "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
-#: ./portlets/portlet.py:71
+#: ./portlets/portlet.py:72
 msgid "help_show_more_link"
 msgstr ""
 
 #. Default: "This can be a file containing an video content, or a folder or collection containing videos"
-#: ./portlets/portlet.py:49
+#: ./portlets/portlet.py:50
 msgid "help_target_object"
 msgstr ""
 
@@ -97,7 +106,7 @@ msgid "help_video_image"
 msgstr ""
 
 #. Default: "Add Video Portlet"
-#: ./portlets/portlet.py:182
+#: ./portlets/portlet.py:186
 msgid "label_add_video_portlet"
 msgstr ""
 
@@ -107,7 +116,7 @@ msgid "label_duration"
 msgstr ""
 
 #. Default: "Edit Video Portlet"
-#: ./portlets/portlet.py:195
+#: ./portlets/portlet.py:199
 msgid "label_edit_video_portlet"
 msgstr ""
 
@@ -134,22 +143,22 @@ msgid "label_info_year"
 msgstr ""
 
 #. Default: "Number of videos to show"
-#: ./portlets/portlet.py:61
+#: ./portlets/portlet.py:62
 msgid "label_number_of_videos_to_show"
 msgstr ""
 
 #. Default: "Portlet header"
-#: ./portlets/portlet.py:41
+#: ./portlets/portlet.py:42
 msgid "label_portlet_header"
 msgstr ""
 
 #. Default: "Show \"more...\" link"
-#: ./portlets/portlet.py:69
+#: ./portlets/portlet.py:70
 msgid "label_show_more_link"
 msgstr ""
 
 #. Default: "Target object"
-#: ./portlets/portlet.py:47
+#: ./portlets/portlet.py:48
 msgid "label_target_object"
 msgstr ""
 
@@ -174,7 +183,7 @@ msgid "label_year"
 msgstr ""
 
 #. Default: "You need to install \"Products.contentmigration\" product for perform the task"
-#: ./browser/migrateblobs.py:33
+#: ./browser/migrateblobs.py:36
 msgid "migration_error_msg"
 msgstr ""
 
