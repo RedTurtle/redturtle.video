@@ -4,8 +4,9 @@ Changelog
 0.7.0 (Unreleased)
 ------------------
 
-* added a ``@@flowplayer-video-migration`` for migrate base Plone Flowplayer enabled contents to be transformed
-  in RedTurtle Video contents [keul] 
+* added a ``@@flowplayer-video-migration`` for migrate base Plone Flowplayer enabled contents to RedTurtle Video contents
+  [keul]
+* updated documentation related to iOS devices [keul]
 
 0.6.0 (2011-08-31)
 ------------------

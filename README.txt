@@ -39,6 +39,33 @@ __ http://flowplayer.org/
 If you provided also the image field, this can be used (optionally) as video starting splash image.
 All other amazing features came directly from the power of ``collective.flowplayer``.
 
+Migrate from basic collective.flowplayer file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you already used ``collective.flowplayer`` in your site for manage internal video and now you want
+to migrate them to RedTurtle "Video file" contents, you can use the ``@@flowplayer-video-migration`` view.
+You need to have installed also `Products.contentmigration`__.
+
+__ http://pypi.python.org/pypi/Products.contentmigration
+
+Please, **backup** your data before trying this!
+
+iOS devices compatibility
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using collective.flowplayer you have no compatiblity with iPhone/iPad/iWhatever devices as far as they
+don't support Flash technology.
+
+Using RedTurtle Video and providing:
+
+* a splash screen image
+* a compatible video format like *mp4*
+
+...you will be able to use also those kind of devices.
+
+.. image:: http://keul.it/images/plone/redturtle.video-0.7.0-01.png
+   :alt: A Video file with iPhone
+
 Remote video
 ------------
 
