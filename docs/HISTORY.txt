@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.7.1 (Unreleased)
+------------------
+
+* TODO - blob file field have a different meta_type that make the migration walker fail
+* TODO - get the duration from the converted video
+
 0.7.0 (2011-09-28)
 ------------------
 
