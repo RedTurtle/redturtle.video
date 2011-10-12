@@ -202,9 +202,9 @@ Before choosing this product think about what you want to get from "Plone and Vi
 We strongly suggest you to use ``redturtle.video`` only when:
 
 * The simple use of ``collective.flowplayer`` if not enough (you don't like to upload a "File" that magically
-  became a Video? You need remote video support? You need a real new plone content type to make Collections?)
+  became a Video? You need remote video support? You need a real new Plone content type to make Collections?)
 * The use of `Plumi`__ suite is "too much" (you don't need a full video site, just a simple video support inside
-  you CMS)
+  your CMS)
 * You need to have Video as real CMS contents, not only use them embedded in document text (a task that you can
   reach easily using `collective.embedly`__)
 
