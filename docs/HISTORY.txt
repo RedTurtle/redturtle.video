@@ -4,8 +4,12 @@ Changelog
 0.7.1 (Unreleased)
 ------------------
 
-* TODO - blob file field have a different meta_type that make the migration walker fail
+* the ``flowplayer-video-migration``view can be called on a different context that isn't portal
+  root, and migrate only files in that subtree [keul]
+* blob file field have a different meta_type that make the migration walker fail.
+  Not supported both ATFile and ATBlob [keul]
 * TODO - get the duration from the converted video
+* TODO - the embed macro view must be public
 
 0.7.0 (2011-09-28)
 ------------------

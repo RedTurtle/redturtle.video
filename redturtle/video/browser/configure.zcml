@@ -41,9 +41,10 @@
         name="blob-video-migration"
         class=".migrateblobs.MigrateBlobs"
         permission="cmf.ManagePortal" />
+
     <browser:page
         zcml:condition="installed Products.contentmigration"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        for="*"
         name="flowplayer-video-migration"
         class=".migrateflowplayable.MigrateFlowplayerFile"
         permission="cmf.ManagePortal" />

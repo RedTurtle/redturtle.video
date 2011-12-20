@@ -25,7 +25,8 @@ class MigrateFlowplayerFile(formbase.PageForm):
     def actionMigrate(self, action, data):
         output = migrateFlowplayerToRedTurtleVideo(self.context)
         if output:
-            IStatusMessage(self.request).addStatusMessage(output, type='info')
+            for o in output:
+                IStatusMessage(self.request).addStatusMessage(o, type='info')
         else:
             IStatusMessage(self.request).addStatusMessage(_(u'Nothing to migrate'), type='info')
         return self.request.response.redirect(self.context.absolute_url())
