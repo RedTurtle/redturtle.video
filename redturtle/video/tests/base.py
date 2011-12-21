@@ -66,6 +66,14 @@ class TestCase(ptc.PloneTestCase):
     applies to unit test cases.
     """
 
+    def getVideoFile(self):
+        video = '/'.join(os.path.realpath( __file__ ).split(os.path.sep )[:-2])
+        video = '%s/tests/1-2-3.mp4' % video
+        fd = open(video, 'rb')
+        data = fd.read()
+        fd.close()
+        return data
+
 
 class FunctionalTestCase(ptc.FunctionalTestCase):
     """We use this class for functional integration tests that use

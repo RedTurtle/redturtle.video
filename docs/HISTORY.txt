@@ -4,18 +4,16 @@ Changelog
 0.7.1 (Unreleased)
 ------------------
 
-* the ``flowplayer-video-migration``view can be called on a different context that isn't portal
-  root, and migrate only files in that subtree [keul]
 * blob file field have a different meta_type that make the migration walker fail.
-  Not supported both ATFile and ATBlob [keul]
-* TODO - get the duration from the converted video
-* TODO - the embed macro view must be public
+  Now supported both ATFile and ATBlob [keul]
+* the migrator view from File was not properly taking video metadata [keul]
+* ``getEmbedCode`` and ``getPlayerCode`` methods can now be called from other views [keul]
 
 0.7.0 (2011-09-28)
 ------------------
 
-* added a ``@@flowplayer-video-migration`` for migrate base Plone Flowplayer enabled contents to RedTurtle Video contents
-  [keul]
+* added a ``@@flowplayer-video-migration`` for migrate base Plone Flowplayer enabled contents to RedTurtle
+  Video contents [keul]
 * updated documentation related to iOS devices [keul]
 
 0.6.0 (2011-08-31)
@@ -25,7 +23,7 @@ Changelog
   pinned in 4.1 release [mamico]
 * dependency on ``Products.CMFPlone`` instead of ``Plone``, for
   Plone 4.1 compatibility (see `documentation`__) [keul]
-* fixed target_url if the target is a folder (close `#10`__) [micecchi]
+* fixed portlet target_url if the target is a folder (close `#10`__) [micecchi]
 * removed internal support for "Vimeo" and "Metacafe" services, moved away in proper external projects.
   This close ticket `#7`__ [keul]
 * added two ZMI properties to controls default video size when creating new contents. Also the default

@@ -252,7 +252,7 @@ Sample' tab.
     False
 
 Adding a new RTInternalVideo content item as contributor
-------------------------------------------------
+--------------------------------------------------------
 
 Not only site managers are allowed to add RTInternalVideo content items, but
 also site contributors.

@@ -2,16 +2,36 @@
 
 from urlparse import urlparse
 from zope.component import getMultiAdapter, ComponentLookupError
+from zope.interface import implements
 
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
-
-from collective.flowplayer.browser.view import File, Link
 from plone.memoize.instance import memoize
 
+from collective.flowplayer.browser.view import File, Link
+from collective.flowplayer.interfaces import IFlowPlayerView
+
 from redturtle.video.interfaces import IVideoEmbedCode
+
+
+class IRTInternalVideoView(IFlowPlayerView):
+    """
+    Interface for the internal RedTurtle video view
+    """
+    
+    def getEmbedCode():
+        """Get the code needed embed of the video in 3rd party pages""" 
+
+
+class IRTExternalVideoView(IFlowPlayerView):
+    """
+    Interface for the remote RedTurtle video view
+    """
+    
+    def getPlayerCode():
+        """Get the code needed display the remoted video""" 
 
 
 class Macros(BrowserView):
@@ -23,6 +43,8 @@ class Macros(BrowserView):
 
 class InternalVideo(File):
     """The Internal Video browser view"""
+    
+    implements(IRTInternalVideoView)
 
     def __init__(self, context, request):
         File.__init__(self, context, request)
@@ -57,6 +79,22 @@ class InternalVideo(File):
         return "".join((x.strip() for x in embed.splitlines()))
 
 
+class RemoteVideo(Link):
+    """The External Video link browser view"""
+    
+    implements(IRTExternalVideoView)
+
+    @memoize
+    def getPlayerCode(self):
+        """Return code from external service player"""
+        video_site = urlparse(self.context.getRemoteUrl())[1].replace('www.','')
+        try:
+            adapter = getMultiAdapter((self.context, self.request), IVideoEmbedCode, name = video_site)
+        except ComponentLookupError:
+            adapter = getMultiAdapter((self.context, self.request), IVideoEmbedCode)            
+        return adapter()
+
+
 class InternalVideoConfiguration(InternalVideo):
     """Return the right configuration js file for this video"""
     
@@ -85,18 +123,3 @@ class InternalVideoConfiguration(InternalVideo):
            "baseUrl" : portal_url,
            "clipUrl" : self.href()
            }
-
-
-
-class RemoteVideo(Link):
-    """The External Video link browser view"""
-
-    @memoize
-    def getPlayerCode(self):
-        """Return code from external service player"""
-        video_site = urlparse(self.context.getRemoteUrl())[1].replace('www.','')
-        try:
-            adapter = getMultiAdapter((self.context, self.request), IVideoEmbedCode, name = video_site)
-        except ComponentLookupError:
-            adapter = getMultiAdapter((self.context, self.request), IVideoEmbedCode)            
-        return adapter()
