@@ -3,6 +3,6 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-collective.flowplayer:default</dependency>
-    <dependency>profile-plone.app.imaging:default</dependency>
+    <!--dependency>profile-plone.app.imaging:default</dependency-->
   </dependencies>
 </metadata>

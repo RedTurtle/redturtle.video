@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 version = '0.7.0'
 
-tests_require=['zope.testing']
+tests_require=['zope.testing', 'Products.contentmigration']
 
 install_requires = ['setuptools',
                     'hachoir_core',
@@ -19,6 +19,7 @@ install_requires = ['setuptools',
 # http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.0-to-4.1/referencemanual-all-pages
 if sys.version_info < (2, 6):
     install_requires.append('Plone')
+    install_requires.append('collective.relateditems')
 else:
     install_requires.append('Products.CMFPlone')
 

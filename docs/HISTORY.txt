@@ -8,6 +8,13 @@ Changelog
   Now supported both ATFile and ATBlob [keul]
 * the migrator view from File was not properly taking video metadata [keul]
 * ``getEmbedCode`` and ``getPlayerCode`` methods can now be called from other views [keul]
+* no more running ``plone.app.image`` generic profile setup when installing.
+  This was giving some trouble when the products was already in use, because
+  custom image size are removed [keul]
+* related items in Plone 4 were doubled; fixed. to keep also Plone 3 compatibility,
+  added dependency to `collective.relateditems`__ [keul]
+
+__ https://github.com/keul/collective.relateditems
 
 0.7.0 (2011-09-28)
 ------------------

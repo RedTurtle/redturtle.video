@@ -9,7 +9,7 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <include package="collective.flowplayer" />
-  <include package="plone.app.imaging" />  
+  <include package="plone.app.imaging" /> 
 
   <i18n:registerTranslations directory="locales" />
 
@@ -17,6 +17,16 @@
   <include package=".browser" />
   <include package=".content" />
   <include package=".portlets" />
+
+  <configure zcml:condition="installed collective.relateditems">
+      <include package="collective.relateditems" />
+	  <class class="redturtle.video.content.rtinternalvideo.RTInternalVideo">
+          <implements interface="collective.relateditems.interfaces.IRelatedItemsEnabledContent"/>
+      </class>
+	  <class class="redturtle.video.content.rtremotevideo.RTRemoteVideo">
+          <implements interface="collective.relateditems.interfaces.IRelatedItemsEnabledContent"/>
+      </class>
+  </configure>
 
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
