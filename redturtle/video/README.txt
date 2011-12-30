@@ -20,7 +20,7 @@ First, we must perform some setup.
     >>> from Products.PloneTestCase.setup import portal_owner, default_password
 
 Video File - RTInternalVideo
-==========================
+============================
 
 We can add a Video content to display it in Plone using `collective.flowplayer`__.
 
