@@ -46,7 +46,8 @@ We use the 'Add new' menu to add a new content item.
     >>> browser.getLink('Add new').click()
 
 Then we select the type of item we want to add. In this case we select
-'Video Link' and click the 'Add' button to get to the add form.
+'Video File' and click the 'Add' button to get to the add form.
+
     >>> browser.getControl('Video file').click()
     >>> browser.getControl(name='form.button.Add').click()
     >>> 'RTInternalVideo' in browser.contents
