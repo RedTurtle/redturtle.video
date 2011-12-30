@@ -61,7 +61,7 @@ We can add some additional data to video as ``year`` and ``duration``.
 
     >>> browser.getControl(label='Year').value = '2011'
 
-We dont' specify a duration, as the product itself will get it from the movies metadata.
+We don't specify a duration, as the product itself will get it from the movies metadata.
 
 Finally the video:
 
