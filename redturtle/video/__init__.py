@@ -11,8 +11,9 @@ from Products.CMFCore import utils
 # This will be imported with the special name "_" in most modules. Strings
 # like _(u"message") will then be extracted by i18n tools for translation.
 
+import logging
 videoMessageFactory = MessageFactory('redturtle.video')
-
+logger = logging.getLogger('redturtle.video')
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product.

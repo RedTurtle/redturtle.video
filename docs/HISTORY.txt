@@ -13,8 +13,10 @@ Changelog
   custom image size are removed [keul]
 * related items in Plone 4 were doubled; fixed. to keep also Plone 3 compatibility,
   added dependency to `collective.relateditems`__ [keul]
+* fixed a bug that brake video if a user remove sizes information [keul]
+* fixed bug in metadata extraction on Plone 3 if not blob support is present [keul]
 
-__ https://github.com/keul/collective.relateditems
+__ http://plone.org/products/collective.relateditems/
 
 0.7.0 (2011-09-28)
 ------------------

@@ -49,8 +49,8 @@ class InternalVideo(File):
     def __init__(self, context, request):
         File.__init__(self, context, request)
 
-        self.height = self.height or context.getHeight()
-        self.width = self.width or context.getWidth()        
+        self.height = self.height or context.getHeight() or context.getDefaultHeight()
+        self.width = self.width or context.getWidth() or context.getDefaultWidth()     
         self._scale = "height: %dpx; width: %dpx;" % (self.height, self.width)
 
     def href(self):
@@ -73,8 +73,8 @@ class InternalVideo(File):
            "baseUrl" : portal_url,
            "here_url": context.absolute_url(),
            "clipUrl" : self.href(),
-           "width"   : context.getWidth(),
-           "height"   : context.getHeight(),           
+           "width"   : self.width,
+           "height"   : self.height,           
            }
         return "".join((x.strip() for x in embed.splitlines()))
 

@@ -5,6 +5,8 @@
 
 # Includes above someway broke the stdout when used at module level
 
+from redturtle.video import logger
+
 def extract(filename):
     """Extract the metadata from the media file"""
 
@@ -18,20 +20,20 @@ def extract(filename):
     try:
         parser = createParser(filename)
     except InputStreamError, err:
-        print "stream error! %s\n" % unicode(err)
+        logger.warning("Stream error! %s" % unicode(err))
         return None
 
     if not parser:
-        print "Unable to create parser.\n"
+        logger.warning("Unable to create parser.")
         return None
     try:
         metadata = extractMetadata(parser)
     except HachoirError, err:
-        print "stream error! %s\n" % unicode(err)
+        logger.warning("Stream error! %s" % unicode(err))
         return None
 
     if metadata is None:
-        print "unable to extract metadata.\n"
+        logger.warning("unable to extract metadata.")
         return None
 
     return metadata

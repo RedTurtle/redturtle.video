@@ -54,14 +54,17 @@ def createTempFileInternalVideo(object, event):
     file=object.getFile()
     fd=tempfile.NamedTemporaryFile()
     if type(file.data)==str:
-        # blob support
+        # *** blob support ***
         fd.write(file.data)
+        #name = file.getBlob()._current_filename()
+        name = fd.name
     else:
-        # No blob
-        fd.write(file.data.data)
-    _setVideoMetadata(object, fd.name)
-    object.reindexObject()
+        # *** No blob ***
+        fd.write(str(file.data))
+        name = fd.name
+    _setVideoMetadata(object, name)
     fd.close()
+    object.reindexObject()
 
 
 def createTempFileRemoteVideo(object, event):
