@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.7.1 (Unreleased)
+0.7.1 (2012-01-02)
 ------------------
 
 * blob file field have a different meta_type that make the migration walker fail.
