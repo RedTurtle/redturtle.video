@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.7.2 (Unreleased)
+------------------
+
+* removed (commented) code that reindex an index when it's created while installing
+  the product. This can take a *very* long time on huge site [keul]
+
 0.7.1 (2012-01-02)
 ------------------
 
