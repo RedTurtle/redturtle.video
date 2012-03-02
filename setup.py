@@ -8,9 +8,6 @@ version = '0.7.1'
 tests_require=['zope.testing', 'Products.contentmigration']
 
 install_requires = ['setuptools',
-                    'hachoir_core',
-                    'hachoir_metadata',
-                    'hachoir_parser',
                     'collective.flowplayer',
                     'plone.app.imaging>=1.0b9',
                     ]
