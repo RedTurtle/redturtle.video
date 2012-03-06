@@ -6,6 +6,8 @@ Changelog
 
 * removed (commented) code that reindex an index when it's created while installing
   the product. This can take a *very* long time on huge site [keul]
+* removed hachoit dependencies: leave this responsability only to collective.flowplayer 
+  [keul]
 
 0.7.1 (2012-01-02)
 ------------------
