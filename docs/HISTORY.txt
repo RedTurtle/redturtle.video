@@ -8,6 +8,7 @@ Changelog
   the product. This can take a *very* long time on huge site [keul]
 * removed hachoit dependencies: leave this responsability only to collective.flowplayer 
   [keul]
+* Added spanish translation [Manuel]
 
 0.7.1 (2012-01-02)
 ------------------
