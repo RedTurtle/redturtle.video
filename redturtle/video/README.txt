@@ -60,7 +60,7 @@ Now we fill the form and submit it.
 
 We can add some additional data to video as ``year`` and ``duration``.
 
-    >>> browser.getControl(label='Year').value = '2011'
+    >>> browser.getControl(name='year').value = '2011'
 
 We don't specify a duration, as the product itself will get it from the movies metadata.
 
@@ -80,7 +80,7 @@ Let's save and see our results.
 This is the page content.
 
     >>> print browser.contents
-    <!DOCTYPE html PUBLIC...
+    <!DOCTYPE html...
     ...
             <div class="autoFlowPlayer video videoContent internalVideoContent" style="height: 480px; width: 640px;">
                 <a class="videoWrapper" style="height: 480px; width: 640px;" href="http://.../rtinternalvideo-sample/at_download/file">
