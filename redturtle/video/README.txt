@@ -79,7 +79,7 @@ Let's save and see our results.
 
 This is the page content.
 
-    >>> print browser.contents
+    >>> print browser.contents.strip()
     <!DOCTYPE html...
     ...
             <div class="autoFlowPlayer video videoContent internalVideoContent" style="height: 480px; width: 640px;">
@@ -127,7 +127,7 @@ Now we fill the form and submit it.
 
 We can add some additional data to video as ``year`` and ``duration``.
 
-    >>> browser.getControl(label='Year').value = '2007'
+    >>> browser.getControl(name='year').value = '2007'
     >>> browser.getControl(label='Duration').value = '00:02:25'
 
 We can also use a different size:
@@ -140,8 +140,8 @@ We can also use a different size:
 
 Let's save and see our results.
 
-    >>> print browser.contents
-    <!DOCTYPE html PUBLIC...
+    >>> print browser.contents.strip()
+    <!DOCTYPE html...
     ...
     <div class="videoContainer">
     ...
@@ -174,8 +174,8 @@ Now our video link have a image.
 And related views.
 
     >>> browser.open('%s/rtremotevideo-sample/image/image_view_fullscreen' % portal_url)
-    >>> print browser.contents
-    <!DOCTYPE html PUBLIC...
+    >>> print browser.contents.strip()
+    <!DOCTYPE html...
     ...
     ...<img src="http://nohost/plone/rtremotevideo-sample/image" alt="RTRemoteVideo Sample" title="RTRemoteVideo Sample" height="256" width="256" />...
     ...
