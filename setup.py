@@ -8,6 +8,9 @@ version = '0.7.1'
 tests_require=['zope.testing', 'Products.contentmigration']
 
 install_requires = ['setuptools',
+                    'hachoir_core',
+                    'hachoir_metadata',
+                    'hachoir_parser',
                     'collective.flowplayer',
                     'plone.app.imaging>=1.0b9',
                     ]
@@ -32,6 +35,7 @@ setup(name='redturtle.video',
         'Framework :: Plone :: 3.3',
         'Framework :: Plone :: 4.0',
         'Framework :: Plone :: 4.1',
+        'Framework :: Plone :: 4.2',
         'Development Status :: 5 - Production/Stable',
         'Topic :: Multimedia :: Video',
         'License :: OSI Approved :: GNU General Public License (GPL)',
