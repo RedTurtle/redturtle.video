@@ -25,7 +25,7 @@ else:
 
 setup(name='redturtle.video',
       version=version,
-      description="Basic video contents (site's internal and remote) for Plone; "
+      description="Video content types for Plone; "
                   "use collective.flowplayer but also pluggable with external services",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
@@ -42,7 +42,7 @@ setup(name='redturtle.video',
         ],
       keywords='plone video flowplayer plonegov',
       author='RedTurtle Technology',
-      author_email='sviluppoplone@redturtle.net',
+      author_email='sviluppoplone@redturtle.it',
       url='http://plone.org/products/redturtle.video',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
