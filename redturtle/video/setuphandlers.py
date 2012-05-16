@@ -61,7 +61,7 @@ def migrateTo060rc1(context, logger=None):
     if logger is None:
         logger = logging.getLogger('redturtle.video')
     setup_tool = getToolByName(context, 'portal_setup')
-    setup_tool.runImportStepFromProfile(PROFILE_ID, 'properties')
+    setup_tool.runImportStepFromProfile(PROFILE_ID, 'propertiestool')
     registerProperties(context, logger)
     logger.info("Migrated to 0.6.0")
 

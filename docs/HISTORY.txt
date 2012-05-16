@@ -6,8 +6,13 @@ Changelog
 
 * removed (commented) code that reindex an index when it's created while installing
   the product. This can take a *very* long time on huge site [keul]
-* Added spanish translation [Manuel]
+* added spanish translation [Manuel]
 * fixed tests for Plone 4.2 compatibility [keul]
+* Fixed migration step that was not running the proper dependecy (see `#2`__) [keul]
+* year field now limited to 4 chars [keul]
+* from now include compiled .mo files in the egg [keul] 
+
+__ https://github.com/RedTurtle/redturtle.video/issues/2
 
 0.7.1 (2012-01-02)
 ------------------
