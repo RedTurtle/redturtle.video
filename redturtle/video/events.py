@@ -64,6 +64,7 @@ def createTempFileInternalVideo(object, event):
         name = fd.name
     _setVideoMetadata(object, name)
     fd.close()
+    # noLongerProvides(object, IVideo)
     object.reindexObject()
 
 

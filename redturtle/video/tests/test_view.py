@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import cStringIO
-from zope.component import getMultiAdapter
+#from zope.component import getMultiAdapter
 from redturtle.video.tests.base import TestCase
 
 class TestView(TestCase):

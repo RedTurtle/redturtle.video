@@ -28,6 +28,8 @@ RTInternalVideoSchema = ATFileSchema.copy() + VIDEO_SCHEMA.copy()
 RTInternalVideoSchema['title'].storage = atapi.AnnotationStorage()
 RTInternalVideoSchema['title'].required = True
 RTInternalVideoSchema['description'].storage = atapi.AnnotationStorage()
+RTInternalVideoSchema['file'].searchable = False
+#RTInternalVideoSchema['file'].index_method = '_at_accessor'
 
 imageField = ATImageSchema['image'].copy()
 imageField.required = False
@@ -107,5 +109,10 @@ class RTInternalVideo(base.ATCTContent, ATCTImageTransform, DefaultVideo):
         if self.getImage():
             return True
         return False
+
+    security.declarePrivate('getIndexValue')
+    def getIndexValue(self, mimetype='text/plain'):
+        # Need to overridide because plone.app.blob use and force this to exists
+        return ''
 
 atapi.registerType(RTInternalVideo, PROJECTNAME)

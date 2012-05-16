@@ -11,6 +11,8 @@ Changelog
 * Fixed migration step that was not running the proper dependecy (see `#2`__) [keul]
 * year field now limited to 4 chars [keul]
 * from now include compiled .mo files in the egg [keul] 
+* fixed a bug when migrating from File to InternalVideo on Plone 4 (using plone.app.blob).
+  ``IVideo`` now extend ``IFileContent`` [keul] 
 
 __ https://github.com/RedTurtle/redturtle.video/issues/2
 

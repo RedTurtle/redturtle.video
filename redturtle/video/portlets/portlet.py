@@ -20,7 +20,6 @@ from redturtle.video.interfaces import IRTVideo
 from redturtle.video import videoMessageFactory as _
 
 from Products.CMFCore.utils import getToolByName
-from zope.component import getMultiAdapter
 from Acquisition import aq_inner
 
 def getImageUrl(resource):
