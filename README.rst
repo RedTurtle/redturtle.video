@@ -115,7 +115,7 @@ going to ZMI, in ``portal_properties`` and change values in ``redturtle_video_pr
 Requirements
 ============
 
-Tested on Plone 3.3, 4.0 and 4.1
+Tested on Plone 3.3, 4.0, 4.1 and 4.2rc1, with collective.flowplayer 3.0rc4.
 
 Installation
 ============
@@ -145,7 +145,7 @@ Support
 =======
 
 If you find bugs or have a good suggestion, open a ticket at
-http://plone.org/products/redturtle.video/issues/
+https://github.com/RedTurtle/redturtle.video/issues/
 
 TODO
 ====
