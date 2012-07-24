@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import sys
 import tempfile
 import urllib2
 from urlparse import urlparse
@@ -11,6 +11,13 @@ from collective.flowplayer.interfaces import IFlowPlayable
 
 from redturtle.video.metadataextractor import extract
 from redturtle.video.interfaces import IVideoEmbedCode
+from redturtle.video.config import DEFAULT_TIMEOUT
+
+if sys.version_info < (2, 6):
+    PLONE4 = False
+else:
+    PLONE4 = True
+
 
 def _setVideoMetadata(object, name):
     """Set the metadata taken from the video using hachoir
@@ -85,13 +92,36 @@ def createTempFileRemoteVideo(object, event):
 def externalVideoModified(object, event):
     """A remote video has been modified; check is we need to provide to it
     the IFlowPlayable interface (only if it is Flowplayer compatible)"""
-    video_site = urlparse(object.getRemoteUrl())[1].replace('www.','')
+    video_site = urlparse(object.getRemoteUrl())[1].replace('www.', '')
     try:
-        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode, name = video_site)
+        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode, name=video_site)
         noLongerProvides(object, IFlowPlayable)
     except ComponentLookupError:
-        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode)            
+        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode)
         alsoProvides(object, IFlowPlayable)
     object.reindexObject(idxs=['object_provides'])
 
-    
+
+def retrieveThumbnail(object, event):
+    """
+    """
+    if object.getImage():
+        return
+    video_site = urlparse(object.getRemoteUrl())[1].replace('www.', '')
+
+    try:
+        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode, name=video_site)
+    except ComponentLookupError:
+        return
+    thumb_obj = adapter.getThumb()
+    if PLONE4:
+        response = urllib2.urlopen(thumb_obj.url, timeout=DEFAULT_TIMEOUT)
+    else:
+        response = urllib2.urlopen(thumb_obj.url)
+    # fd = tempfile.NamedTemporaryFile()
+    # fd.write(©)
+    object.setImage(response.read())
+    field = object.getField('image')
+    field.setContentType(object, thumb_obj.content_type)
+    field.setFilename(object, thumb_obj.filename)
+

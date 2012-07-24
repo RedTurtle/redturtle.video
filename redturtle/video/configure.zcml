@@ -84,4 +84,11 @@
               handler=".events.externalVideoModified"
             />
 
+  <!-- THUMBNAIL RETRIEVER -->
+  <subscriber
+    for=".interfaces.IRTRemoteVideo
+         Products.Archetypes.interfaces.IObjectInitializedEvent"
+    handler=".events.retrieveThumbnail"
+    />
+
 </configure>

@@ -1,6 +1,6 @@
 """Common configuration constants
 """
-
+DEFAULT_TIMEOUT = 20
 PROJECTNAME = 'redturtle.video'
 
 ADD_PERMISSIONS = {
