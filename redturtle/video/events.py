@@ -28,9 +28,9 @@ def _setVideoMetadata(object, name):
         try:
             duration = metadata.getItems('duration')
             if len(duration) >= 1:
-                strdate=str(duration[0].value)
-                strdate=strdate.split('.')
-                strdate=strdate[0]
+                strdate = str(duration[0].value)
+                strdate = strdate.split('.')
+                strdate = strdate[0]
                 if strdate.startswith('0:'):
                     strdate = '0' + strdate
                 object.setDuration(strdate)
@@ -58,9 +58,9 @@ def createTempFileInternalVideo(object, event):
     """
     if object.getDuration():
         return
-    file=object.getFile()
-    fd=tempfile.NamedTemporaryFile()
-    if type(file.data)==str:
+    file = object.getFile()
+    fd = tempfile.NamedTemporaryFile()
+    if type(file.data) == str:
         # *** blob support ***
         fd.write(file.data)
         #name = file.getBlob()._current_filename()
@@ -80,9 +80,9 @@ def createTempFileRemoteVideo(object, event):
     """
     if object.getDuration():
         return
-    url=object.getRemoteUrl()
+    url = object.getRemoteUrl()
     response = urllib2.urlopen(url)
-    fd=tempfile.NamedTemporaryFile()
+    fd = tempfile.NamedTemporaryFile()
     fd.write(response.read())
     _setVideoMetadata(object, fd.name)
     object.reindexObject()
@@ -94,7 +94,9 @@ def externalVideoModified(object, event):
     the IFlowPlayable interface (only if it is Flowplayer compatible)"""
     video_site = urlparse(object.getRemoteUrl())[1].replace('www.', '')
     try:
-        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode, name=video_site)
+        adapter = getMultiAdapter((object, object.REQUEST),
+                                  IVideoEmbedCode,
+                                  name=video_site)
         noLongerProvides(object, IFlowPlayable)
     except ComponentLookupError:
         adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode)
@@ -107,21 +109,31 @@ def retrieveThumbnail(object, event):
     """
     if object.getImage():
         return
+
     video_site = urlparse(object.getRemoteUrl())[1].replace('www.', '')
 
     try:
-        adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode, name=video_site)
+        adapter = getMultiAdapter((object, object.REQUEST),
+                                  IVideoEmbedCode,
+                                  name=video_site)
     except ComponentLookupError:
         return
-    thumb_obj = adapter.getThumb()
+
+    try:
+        thumb_obj = adapter.getThumb()
+    except NotImplementedError:
+        """
+        This means that we are using a plugin not implementing getThumb.
+        The fallback it's on the base adapter that raise the exception.
+        """
+        return
+
     if PLONE4:
         response = urllib2.urlopen(thumb_obj.url, timeout=DEFAULT_TIMEOUT)
     else:
         response = urllib2.urlopen(thumb_obj.url)
-    # fd = tempfile.NamedTemporaryFile()
-    # fd.write(©)
+
     object.setImage(response.read())
     field = object.getField('image')
     field.setContentType(object, thumb_obj.content_type)
     field.setFilename(object, thumb_obj.filename)
-
