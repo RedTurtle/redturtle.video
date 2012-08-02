@@ -41,6 +41,21 @@ class VideoEmbedCode(object):
     def getHeight(self):
         return self.context.getHeight()
 
+    def getThumb(self):
+        """
+        Implements this method in more specific adapter
+        """
+        raise NotImplementedError
+
     def __call__(self):
         return self.template()
 
+
+class ThumbObject(object):
+    """
+    This object provides basic informations about the thumb image
+    """
+    def __init__(self, url, content_type, filename):
+        self.url = url
+        self.content_type = content_type
+        self.filename = filename
