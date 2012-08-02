@@ -9,7 +9,7 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <include package="collective.flowplayer" />
-  <include package="plone.app.imaging" /> 
+  <include package="plone.app.imaging" />
 
   <i18n:registerTranslations directory="locales" />
 
