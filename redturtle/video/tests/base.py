@@ -79,7 +79,7 @@ class TestCase(ptc.PloneTestCase):
         fd.close()
         return data
 
-    def custom_urlopen(self, url):
+    def custom_urlopen(self, url, timeout='useless'):
         image_path = '/'.join(
                               os.path.realpath( __file__ ).split(os.path.sep)[:-2]
                               )
