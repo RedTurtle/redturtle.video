@@ -16,7 +16,7 @@ VIDEO_SCHEMA=atapi.Schema((
                     label = _(u'label_duration', default=u'Duration'),
                     description = '',
                     )),
-                    
+
     atapi.BooleanField('useSplashScreen',
                 default=False,
                 schemata="look",

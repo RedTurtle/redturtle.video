@@ -7,7 +7,7 @@ class DefaultVideo(object):
     """Common properties for rt video contents"""
 
     security = ClassSecurityInfo()
-    
+
     security.declarePrivate("getDefaultWidth")
     def getDefaultWidth(self):
         p_tool = getToolByName(self, 'portal_properties')
