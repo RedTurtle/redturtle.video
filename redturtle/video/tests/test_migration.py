@@ -22,7 +22,7 @@ class TestView(TestCase):
         f.edit(title="Another simple ATFile", file=self.getVideoFile())
         f.setFilename('1-2-3.mp4')
         notify(ObjectInitializedEvent(self.portal.folder['another-atfile']))
-        
+
 
     def test_siteMigration(self):
         output = migrateFlowplayerToRedTurtleVideo(self.portal)
