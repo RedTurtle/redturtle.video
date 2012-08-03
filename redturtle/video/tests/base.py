@@ -6,6 +6,7 @@ happens at module level, which makes it faster to run each test, but
 slows down test runner startup.
 """
 import os
+import StringIO
 from Products.Five import zcml
 from Products.Five import fiveconfigure
 
@@ -17,6 +18,7 @@ from Products.PloneTestCase.layer import onsetup
 from zope.publisher.interfaces.browser import IHTTPRequest
 from zope.publisher.browser import TestRequest
 from zope.interface import implements
+
 
 @onsetup
 def setup_product():
@@ -56,6 +58,7 @@ def setup_product():
 setup_product()
 ptc.setupPloneSite(products=['redturtle.video'])
 
+
 class TestRequest(TestRequest):
     implements(IHTTPRequest)
 
@@ -67,12 +70,38 @@ class TestCase(ptc.PloneTestCase):
     """
 
     def getVideoFile(self):
-        video = '/'.join(os.path.realpath( __file__ ).split(os.path.sep )[:-2])
+        video = '/'.join(
+                         os.path.realpath( __file__ ).split(os.path.sep)[:-2]
+                         )
         video = '%s/tests/1-2-3.mp4' % video
         fd = open(video, 'rb')
         data = fd.read()
         fd.close()
         return data
+
+    def custom_urlopen(self, url):
+        image_path = '/'.join(
+                              os.path.realpath( __file__ ).split(os.path.sep)[:-2]
+                              )
+        image = '%s/tests/plone_italia.png' % image_path
+        fd = open(image, 'rb')
+        data = StringIO.StringIO(fd.read())
+        fd.close()
+        return data
+
+    def get_images(self):
+        image_path = '/'.join(
+                              os.path.realpath( __file__ ).split(os.path.sep)[:-2]
+                              )
+        image1 = '%s/tests/plone_italia.png' % image_path
+        image2 = '%s/tests/plone_logo.png' % image_path
+        fd1 = open(image1, 'rb')
+        fd2 = open(image2, 'rb')
+        data1 = StringIO.StringIO(fd1.read())
+        data2 = StringIO.StringIO(fd2.read())
+        fd1.close()
+        fd2.close()
+        return data1, data2
 
 
 class FunctionalTestCase(ptc.FunctionalTestCase):
@@ -102,4 +131,3 @@ class FunctionalTestCase(ptc.FunctionalTestCase):
         data = fd.read()
         fd.close()
         return data
-
