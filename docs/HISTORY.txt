@@ -1,15 +1,13 @@
 Changelog
 =========
 
-0.7.5 (2012-08-03)
-------------------
- * fix test for plone 4.2 compatibility [lucabel]
-
-0.7.4 (2012-08-02)
+0.8.0 (unreleased)
 ------------------
 
+* fix test for plone 4.2 compatibility [lucabel]
 * adds events that call getThumb on the RemoteVideo adapter, and try to get a thumb image
- for the video [micecchi, lucabel]
+  for the video [micecchi, lucabel]
+* fixed a GS circular dependency error [keul]
 
 0.7.3 (2012-05-18)
 ------------------

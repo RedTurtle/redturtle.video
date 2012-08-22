@@ -42,7 +42,7 @@
       title="redturtle.video: miscellaneous import steps"
       description="Various import steps that are not handled by GS import/export handlers."
       handler="redturtle.video.setuphandlers.setupVarious">
-      <depends name="catalog.xml"/>
+      <depends name="catalog"/>
   </genericsetup:importStep>
 
   <genericsetup:upgradeStep
