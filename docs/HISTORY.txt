@@ -4,6 +4,7 @@ Changelog
 0.8.0 (unreleased)
 ------------------
 
+* add a body field to the video types [davismr]
 * fix test for plone 4.2 compatibility [lucabel]
 * adds events that call getThumb on the RemoteVideo adapter, and try to get a thumb image
   for the video [micecchi, lucabel]
