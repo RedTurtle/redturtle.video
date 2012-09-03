@@ -50,12 +50,3 @@ class VideoEmbedCode(object):
     def __call__(self):
         return self.template()
 
-
-class ThumbObject(object):
-    """
-    This object provides basic informations about the thumb image
-    """
-    def __init__(self, url, content_type, filename):
-        self.url = url
-        self.content_type = content_type
-        self.filename = filename
