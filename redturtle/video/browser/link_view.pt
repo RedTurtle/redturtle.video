@@ -33,6 +33,7 @@
         </div>
 
         <metal:video_details use-macro="context/@@redturtlevideo_macros/video_details" />
+        <metal:field use-macro="python:context.widget('text', mode='view')" />
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

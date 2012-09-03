@@ -27,6 +27,17 @@ VIDEO_SCHEMA=atapi.Schema((
                                             u"but also in the video view."),
                     )),
 
+    atapi.TextField('text',
+              required=False,
+              searchable=True,
+              validators = ('isTidyHtmlWithCleanup',),
+              default_output_type = 'text/x-html-safe',
+              widget = atapi.RichWidget(
+                        description = '',
+                        label = _(u'label_body_text', default=u'Body Text'),
+                        rows = 25,
+                        )),
+
     atapi.IntegerField('width',
                 validation=('isInt',),
                 default_method="getDefaultWidth",

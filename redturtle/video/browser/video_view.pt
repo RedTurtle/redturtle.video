@@ -16,7 +16,7 @@
             Title
             </metal:field>
         </h1>
-		
+
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <div class="documentDescription">
@@ -30,32 +30,34 @@
         <div class="autoFlowPlayer video videoContent internalVideoContent"
               tal:attributes="style view/scale">
             <a class="videoWrapper"
-			   tal:attributes="href view/href;
+               tal:attributes="href view/href;
                                style view/scale"
-		       tal:define="scale context/@@images;
-				           thumbnail python: scale.scale('image', width=context.getWidth(), height=context.getHeight(), direction='down');
-						   showSplashImage python:thumbnail and context.hasSplashScreenImage() and context.getUseSplashScreen();">
+               tal:define="scale context/@@images;
+                           thumbnail python: scale.scale('image', width=context.getWidth(), height=context.getHeight(), direction='down');
+                           showSplashImage python:thumbnail and context.hasSplashScreenImage() and context.getUseSplashScreen();">
                 <img tal:condition="showSplashImage"
-					 alt="Video splashscreen"
+                     alt="Video splashscreen"
                      tal:attributes="src thumbnail/url;
-					                 width thumbnail/width;
+                                     width thumbnail/width;
                                      height thumbnail/height;" />
                 <span class="iconPlay"
-				     tal:condition="showSplashImage"
-				     tal:attributes="style python: 'left: %spx;; top: %spx' % ((thumbnail.width/2-42) , (thumbnail.height/2-42));
-									 "></span>
+                      tal:condition="showSplashImage"
+                      tal:attributes="style python: 'left: %spx;; top: %spx' % ((thumbnail.width/2-42) , (thumbnail.height/2-42));
+                "></span>
                 <tal:novideo condition="not:context/getUseSplashScreen">
-	                <span class="flowPlayerMessage discreet"
-		                  i18n:translate="video_fallback">
-		                If your video does not start playing shortly, please ensure
-		                that you have JavaScript enabled and the latest version of
-		                Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
-					</span>
-				</tal:novideo>
+                    <span class="flowPlayerMessage discreet"
+                          i18n:translate="video_fallback">
+                        If your video does not start playing shortly, please ensure
+                        that you have JavaScript enabled and the latest version of
+                        Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
+                    </span>
+                </tal:novideo>
             </a>
         </div>
 
         <metal:video_details use-macro="context/@@redturtlevideo_macros/video_details" />
+
+        <metal:field use-macro="python:context.widget('text', mode='view')" />
 
         <form action="">
           <label for="embed" i18n:translate="description_embed">Put this video on your site</label>
