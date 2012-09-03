@@ -147,11 +147,6 @@ Support
 If you find bugs or have a good suggestion, open a ticket at
 https://github.com/RedTurtle/redturtle.video/issues/
 
-TODO
-====
-
-* video transcript field: can be useful?
-
 Credits
 =======
 
