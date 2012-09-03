@@ -5,10 +5,13 @@ Changelog
 ------------------
 
 * add a body field to the video types [davismr]
+* fixed missing Generic Setup dependency (close `#8`__) [davismr]
 * fix test for plone 4.2 compatibility [lucabel]
 * adds events that call getThumb on the RemoteVideo adapter, and try to get a thumb image
   for the video [micecchi, lucabel]
 * fixed a GS circular dependency error [keul]
+
+__ https://github.com/RedTurtle/redturtle.video/pull/8
 
 0.7.3 (2012-05-18)
 ------------------
