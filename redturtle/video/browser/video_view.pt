@@ -33,7 +33,7 @@
                tal:attributes="href view/href;
                                style view/scale"
                tal:define="scale context/@@images;
-                           thumbnail python: scale.scale('image', width=context.getWidth(), height=context.getHeight(), direction='down');
+                           thumbnail python: scale.scale('image', width=context.getWidth() or view.width, height=context.getHeight() or view.height, direction='down');
                            showSplashImage python:thumbnail and context.hasSplashScreenImage() and context.getUseSplashScreen();">
                 <img tal:condition="showSplashImage"
                      alt="Video splashscreen"

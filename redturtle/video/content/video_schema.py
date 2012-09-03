@@ -33,8 +33,9 @@ VIDEO_SCHEMA=atapi.Schema((
               validators = ('isTidyHtmlWithCleanup',),
               default_output_type = 'text/x-html-safe',
               widget = atapi.RichWidget(
-                        description = '',
                         label = _(u'label_body_text', default=u'Body Text'),
+                        description = _(u'help_body_text',
+                                        default=u'You can use this field for provide a video transcript'),
                         rows = 25,
                         )),
 

@@ -5,8 +5,10 @@ Plone's products are loaded, and a Plone site will be created. This
 happens at module level, which makes it faster to run each test, but
 slows down test runner startup.
 """
+
 import os
 import StringIO
+
 from Products.Five import zcml
 from Products.Five import fiveconfigure
 
@@ -15,10 +17,13 @@ from Testing import ZopeTestCase as ztc
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
 
+import zope.component
 from zope.publisher.interfaces.browser import IHTTPRequest
 from zope.publisher.browser import TestRequest
 from zope.interface import implements
 
+from redturtle.video.interfaces import IVideoEmbedCode, IRTRemoteVideo
+from redturtle.video.remote_thumb import RemoteThumb 
 
 @onsetup
 def setup_product():
@@ -59,6 +64,19 @@ setup_product()
 ptc.setupPloneSite(products=['redturtle.video'])
 
 
+class TestVideoEmbedCode(object):
+    """test adapter for foo.com"""
+    
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+    
+    def getThumb(self):
+        return RemoteThumb(url='http://foo.com/image',
+                           content_type='image/jpg',
+                           filename='image.jpg')
+
+
 class TestRequest(TestRequest):
     implements(IHTTPRequest)
 
@@ -68,6 +86,17 @@ class TestCase(ptc.PloneTestCase):
     necessary, we can put common utility or setup code in here. This
     applies to unit test cases.
     """
+
+    def setUp(self):
+        super(TestCase, self).setUp()
+        zope.component.provideAdapter(
+                TestVideoEmbedCode,
+                (IRTRemoteVideo,
+                 zope.publisher.interfaces.browser.IHTTPRequest),
+                provides=IVideoEmbedCode,
+                name=u'foo.com'
+            )
+
 
     def getVideoFile(self):
         video = '/'.join(

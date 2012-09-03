@@ -26,7 +26,7 @@ class TestInitializedEvent(TestCase):
                                   id="remote-video-file")
         f = getattr(self.portal, 'remote-video-file')
         f.edit(title="A remote file",
-               remoteUrl="http://youtu.be/KUKU0mq0fTU")
+               remoteUrl="http://foo.com/foo")
         notify(ObjectInitializedEvent(f))
         plone_italia_png = md5.new(self.image1.read()).digest()
         img_from_video = md5.new(f.getImage().data).digest()
@@ -37,7 +37,7 @@ class TestInitializedEvent(TestCase):
                                   id="other-remote-video-file")
         f = getattr(self.portal, 'other-remote-video-file')
         f.edit(title="Another remote file",
-               remoteUrl="http://youtu.be/KUKU0mq0fTU",
+               remoteUrl="http://foo.com/foo",
                image=self.image2.read(),
               )
 

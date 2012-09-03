@@ -82,8 +82,8 @@ This is the page content.
     >>> print browser.contents.strip()
     <!DOCTYPE html...
     ...
-            <div class="autoFlowPlayer video videoContent internalVideoContent" style="height: 480px; width: 640px;">
-                <a class="videoWrapper" style="height: 480px; width: 640px;" href="http://.../rtinternalvideo-sample/at_download/file">
+            <div class="autoFlowPlayer video videoContent internalVideoContent" style="height: 300px; width: 400px;">
+                <a class="videoWrapper" style="height: 300px; width: 400px;" href="http://.../rtinternalvideo-sample/at_download/file">
     ...
                 </a>
             </div>

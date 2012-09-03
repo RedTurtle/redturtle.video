@@ -10,8 +10,11 @@ Changelog
 * adds events that call getThumb on the RemoteVideo adapter, and try to get a thumb image
   for the video [micecchi, lucabel]
 * fixed a GS circular dependency error [keul]
+* video size in content was ignored when also present in video metadata (close `#6`__)
+  [keul]
 
 __ https://github.com/RedTurtle/redturtle.video/pull/8
+__ https://github.com/RedTurtle/redturtle.video/issues/6
 
 0.7.3 (2012-05-18)
 ------------------

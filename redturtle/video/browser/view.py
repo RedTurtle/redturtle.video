@@ -48,9 +48,8 @@ class InternalVideo(File):
 
     def __init__(self, context, request):
         File.__init__(self, context, request)
-
-        self.height = self.height or context.getHeight() or context.getDefaultHeight()
-        self.width = self.width or context.getWidth() or context.getDefaultWidth()     
+        self.height = context.getHeight() or self.height or context.getDefaultHeight()
+        self.width = context.getWidth() or self.width or context.getDefaultWidth() 
         self._scale = "height: %dpx; width: %dpx;" % (self.height, self.width)
 
     def href(self):

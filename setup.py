@@ -51,7 +51,7 @@ setup(name='redturtle.video',
       zip_safe=False,
       install_requires=install_requires,
       tests_require=tests_require,
-      extras_require=dict(tests=tests_require),
+      extras_require=dict(test=tests_require),
       test_suite = 'redturtle.video.tests.test_doctest.test_suite',
       entry_points="""
       [z3c.autoinclude.plugin]

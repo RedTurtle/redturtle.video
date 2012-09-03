@@ -42,10 +42,12 @@ def _setVideoMetadata(object, name):
 
         # size
         try:
-            width = metadata.getItems('width')[0].value
-            height = metadata.getItems('height')[0].value
-            object.setWidth(width)
-            object.setHeight(height)
+            if not object.getWidth():
+                width = metadata.getItems('width')[0].value
+                object.setWidth(width)
+            if not object.getHeight():
+                object.setHeight(height)
+                height = metadata.getItems('height')[0].value
         # no valid data
         except ValueError:
             pass
