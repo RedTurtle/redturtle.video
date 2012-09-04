@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.8.0 (unreleased)
+0.8.0 (2012-09-04)
 ------------------
 
 * add a body field to the video types [davismr]
