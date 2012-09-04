@@ -115,7 +115,7 @@ going to ZMI, in ``portal_properties`` and change values in ``redturtle_video_pr
 Requirements
 ============
 
-Tested on Plone 3.3, 4.0, 4.1 and 4.2rc1, with collective.flowplayer 3.0rc4.
+Tested on Plone 3.3 and 4.2, with collective.flowplayer 3.0.
 
 Installation
 ============
@@ -134,12 +134,9 @@ To add also additional video providers support::
     ...
     eggs =
         ...
-        redturtle.video
         collective.rtvideo.youtube
         ...
         mycompany.myservice
-
-Plone 3.2 or lower users: don't forget ``zcml`` section.
 
 Support
 =======
