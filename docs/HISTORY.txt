@@ -4,7 +4,7 @@ Changelog
 0.8.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- added fix for thumb size. Now uses plone.app.imaging sizes [cekk]
 
 
 0.8.0 (2012-09-04)
@@ -13,7 +13,7 @@ Changelog
 * add a body field to the video types [davismr]
 * fixed missing Generic Setup dependency (close `#8`__) [davismr]
 * adds events that call getThumb on the RemoteVideo adapter, and try to get a thumb image
-  for the video [micecchi, lucabel]
+  for the video [cekk, lucabel]
 * fixed a GS circular dependency error [keul]
 * video size in content was ignored when also present in video metadata (close `#6`__)
   [keul]
@@ -72,7 +72,7 @@ __ http://plone.org/products/collective.relateditems/
   pinned in 4.1 release [mamico]
 * dependency on ``Products.CMFPlone`` instead of ``Plone``, for
   Plone 4.1 compatibility (see `documentation`__) [keul]
-* fixed portlet target_url if the target is a folder (close `#10`__) [micecchi]
+* fixed portlet target_url if the target is a folder (close `#10`__) [cekk]
 * removed internal support for "Vimeo" and "Metacafe" services, moved away in proper external projects.
   This close ticket `#7`__ [keul]
 * added two ZMI properties to controls default video size when creating new contents. Also the default
