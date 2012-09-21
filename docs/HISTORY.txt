@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.8.1 (unreleased)
+0.8.1 (2012-09-21)
 ------------------
 
 - added fix for thumb size. Now uses plone.app.imaging sizes [cekk]
