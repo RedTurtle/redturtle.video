@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-09-28 09:56+0000\n"
+"POT-Creation-Date: 2012-09-26 12:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "A video file with screenshot"
 msgstr ""
 
 #: ./browser/migrateblobs.py:42
-#: ./browser/migrateflowplayable.py:33
+#: ./browser/migrateflowplayable.py:34
 msgid "Cancel"
 msgstr ""
 
@@ -38,15 +38,18 @@ msgstr ""
 msgid "Migrate Internal video"
 msgstr ""
 
-#: ./browser/migrateflowplayable.py:30
+#: ./browser/migrateflowplayable.py:31
 msgid "Nothing to migrate"
+msgstr ""
+
+msgid "Simple video content type, integrated with collective.flowplayer and remote video providers"
 msgstr ""
 
 #: ./profiles/default/types/RTInternalVideo.xml
 msgid "Video file"
 msgstr ""
 
-#: ./portlets/portlet.py:98
+#: ./portlets/portlet.py:97
 msgid "Video gallery"
 msgstr ""
 
@@ -55,73 +58,83 @@ msgid "Video link"
 msgstr ""
 
 #. Default: "Put this video on your site"
-#: ./browser/video_view.pt:61
+#: ./browser/video_view.pt:63
 msgid "description_embed"
 msgstr ""
 
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:188
+#: ./portlets/portlet.py:187
 msgid "help_add_video_portlet"
 msgstr ""
 
+#. Default: "You can use this field for provide a video transcript"
+#: ./content/video_schema.py:37
+msgid "help_body_text"
+msgstr ""
+
 #. Default: "This portlet display a video gallery."
-#: ./portlets/portlet.py:201
+#: ./portlets/portlet.py:200
 msgid "help_edit_video_portlet"
 msgstr ""
 
 #. Default: "Enter a number greater than 0 to limit the number of items displayed"
-#: ./portlets/portlet.py:64
+#: ./portlets/portlet.py:63
 msgid "help_number_of_videos_to_show"
 msgstr ""
 
 #. Default: "Title of the rendered portlet"
-#: ./portlets/portlet.py:44
+#: ./portlets/portlet.py:43
 msgid "help_portlet_header"
 msgstr ""
 
 #. Default: "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
-#: ./portlets/portlet.py:72
+#: ./portlets/portlet.py:71
 msgid "help_show_more_link"
 msgstr ""
 
 #. Default: "This can be a file containing an video content, or a folder or collection containing videos"
-#: ./portlets/portlet.py:50
+#: ./portlets/portlet.py:49
 msgid "help_target_object"
 msgstr ""
 
 #. Default: "Check for use splash screen image not only in the product's portlet but also in the video view."
-#: ./content/video_schema.py:23
+#: ./content/video_schema.py:25
 msgid "help_use_imge"
 msgstr ""
 
 #. Default: "Put there the video file in a compatible format"
-#: ./content/rtinternalvideo.py:45
+#: ./content/rtinternalvideo.py:48
 msgid "help_video_file"
 msgstr ""
 
 #. Default: "Can be used to provide splash image when needed"
-#: ./content/rtinternalvideo.py:35
+#: ./content/rtinternalvideo.py:37
 #: ./content/rtremotevideo.py:35
 msgid "help_video_image"
 msgstr ""
 
 #. Default: "Add Video Portlet"
-#: ./portlets/portlet.py:186
+#: ./portlets/portlet.py:185
 msgid "label_add_video_portlet"
 msgstr ""
 
+#. Default: "Body text"
+#: ./content/video_schema.py:36
+msgid "label_body_text"
+msgstr ""
+
 #. Default: "Duration"
-#: ./content/video_schema.py:14
+#: ./content/video_schema.py:16
 msgid "label_duration"
 msgstr ""
 
 #. Default: "Edit Video Portlet"
-#: ./portlets/portlet.py:199
+#: ./portlets/portlet.py:198
 msgid "label_edit_video_portlet"
 msgstr ""
 
 #. Default: "Video height"
-#: ./content/video_schema.py:42
+#: ./content/video_schema.py:56
 msgid "label_height"
 msgstr ""
 
@@ -143,37 +156,37 @@ msgid "label_info_year"
 msgstr ""
 
 #. Default: "Number of videos to show"
-#: ./portlets/portlet.py:62
+#: ./portlets/portlet.py:61
 msgid "label_number_of_videos_to_show"
 msgstr ""
 
 #. Default: "Portlet header"
-#: ./portlets/portlet.py:42
+#: ./portlets/portlet.py:41
 msgid "label_portlet_header"
 msgstr ""
 
 #. Default: "Show \"more...\" link"
-#: ./portlets/portlet.py:70
+#: ./portlets/portlet.py:69
 msgid "label_show_more_link"
 msgstr ""
 
 #. Default: "Target object"
-#: ./portlets/portlet.py:48
+#: ./portlets/portlet.py:47
 msgid "label_target_object"
 msgstr ""
 
 #. Default: "Use image as splash screen?"
-#: ./content/video_schema.py:22
+#: ./content/video_schema.py:24
 msgid "label_use_imge"
 msgstr ""
 
 #. Default: "Video file"
-#: ./content/rtinternalvideo.py:43
+#: ./content/rtinternalvideo.py:46
 msgid "label_video_file"
 msgstr ""
 
 #. Default: "Video width"
-#: ./content/video_schema.py:33
+#: ./content/video_schema.py:47
 msgid "label_width"
 msgstr ""
 

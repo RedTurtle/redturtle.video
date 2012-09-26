@@ -4,14 +4,12 @@ Changelog
 0.8.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Updated italian translation [keul]
 
 0.8.1 (2012-09-21)
 ------------------
 
 - added fix for thumb size. Now uses plone.app.imaging sizes [cekk]
-
 
 0.8.0 (2012-09-04)
 ------------------
