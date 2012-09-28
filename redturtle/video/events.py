@@ -7,7 +7,7 @@ from urlparse import urlparse
 from zope.interface import alsoProvides, noLongerProvides
 from zope.component import getMultiAdapter, ComponentLookupError
 
-from collective.flowplayer.interfaces import IFlowPlayable
+from collective.flowplayer.interfaces import IVideo
 
 from redturtle.video.metadataextractor import extract
 from redturtle.video.interfaces import IVideoEmbedCode
@@ -99,10 +99,10 @@ def externalVideoModified(object, event):
         adapter = getMultiAdapter((object, object.REQUEST),
                                   IVideoEmbedCode,
                                   name=video_site)
-        noLongerProvides(object, IFlowPlayable)
+        noLongerProvides(object, IVideo)
     except ComponentLookupError:
         adapter = getMultiAdapter((object, object.REQUEST), IVideoEmbedCode)
-        alsoProvides(object, IFlowPlayable)
+        alsoProvides(object, IVideo)
     object.reindexObject(idxs=['object_provides'])
 
 

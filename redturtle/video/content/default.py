@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 
+from zope.interface import implements
+
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 
+from Products.ATContentTypes.interface import IImageContent
+
 class DefaultVideo(object):
-    """Common properties for rt video contents"""
+    """Common properties for RedTurtle Video contents"""
+    implements(IImageContent)
 
     security = ClassSecurityInfo()
 
