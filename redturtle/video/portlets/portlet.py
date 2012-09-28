@@ -113,7 +113,7 @@ class Renderer(base.Renderer):
         if plone_view.isStructuralFolder():
             return target.absolute_url()
         else:
-            return "%s/view" %target.absolute_url()
+            return "%s/view" % target.absolute_url()
 
     @memoize
     def videos(self):
@@ -125,6 +125,7 @@ class Renderer(base.Renderer):
             return [dict(title=target.Title(),
                          description=target.Description(),
                          url=target.absolute_url(),
+                         path='/'.join(target.getPhysicalPath()),
                          year=target.getYear(),
                          duration=target.getDuration(),
                          image_url=getImageUrl(target)),
@@ -132,12 +133,13 @@ class Renderer(base.Renderer):
         if IATFolder.providedBy(target):
             values = []
             videos = target.getFolderContents(
-                        contentFilter = {'object_provides':
+                        contentFilter={'object_provides':
                                             IRTVideo.__identifier__})
             for v in videos:
                 values.append(dict(title = v.Title,
                                    description = v.Description,
                                    url = v.getURL(),
+                                   path=v.getPath(),
                                    year = v.getYear,
                                    duration = v.getDuration,
                                    image_url = getImageUrl(v),
@@ -153,6 +155,7 @@ class Renderer(base.Renderer):
                 values.append(dict(title=v.Title,
                                    description=v.Description,
                                    url=v.getURL(),
+                                   path=v.getPath(),
                                    year=v.getYear,
                                    duration=v.getDuration,
                                    image_url=getImageUrl(v),

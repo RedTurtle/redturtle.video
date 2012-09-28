@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 - Updated italian translation [keul]
+- Added video path to portlet info dict [cekk]
 
 0.8.1 (2012-09-21)
 ------------------
