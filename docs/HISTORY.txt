@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.0 (unreleased)
+1.0.0 (2012-10-01)
 ------------------
 
 - Updated italian translation [keul]

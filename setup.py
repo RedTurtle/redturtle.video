@@ -3,7 +3,7 @@
 import os, sys
 from setuptools import setup, find_packages
 
-version = '1.0.0.dev0'
+version = '1.0.0'
 
 tests_require=['zope.testing', 'Products.contentmigration']
 
