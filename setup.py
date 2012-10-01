@@ -3,7 +3,7 @@
 import os, sys
 from setuptools import setup, find_packages
 
-version = '0.8.2.dev1'
+version = '1.0.0.dev0'
 
 tests_require=['zope.testing', 'Products.contentmigration']
 
@@ -11,7 +11,7 @@ install_requires = ['setuptools',
                     'hachoir_core',
                     'hachoir_metadata',
                     'hachoir_parser',
-                    'collective.flowplayer',
+                    'collective.flowplayer<3.1',
                     'plone.app.imaging>=1.0b9',
                     ]
 

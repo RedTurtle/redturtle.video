@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.8.2 (unreleased)
+1.0.0 (unreleased)
 ------------------
 
 - Updated italian translation [keul]

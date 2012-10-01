@@ -8,8 +8,8 @@ A simple video support for Plone, mainly based on `collective.flowplayer`__.
 __ http://pypi.python.org/pypi/collective.flowplayer
 
 .. Warning::
-    Right now RedTurtle Video is **not compatible with latest collective.flowplayer releases**.
-    You must use a version **lesser than 3.1**.
+    Right now RedTurtle Video is **not compatible with latest collective.flowplayer releases**;
+    It requires **version 3.0**.
 
 Features
 ========
