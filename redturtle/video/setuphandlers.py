@@ -22,8 +22,7 @@ def addKeyToCatalog(portal, logger=None):
     catalog = getToolByName(portal, 'portal_catalog')
     indexes = catalog.indexes()
     # Specify the indexes you want, with ('index_name', 'index_type')
-    wanted = (('hasSplashScreenImage', 'FieldIndex'),
-              ('getYear', 'KeywordIndex'),
+    wanted = (('getYear', 'KeywordIndex'),
               ('getDuration', 'KeywordIndex')
               )
 
