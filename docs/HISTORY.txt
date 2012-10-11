@@ -4,7 +4,9 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- We don't need the hasSplashScreenImage catalog index [keul]
+- We don't need any new catalog index so we are not creating theme.
+  To don't brake 3rd party packages we will *not* remove index when upgrading
+  [keul]
 
 1.0.0 (2012-10-01)
 ------------------
