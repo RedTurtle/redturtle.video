@@ -3,6 +3,7 @@
 from zope.interface import implements
 
 from AccessControl import ClassSecurityInfo
+from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
 
 from Products.ATContentTypes.interface import IImageContent
@@ -29,6 +30,7 @@ class DefaultVideo(object):
         except AttributeError:
             return 200 # old default
 
+    security.declareProtected(permissions.View, "hasSplashScreenImage")
     def hasSplashScreenImage(self):
         """Boolean value to know if an image is available"""
         if self.getImage():
