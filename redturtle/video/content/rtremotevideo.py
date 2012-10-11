@@ -83,10 +83,4 @@ class RTRemoteVideo(ATLink, ATCTImageTransform, DefaultVideo):
 
         return ATLink.__bobo_traverse__(self, REQUEST, name)
 
-    def hasSplashScreenImage(self):
-        """Boolean value to know if an image is available"""
-        if self.getImage():
-            return True
-        return False
-
 atapi.registerType(RTRemoteVideo, PROJECTNAME)

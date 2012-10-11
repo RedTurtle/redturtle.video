@@ -28,3 +28,9 @@ class DefaultVideo(object):
             return p_tool.redturtle_video_properties.default_videosize_h
         except AttributeError:
             return 200 # old default
+
+    def hasSplashScreenImage(self):
+        """Boolean value to know if an image is available"""
+        if self.getImage():
+            return True
+        return False

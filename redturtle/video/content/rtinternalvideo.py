@@ -105,12 +105,6 @@ class RTInternalVideo(base.ATCTContent, ATCTImageTransform, DefaultVideo):
             return 0
         return f.get_size(self) or 0
 
-    def hasSplashScreenImage(self):
-        """Boolean value to know if an image is available"""
-        if self.getImage():
-            return True
-        return False
-
     security.declarePrivate('getIndexValue')
     def getIndexValue(self, mimetype='text/plain'):
         # Need to overridide because plone.app.blob use and force this to exists
