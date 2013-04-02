@@ -139,3 +139,4 @@ def retrieveThumbnail(object, event):
     field = object.getField('image')
     field.setContentType(object, thumb_obj.content_type)
     field.setFilename(object, thumb_obj.filename)
+    object.reindexObject(idxs=['hasSplashScreenImage'])
