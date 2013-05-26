@@ -5,10 +5,10 @@ from zope.component import getMultiAdapter, ComponentLookupError
 from zope.interface import implements
 
 try:
-    from zope.browserpage import viewpagetemplatefile
+    from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 except ImportError:
     # Plone < 4.1
-    from zope.app.pagetemplate import viewpagetemplatefile
+    from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
