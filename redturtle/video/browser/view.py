@@ -4,7 +4,11 @@ from urlparse import urlparse
 from zope.component import getMultiAdapter, ComponentLookupError
 from zope.interface import implements
 
-from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+try:
+    from zope.browserpage import viewpagetemplatefile
+except ImportError:
+    # Plone < 4.1
+    from zope.app.pagetemplate import viewpagetemplatefile
 
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName

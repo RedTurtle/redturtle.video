@@ -2,8 +2,12 @@
 
 from zope.interface import implements
 from redturtle.video.interfaces import IVideoEmbedCode
-from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 
+try:
+    from zope.browserpage import viewpagetemplatefile
+except ImportError:
+    # Plone < 4.1
+    from zope.app.pagetemplate import viewpagetemplatefile
 
 class VideoEmbedCode(object):
     """ VideoEmbedCode
