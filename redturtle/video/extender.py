@@ -16,7 +16,7 @@ class ExtensionBlobField(ExtensionField, BlobField):
     """ derivative of blobfield for extending schemas """
 
 
-class RemoteVideoATTypeExtender(object):
+class InternalVideoATTypeExtender(object):
     adapts(IRTInternalVideo)
     implements(ISchemaExtender)
 

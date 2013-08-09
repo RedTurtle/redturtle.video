@@ -1,11 +1,14 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed Python import for Plone 4.3 (close `#14`__) [bhenker]
+- Named the schemaextender adapter, to be compatible with latests
+  collective.flowplayer versions [keul]
 
+  __ https://github.com/RedTurtle/redturtle.video/pull/14
 
 1.0.1 (2013-04-03)
 ------------------
@@ -13,7 +16,6 @@ Changelog
 - We don't need any new catalog index so we are not creating theme.
   To don't brake 3rd party packages we will *not* remove index when upgrading
   [keul]
-
 - Added reindex for hasSplashScreenImage when retrieve thumb from external plugin
   [cekk]
 

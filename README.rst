@@ -7,10 +7,6 @@ A simple video support for Plone, mainly based on `collective.flowplayer`__.
 
 __ http://pypi.python.org/pypi/collective.flowplayer
 
-.. Warning::
-    Right now RedTurtle Video is **not compatible with latest collective.flowplayer releases**;
-    It requires **version 3.0**.
-
 Features
 ========
 
@@ -119,7 +115,7 @@ going to ZMI, in ``portal_properties`` and change values in ``redturtle_video_pr
 Requirements
 ============
 
-Tested on Plone 3.3 and 4.2, with collective.flowplayer 3.0.
+Tested on all Plone versions from 3.3 to 4.3, with many compatible collective.flowplayer versions.
 
 Installation
 ============
@@ -155,7 +151,7 @@ Developed with the support of:
 
 * `Rete Civica Mo-Net - Comune di Modena`__
   
-  .. image:: http://www.comune.modena.it/grafica/logoComune/logoComunexweb.jpg 
+  .. image:: http://www.comune.modena.it/grafica/logoComune/logoComunexweb.jpg
      :alt: City of Modena - logo
   
 * `Regione Emilia Romagna`__

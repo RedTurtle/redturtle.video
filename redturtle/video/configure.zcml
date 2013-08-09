@@ -70,7 +70,8 @@
 
   <configure zcml:condition="installed plone.app.blob">
     <include package="archetypes.schemaextender" />
-    <adapter factory=".extender.RemoteVideoATTypeExtender" />
+    <adapter name="video.blob"
+	         factory=".extender.InternalVideoATTypeExtender" />
   </configure>
 
   <adapter
