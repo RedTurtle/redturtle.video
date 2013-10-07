@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.0.2 (2013-10-07)
 ------------------
 - Fix permission to add portlet. Now who can mange portlets, can create the portlet [cekk]
 
