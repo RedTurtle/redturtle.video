@@ -22,7 +22,7 @@ Changelog
 ------------------
 
 - We don't need any new catalog index so we are not creating them.
-  To don't brake 3rd party packages we will *not* remove index when upgrading
+  To don't break 3rd party packages we will *not* remove index when upgrading
   [keul]
 - Added reindex for hasSplashScreenImage when retrieve thumb from external plugin
   [cekk]
