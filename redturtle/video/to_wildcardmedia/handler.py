@@ -17,6 +17,9 @@ from redturtle.video.to_wildcardmedia.migrator import migrate_videolink
 
 
 def toWildcardMedia(context):
+    if context.readDataFile('redturtle.video_to_wmedia_migration.txt') is None:
+        return
+
     site = context.getSite()
     if not WM_FOUND:
         logger.error("wildcard.media not found. Can't migrate anything")
