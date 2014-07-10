@@ -104,7 +104,7 @@ class RTInternalVideoMigrator(ATCTContentMigrator):
         old_image = self.old.getField('image').get(self.old)
         if old_image != '':
             filename = safe_unicode(old_image.filename)
-            # BBB: plone.app.contentttypes migrator use old_image.data,
+            # BBB: plone.app.contenttypes migrator use old_image.data,
             # but I get ComponentLookupError
             namedblobimage = NamedBlobImage(data=old_image.data.data,
                                             filename=filename)
@@ -113,8 +113,8 @@ class RTInternalVideoMigrator(ATCTContentMigrator):
         width = self.old.getField('width').get(self.old)
         self.new.width = width
         height = self.old.getField('height').get(self.old)
-        self.new.height = height        
-        
+        self.new.height = height
+
 
 
 def migrate_internalvideo(portal):
@@ -122,106 +122,40 @@ def migrate_internalvideo(portal):
 
 
 
-class DocumentMigrator(ATCTContentMigrator):
+class RTRemoteVideoMigrator(ATCTContentMigrator):
 
-    src_portal_type = 'Document'
-    src_meta_type = 'ATDocument'
-    dst_portal_type = 'Document'
+    src_portal_type = 'RTRemoteVideo'
+    src_meta_type = 'RTRemoteVideo'
+    dst_portal_type = 'WildcardVideo'
     dst_meta_type = None  # not used
 
     def migrate_schema_fields(self):
+        # text/transcript
         field = self.old.getField('text')
         mime_type = field.getContentType(self.old)
         raw_text = safe_unicode(field.getRaw(self.old))
-        if raw_text.strip() == '':
-            return
-        richtext = RichTextValue(raw=raw_text, mimeType=mime_type,
-                                 outputMimeType='text/x-html-safe')
-        self.new.text = richtext
-
-
-def migrate_documents(portal):
-    return migrate(portal, DocumentMigrator)
-
-
-class FileMigrator(ATCTContentMigrator):
-
-    src_portal_type = 'File'
-    src_meta_type = 'ATFile'
-    dst_portal_type = 'File'
-    dst_meta_type = None  # not used
-
-    def migrate_schema_fields(self):
-        old_file = self.old.getField('file').get(self.old)
-        filename = safe_unicode(old_file.filename)
-        namedblobfile = NamedBlobFile(contentType=old_file.content_type,
-                                      data=old_file.data,
-                                      filename=filename)
-        self.new.file = namedblobfile
-
-
-def migrate_files(portal):
-    return migrate(portal, FileMigrator)
-
-
-class BlobFileMigrator(FileMigrator):
-
-    src_portal_type = 'File'
-    src_meta_type = 'ATBlob'
-    dst_portal_type = 'File'
-    dst_meta_type = None  # not used
-
-
-def migrate_blobfiles(portal):
-    return migrate(portal, BlobFileMigrator)
-
-
-class ImageMigrator(ATCTContentMigrator):
-
-    src_portal_type = 'Image'
-    src_meta_type = 'ATImage'
-    dst_portal_type = 'Image'
-    dst_meta_type = None  # not used
-
-    def migrate_schema_fields(self):
+        if raw_text.strip() != '':
+            richtext = RichTextValue(raw=raw_text, mimeType=mime_type,
+                                     outputMimeType='text/x-html-safe')
+            self.new.transcript = richtext
+        # image/splashscreen
         old_image = self.old.getField('image').get(self.old)
-        if old_image == '':
-            return
-        filename = safe_unicode(old_image.filename)
-        namedblobimage = NamedBlobImage(data=old_image.data,
-                                        filename=filename)
-        self.new.image = namedblobimage
+        if old_image != '':
+            filename = safe_unicode(old_image.filename)
+            # BBB: plone.app.contenttypes migrator use old_image.data,
+            # but I get ComponentLookupError
+            namedblobimage = NamedBlobImage(data=old_image.data.data,
+                                            filename=filename)
+            self.new.image = namedblobimage
+        # video link
+        remote_url = self.old.getField('remoteUrl').get(self.old)
+        self.new.youtube_url = remote_url
+        # size
+        width = self.old.getField('width').get(self.old)
+        self.new.width = width
+        height = self.old.getField('height').get(self.old)
+        self.new.height = height  
 
 
-def migrate_images(portal):
-    return migrate(portal, ImageMigrator)
-
-
-class BlobImageMigrator(ImageMigrator):
-
-    src_portal_type = 'Image'
-    src_meta_type = 'ATBlob'
-    dst_portal_type = 'Image'
-    dst_meta_type = None  # not used
-
-
-def migrate_blobimages(portal):
-    return migrate(portal, BlobImageMigrator)
-
-
-class LinkMigrator(ATCTContentMigrator):
-
-    src_portal_type = 'Link'
-    src_meta_type = 'ATLink'
-    dst_portal_type = 'Link'
-    dst_meta_type = None  # not used
-
-    def migrate_schema_fields(self):
-        remoteUrl = self.old.getField('remoteUrl').get(self.old)
-        self.new.remoteUrl = remoteUrl
-
-
-def migrate_links(portal):
-    return migrate(portal, LinkMigrator)
-
-
+def migrate_videolink(portal):
+    return migrate(portal, RTRemoteVideoMigrator)

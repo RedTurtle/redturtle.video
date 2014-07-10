@@ -13,6 +13,7 @@ except ImportError:
 
 from redturtle.video import logger
 from redturtle.video.to_wildcardmedia.migrator import migrate_internalvideo
+from redturtle.video.to_wildcardmedia.migrator import migrate_videolink
 
 
 def toWildcardMedia(context):
@@ -21,5 +22,10 @@ def toWildcardMedia(context):
         logger.error("wildcard.media not found. Can't migrate anything")
     if not CONTENTMIGRATION_FOUND:
         logger.error("Products.contentmigration not found. Can't migrate anything")
+    logger.info("Migrate internal videos")
     migrate_internalvideo(site)
+    logger.info("Internal video migration done")
+    logger.info("Migrate video links")
+    migrate_videolink(site)
+    logger.info("Video links migration done")
     logger.info("Migration completed")
