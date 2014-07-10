@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+ <column value="hasSplashScreenImage" remove="True" />
+ <column value="getYear" remove="True" />
+ <column value="getDuration" remove="True" />
+</object>

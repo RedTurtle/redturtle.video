@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object>
+ <resourcetypes>
+   <linkable purge="False">
+      <element value="RTInternalVideo" remove="True"/>
+      <element value="RTRemoteVideo" remove="True"/>
+   </linkable>
+ </resourcetypes>
+</object>
+
