@@ -13,6 +13,7 @@ install_requires = ['setuptools',
                     'hachoir_parser',
                     'collective.flowplayer',
                     'plone.app.imaging>=1.0b9',
+                    #'wildcard.media',
                     ]
 
 # what I read there seems not working propery for Plone 3.3
@@ -28,7 +29,7 @@ setup(name='redturtle.video',
       description="Video content types for Plone; "
                   "use collective.flowplayer but also pluggable with external services",
       long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
@@ -36,6 +37,7 @@ setup(name='redturtle.video',
         'Framework :: Plone :: 4.0',
         'Framework :: Plone :: 4.1',
         'Framework :: Plone :: 4.2',
+        'Framework :: Plone :: 4.3',
         'Development Status :: 5 - Production/Stable',
         'Topic :: Multimedia :: Video',
         'License :: OSI Approved :: GNU General Public License (GPL)',

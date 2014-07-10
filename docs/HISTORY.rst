@@ -15,7 +15,7 @@ Changelog
 1.0.1 (2013-04-03)
 ------------------
 
-- We don't need any new catalog index so we are not creating theme.
+- We don't need any new catalog index so we are not creating them.
   To don't brake 3rd party packages we will *not* remove index when upgrading
   [keul]
 - Added reindex for hasSplashScreenImage when retrieve thumb from external plugin
