@@ -15,6 +15,7 @@ Changelog
 
   __ https://github.com/RedTurtle/redturtle.video/issues/12
 
+- Added a Generic Setup import profile for migrate to wildcard.media [keul]
 
 1.0.1 (2013-04-03)
 ------------------

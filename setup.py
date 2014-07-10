@@ -5,7 +5,9 @@ from setuptools import setup, find_packages
 
 version = '1.1.0.dev0'
 
-tests_require=['zope.testing', 'Products.contentmigration']
+tests_require=['zope.testing',
+               'Products.contentmigration',
+               'Products.PloneTestCase']
 
 install_requires = ['setuptools',
                     'hachoir_core',
@@ -14,6 +16,7 @@ install_requires = ['setuptools',
                     'collective.flowplayer',
                     'plone.app.imaging>=1.0b9',
                     #'wildcard.media',
+                    #Products.contentmigration>=2.1.8
                     ]
 
 # what I read there seems not working propery for Plone 3.3
@@ -27,7 +30,8 @@ else:
 setup(name='redturtle.video',
       version=version,
       description="Video content types for Plone; "
-                  "use collective.flowplayer but also pluggable with external services",
+                  "use collective.flowplayer but also pluggable with external services. - "
+                  "Forward compatibility shim version, for easily migrate to wildcard.media",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers

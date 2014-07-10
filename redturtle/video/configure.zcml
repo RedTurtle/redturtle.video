@@ -44,6 +44,15 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      zcml:condition="installed wildcard.media"
+      name="to_wildcardmedia"
+      title="RedTurtle Video: migrate to wildcard.media"
+      directory="profiles/to_wildcardmedia"
+      description="Migrate all RedTurtle Video contents to wildcard.media"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <genericsetup:importStep
       name="redturtle.video.various"
       title="redturtle.video: miscellaneous import steps"
@@ -78,7 +87,7 @@
   <configure zcml:condition="installed plone.app.blob">
     <include package="archetypes.schemaextender" />
     <adapter name="video.blob"
-	         factory=".extender.InternalVideoATTypeExtender" />
+             factory=".extender.InternalVideoATTypeExtender" />
   </configure>
 
   <adapter
