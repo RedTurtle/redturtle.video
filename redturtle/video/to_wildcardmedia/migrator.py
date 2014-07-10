@@ -4,25 +4,19 @@
 This stuff has been stolen from plone.app.contentypes migrations
 '''
 
-from Products.ATContentTypes.interfaces.interfaces import IATContentType
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode, safe_hasattr
+import logging
+from Products.CMFPlone.utils import safe_unicode
 from Products.contentmigration.basemigrator.migrator import CMFItemMigrator
 from Products.contentmigration.basemigrator.walker import CatalogWalker
-from persistent.list import PersistentList
 from plone.app.textfield.value import RichTextValue
-from plone.dexterity.interfaces import IDexterityContent
 from plone.namedfile.file import NamedBlobFile
 from plone.namedfile.file import NamedBlobImage
-#from z3c.relationfield import RelationValue
 from zope.component import adapter
 from zope.component import getAdapters
-from zope.component import getUtility
 from zope.interface import Interface
 from zope.interface import implementer
+#from z3c.relationfield import RelationValue
 
-
-import logging
 logger = logging.getLogger(__name__)
 
 
