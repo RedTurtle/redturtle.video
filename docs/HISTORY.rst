@@ -11,7 +11,7 @@ Changelog
   __ https://github.com/RedTurtle/redturtle.video/pull/14
 
 - Fix permission to add portlet. Now who can manage portlets can create it [cekk]
-- Added the uninstall profile (this close #12) [keul]
+- Added the uninstall profile (this close `#12`__) [keul]
 
   __ https://github.com/RedTurtle/redturtle.video/issues/12
 

@@ -1,14 +1,67 @@
-.. contents:: **Table of contents**
-
-Introduction
-============
-
-A simple video support for Plone, mainly based on `collective.flowplayer`__.
+A simple **video support for Plone**, mainly based on `collective.flowplayer`__.
 
 __ http://pypi.python.org/pypi/collective.flowplayer
 
-Features
-========
+.. contents:: **Table of contents**
+
+Deprecation warning: AKA "Easily migration to wildcard.media"
+=============================================================
+
+.. note:: **Deprecation warning**
+    Although RedTurtle Video will still work for Plone 3.3 to 4.3 (read below), releases from
+    1.1.0 and above will be focused on helping people migrate to `wildcard.media`__
+
+__ https://plone.org/products/wildcard.media
+
+Motivations behind this choice
+------------------------------
+
+RedTurtle Video have a very long history and we loved it, but it's fate is linked to the status of
+``collective.flowplayer``, which is not very clear and still based on a very old
+release of Flowplayer, still based on Flash technology.
+Plone 4.3 compatibility works... more or less (you will experience some issues originated by
+changes done in collective.flowplayer > 3).
+
+But this is not the main problem: meanwhile the web moved on (HTML 5 is here) and a new shiny,
+Dexterity based, product is available: **wildcard.media**.
+
+We *really* think that Plone will live better with a single, well done and mainained product
+instead of having two or more.
+
+All future versions of RedTurtle Video will help people moving on, migrating to this new
+package, and our future work will be probably focused on contributing to *that* package instead.
+
+RedTurtle Video is still your best friend if you need Plone < 4.3 compatibility.
+
+How to migrate?
+---------------
+
+Go to you ``portal_setup`` ZMI tool and run the "*RedTurtle Video: migrate to wildcard.media*"
+Generic Setup profile.
+After that: uninstall RedTurtle Video and remove it from your buildout.
+
+**NB**: ``Products.contentmigration`` is required, and you must rely on
+version 2.1.8 or better::
+
+    [buildout]
+    ...
+    
+    [versions]
+    ...
+    Products.contentmigration = 2.1.8
+
+Limitations
+-----------
+
+wildcard.media is not perfect (yet). There's a big feature that is missing: supporting other
+remote video sources different by YouTube.
+
+We will work on this in future.
+
+RedTurtle Video Features
+========================
+
+(*...in case you still want to use RedTurtle Video...*)
 
 This add to your Plone portal two new types:
 
@@ -162,13 +215,19 @@ Developed with the support of:
   
   .. image:: http://www.fe.camcom.it/cciaa-logo.png/
      :alt: CCIAA Ferrara - logo
+
+* `S. Anna Hospital, Ferrara`__
   
+  .. image:: http://www.ospfe.it/ospfe-logo.jpg 
+     :alt: S. Anna Hospital logo
+
 All of them supports the `PloneGov initiative`__.
 
 __ http://www.comune.modena.it/
 __ http://www.regione.emilia-romagna.it/
 __ http://www.gdf.gov.it/
 __ http://www.fe.camcom.it/
+__ http://www.ospfe.it/
 __ http://www.plonegov.it/
 
 Authors
@@ -186,25 +245,3 @@ Thanks to
 * *Giorgio Borelli* (gborelli) for adding tests, fixing issues and providing *Vimeo* support.
 * *Christian Ledermann* (nan010) for providing *Google Video*, *Metacafe* support and, not
   last, very good documentation.
-
-Other products
-==============
-
-Before choosing this product think about what you want to get from "Plone and Video".
-We strongly suggest you to use ``redturtle.video`` only when:
-
-* The simple use of ``collective.flowplayer`` if not enough (you don't like to upload a "File" that magically
-  became a Video? You need remote video support? You need a real new Plone content type to make Collections?)
-* The use of `Plumi`__ suite is "too much" (you don't need a full video site, just a simple video support inside
-  your CMS)
-* You need to have Video as real CMS contents, not only use them embedded in document text (a task that you can
-  reach easily using `collective.embedly`__)
-
-You can also be interested looking at the `Plone Video Suite`__ discussions. 
-
-Another very interesting approach is the one used in `collective.mediaelementjs`__.
-
-__ http://plone.org/products/plumi
-__ http://projects.quintagroup.com/products/wiki/collective.embedly
-__ http://www.coactivate.org/projects/plone-video-sprint/project-home
-__ http://pypi.python.org/pypi/collective.mediaelementjs
