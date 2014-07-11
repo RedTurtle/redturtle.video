@@ -18,12 +18,12 @@ Motivations behind this choice
 
 RedTurtle Video have a very long history and we loved it, but it's fate is linked to the status of
 ``collective.flowplayer``, which is not very clear and still based on a very old
-release of Flowplayer, still based on Flash technology.
+release of Flowplayer based on Flash technology.
 Plone 4.3 compatibility works... more or less (you will experience some issues originated by
 changes done in collective.flowplayer > 3).
 
-But this is not the main problem: meanwhile the web moved on (HTML 5 is here) and a new shiny,
-Dexterity based, product is available: **wildcard.media**.
+But this is not the main motivation: meanwhile the web moved on (HTML 5 is here!) and a new promising
+(Dexterity based) product is available: **wildcard.media**.
 
 We *really* think that Plone will live better with a single, well done and mainained product
 instead of having two or more.
@@ -54,9 +54,9 @@ Limitations
 -----------
 
 wildcard.media is not perfect (yet). There's a big feature that is missing: supporting other
-remote video sources different by YouTube.
+remote video sources different from YouTube.
 
-We will work on this in future.
+We will probably work on this in future.
 
 RedTurtle Video Features
 ========================

@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.0 (unreleased)
+1.1.0 (2014-07-11)
 ------------------
 
 - Fixed Python import for Plone 4.3 (close `#14`__) [bhenker]
