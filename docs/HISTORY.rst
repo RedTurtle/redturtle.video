@@ -4,7 +4,8 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Handle possible not found error in tumbnail retrieve
+  [cekk]
 
 
 1.1.0 (2014-07-11)
@@ -13,7 +14,7 @@ Changelog
 - Fixed Python import for Plone 4.3 (close `#14`__) [bhenker]
 - Named the schemaextender adapter, to be compatible with latests
   collective.flowplayer versions [keul]
-  
+
   __ https://github.com/RedTurtle/redturtle.video/pull/14
 
 - Fix permission to add portlet. Now who can manage portlets can create it [cekk]
@@ -175,7 +176,7 @@ __ http://plone.org/products/redturtle.video/issues/7
 * restored right position for a lot of viewlet manager
   (reverting some changes done in version 0.3.1) [keul]
 * splashscreen image can be used (optionally) as real video splashscreen.
-  Now `plone.app.imaging`__ is required (even without ``plone.app.blob``) [keul] 
+  Now `plone.app.imaging`__ is required (even without ``plone.app.blob``) [keul]
 * added video size fields; video view and embed code now use it [keul]
 * properly registering types in TinyMCE (this close `#5`__) [keul]
 * external video now provides the ``IFlowPlayable`` interface only when linking
@@ -229,4 +230,3 @@ __ http://plone.org/products/redturtle.video/issues/2
 -----------------------
 
 * initial release
-
