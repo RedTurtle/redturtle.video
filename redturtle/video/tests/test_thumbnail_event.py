@@ -32,6 +32,21 @@ class TestInitializedEvent(TestCase):
         img_from_video = md5.new(f.getImage().data).digest()
         self.assertEqual(plone_italia_png, img_from_video)
 
+    def test_no_image_provided_notfound(self):
+        """
+        what's if we don't found any image?
+        """
+        self.portal.invokeFactory(type_name="RTRemoteVideo",
+                                  id="remote-video-file")
+        f = getattr(self.portal, 'remote-video-file')
+        f.edit(title="A remote file",
+               remoteUrl="http://foo.com/foo")
+        urllib2.urlopen = self.original_urlopen
+        notify(ObjectInitializedEvent(f))
+        self.assertEqual(f.getImage(), "")
+        # re-set custom urlopen
+        urllib2.urlopen = self.custom_urlopen
+
     def test_image_provided(self):
         self.portal.invokeFactory(type_name="RTRemoteVideo",
                                   id="other-remote-video-file")

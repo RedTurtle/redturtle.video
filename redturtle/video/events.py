@@ -12,7 +12,7 @@ from collective.flowplayer.interfaces import IVideo
 from redturtle.video.metadataextractor import extract
 from redturtle.video.interfaces import IVideoEmbedCode
 from redturtle.video.config import DEFAULT_TIMEOUT
-
+from redturtle.video import logger
 if sys.version_info < (2, 6):
     PLONE4 = False
 else:
@@ -129,11 +129,14 @@ def retrieveThumbnail(object, event):
         The fallback it's on the base adapter that raise the exception.
         """
         return
-
-    if PLONE4:
-        response = urllib2.urlopen(thumb_obj.url, timeout=DEFAULT_TIMEOUT)
-    else:
-        response = urllib2.urlopen(thumb_obj.url)
+    try:
+        if PLONE4:
+            response = urllib2.urlopen(thumb_obj.url, timeout=DEFAULT_TIMEOUT)
+        else:
+            response = urllib2.urlopen(thumb_obj.url)
+    except urllib2.HTTPError as e:
+        logger.exception('Thumbnail not saved. Unable to retrieve thumbnail from "%s" for "%s": %s - %s' % (thumb_obj.url, "/".join(object.getPhysicalPath()), e.code, e.msg))
+        return
 
     object.setImage(response.read())
     field = object.getField('image')
