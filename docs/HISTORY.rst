@@ -4,7 +4,7 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Handle possible not found error in tumbnail retrieve
+- Handle possible HTTP ``Not Found`` error in thumbnail retrieve
   [cekk]
 
 
