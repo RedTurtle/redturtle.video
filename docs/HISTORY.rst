@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.1 (unreleased)
+1.1.1 (2015-08-17)
 ------------------
 
 - Handle possible HTTP ``Not Found`` error in thumbnail retrieve
