@@ -135,7 +135,7 @@ def retrieveThumbnail(object, event):
         else:
             response = urllib2.urlopen(thumb_obj.url)
     except urllib2.HTTPError as e:
-        logger.exception('Thumbnail not saved. Unable to retrieve thumbnail from "%s" for "%s": %s - %s' % (thumb_obj.url, "/".join(object.getPhysicalPath()), e.code, e.msg))
+        logger.warning('Thumbnail not saved. Unable to retrieve thumbnail from %s for %s: %s - %s' % (thumb_obj.url, "/".join(object.getPhysicalPath()), e.code, e.msg))
         return
 
     object.setImage(response.read())
