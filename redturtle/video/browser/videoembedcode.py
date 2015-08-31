@@ -22,7 +22,7 @@ class VideoEmbedCode(object):
     >>> class RemoteVideo(object):
     ...     implements(IRTRemoteVideo)
     ...     remoteUrl = 'http://www.site.com/video.mpeg'
-    ...     def getRemoteUrl(self):
+    ...     def getRemoteVideoURL(self):
     ...         return self.remoteUrl
     >>> remotevideo = RemoteVideo()
     >>> view = getMultiAdapter((remotevideo, TestRequest()), IVideoEmbedCode)
@@ -37,7 +37,7 @@ class VideoEmbedCode(object):
         self.request = request
 
     def getVideoLink(self):
-        return self.context.getRemoteUrl()
+        return self.context.getRemoteVideoURL()
 
     def getWidth(self):
         return self.context.getWidth()

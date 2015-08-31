@@ -239,7 +239,7 @@ The main task is to find out how to translate the URL on the site to the
 url of the embedded video. For Metacafe the getVideoLink method looks like this::
 
     def getVideoLink(self):
-        qs = urlparse(self.context.getRemoteUrl())[-2]
+        qs = urlparse(self.context.getRemoteVideoURL())[-2]
         return 'http://www.metacafe.com/fplayer/%s/%s.swf' % qs
 
 Now configure your adapter for your embed code::

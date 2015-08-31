@@ -82,7 +82,7 @@ def createTempFileRemoteVideo(object, event):
     """
     if object.getDuration():
         return
-    url = object.getRemoteUrl()
+    url = object.getRemoteVideoURL()
     response = urllib2.urlopen(url)
     fd = tempfile.NamedTemporaryFile()
     fd.write(response.read())
@@ -94,7 +94,7 @@ def createTempFileRemoteVideo(object, event):
 def externalVideoModified(object, event):
     """A remote video has been modified; check is we need to provide to it
     the IFlowPlayable interface (only if it is Flowplayer compatible)"""
-    video_site = urlparse(object.getRemoteUrl())[1].replace('www.', '')
+    video_site = urlparse(object.getRemoteVideoURL())[1].replace('www.', '')
     try:
         adapter = getMultiAdapter((object, object.REQUEST),
                                   IVideoEmbedCode,
@@ -112,7 +112,7 @@ def retrieveThumbnail(object, event):
     if object.getImage():
         return
 
-    video_site = urlparse(object.getRemoteUrl())[1].replace('www.', '')
+    video_site = urlparse(object.getRemoteVideoURL())[1].replace('www.', '')
 
     try:
         adapter = getMultiAdapter((object, object.REQUEST),

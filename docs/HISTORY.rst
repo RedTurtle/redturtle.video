@@ -1,11 +1,15 @@
 Changelog
 =========
 
-1.1.2 (unreleased)
+1.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Moved away from extending ATLink. It was probably a bad idea from the beginning, plus
+  some `changes`__ introduced on Plone 4.2 lead to issue when external video contents are show in
+  portal tab and navigation
+  [keul]
 
+__ https://github.com/plone/Products.CMFPlone/commit/be6b828870387259a731bf13c45150258efc48cb
 
 1.1.1 (2015-08-17)
 ------------------

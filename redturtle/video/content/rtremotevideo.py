@@ -1,21 +1,22 @@
 """Definition of the RTRemoteVideo content type
 """
 
-from zope.interface import implements
-
+import urlparse
 from AccessControl import ClassSecurityInfo
-from Products.CMFCore import permissions
-from Products.Archetypes import atapi
 from Products.ATContentTypes.content import schemata
-from Products.ATContentTypes.content.link import ATLink, ATLinkSchema
+from Products.ATContentTypes.content.base import ATCTContent
 from Products.ATContentTypes.content.image import ATImageSchema
+from Products.ATContentTypes.content.link import ATLink, ATLinkSchema
 from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
-
+from Products.Archetypes import atapi
+from Products.CMFCore import permissions
 from redturtle.video import videoMessageFactory as _
-from redturtle.video.interfaces import IRTRemoteVideo
 from redturtle.video.config import PROJECTNAME
 from redturtle.video.content.default import DefaultVideo
 from redturtle.video.content.video_schema import VIDEO_SCHEMA
+from redturtle.video.interfaces import IRTRemoteVideo
+from urllib import quote
+from zope.interface import implements
 
 RTRemoteVideoSchema = ATLinkSchema.copy() + VIDEO_SCHEMA.copy() + atapi.Schema((
 
@@ -40,11 +41,12 @@ imageField.sizes = None
 RTRemoteVideoSchema.addField(imageField)
 RTRemoteVideoSchema.moveField('image', after = 'remoteUrl')
 RTRemoteVideoSchema['remoteUrl'].widget.size = 60
+RTRemoteVideoSchema['remoteUrl'].accessor = 'getRemoteVideoURL'
 
 schemata.finalizeATCTSchema(RTRemoteVideoSchema, moveDiscussion = False)
 
 
-class RTRemoteVideo(ATLink, ATCTImageTransform, DefaultVideo):
+class RTRemoteVideo(ATCTContent, ATCTImageTransform, DefaultVideo):
     """A link to a video with screenshot"""
     implements(IRTRemoteVideo)
 
@@ -53,8 +55,6 @@ class RTRemoteVideo(ATLink, ATCTImageTransform, DefaultVideo):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
-
-    # -*- Your ATSchema to Python Property Bridges Here ... -*-
 
     security = ClassSecurityInfo()
 
@@ -81,6 +81,25 @@ class RTRemoteVideo(ATLink, ATCTImageTransform, DefaultVideo):
                 # image might be None or '' for empty images
                 return image
 
-        return ATLink.__bobo_traverse__(self, REQUEST, name)
+        return ATCTContent.__bobo_traverse__(self, REQUEST, name)
+
+    security.declareProtected(permissions.ModifyPortalContent, 'setRemoteUrl')
+    def setRemoteUrl(self, value, **kwargs):
+        """remute url mutator
+
+        Use urlparse to sanify the url
+        Also see http://dev.plone.org/plone/ticket/3296
+        """
+        if value:
+            value = urlparse.urlunparse(urlparse.urlparse(value))
+        self.getField('remoteUrl').set(self, value, **kwargs)
+
+    security.declareProtected(permissions.View, 'getRemoteVideoURL')
+    def getRemoteVideoURL(self):
+        """Sanitize output
+        """
+        value = self.Schema()['remoteUrl'].get(self)
+        if not value: value = ''  # ensure we have a string
+        return quote(value, safe='?$#@/:=+;$,&%')
 
 atapi.registerType(RTRemoteVideo, PROJECTNAME)
