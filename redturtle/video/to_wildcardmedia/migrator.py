@@ -15,7 +15,8 @@ from zope.component import adapter
 from zope.component import getAdapters
 from zope.interface import Interface
 from zope.interface import implementer
-from wildcard.media.async import queueJob
+from wildcard.media.convert import convertVideoFormats
+from wildcard.media.pasync import queueJob
 #from z3c.relationfield import RelationValue
 
 logger = logging.getLogger(__name__)
@@ -116,7 +117,7 @@ class RTInternalVideoMigrator(ATCTContentMigrator):
         height = self.old.getField('height').get(self.old)
         self.new.height = height
         # running video conversion
-        queueJob(self.new)
+        queueJob(self.new, convertVideoFormats)
 
 
 
