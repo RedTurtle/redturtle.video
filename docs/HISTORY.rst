@@ -11,6 +11,9 @@ Changelog
 
 __ https://github.com/plone/Products.CMFPlone/commit/be6b828870387259a731bf13c45150258efc48cb
 
+- Fix compatibility with latest version of wildcard.media
+  [cedricmessiant]
+
 1.1.1 (2015-08-17)
 ------------------
 
