@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.0 (unreleased)
+1.2.0 (2018-09-07)
 ------------------
 
 - Moved away from extending ATLink. It was probably a bad idea from the beginning, plus
