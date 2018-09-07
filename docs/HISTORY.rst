@@ -14,6 +14,9 @@ __ https://github.com/plone/Products.CMFPlone/commit/be6b828870387259a731bf13c45
 - Fix compatibility with latest version of wildcard.media
   [cedricmessiant]
 
+- Added missing `.gitignore` file
+  [arsenico13]
+
 1.1.1 (2015-08-17)
 ------------------
 
